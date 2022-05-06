@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MB Airways</title>
+
+		<meta name="viewport" content="width=1048">
+
+		<link rel="icon" type="image/x-icon" href="assets/images/logos/globe_original.jpg">		
+		<link rel="stylesheet" href="assets/styles/normalize.css">
+		<link rel="stylesheet" href="assets/styles/main.css">
+
+		<!-- Splide -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/css/splide.min.css" integrity="sha256-6YrKt7vMU9e4bwtlblASqhvvEt4/0JEQJ/zyWOFKnaM=" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js" integrity="sha256-bPFHGtlzinBbML+yf5JBexDq8KynAuUMXc3ksBY9Eyo=" crossorigin="anonymous"></script>
+
+		<!-- Leaflet -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+		<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+		<script src="https://cdn.jsdelivr.net/npm/leaflet.geodesic@2.6.1/dist/leaflet.geodesic.umd.min.js" integrity="sha256-p0rKTX8EVkTqoKNnB6YUjgLpX/fO+AF/7Wp+npazFt4=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<header>
+			<div class="gu-section">
+				<span>A Global Unity Alliance Member</span>
+			 	<img src="assets/images/logos/gu_big.png">
+		 	</div>
+
+			<div class="flex-section">
+				<img class="logo-img" src="assets/images/logos/mb_logo_white.png" alt="MB Airways" />
+				<nav>
+					<a href="#book">Book a Trip</a>
+					<a href="#destinations">Explore Destinations</a>
+					<a href="#fleet">Our Fleet</a>
+				</nav>
+			</div>
+		</header>
+
+		<div class="splide" role="group">
+			<div class="lead-wrapper">
+				<div class="lead">
+					<h1>We look forward to welcoming you onboard</h1>
+					<a class="btn" href="#book">Book a Trip</a>
+				</div>
+			</div>
+
+		  	<div class="splide__track">
+				<ul class="splide__list">
+					<li class="splide__slide">
+						<div class="caption-wrapper">
+							<div class="caption">
+								<p>Plan your next family vacation to&hellip;</p>
+								<h3>Orlando, USA</h3>
+								<p><a href="#book">Book now ></a></p>
+							</div>
+						</div>
+						<div class="img" style="background-image: url('assets/images/destinations/orlando.jpg')">
+					</li>
+					<li class="splide__slide">
+						<div class="caption-wrapper">
+							<div class="caption">
+								<p>Escape the cold weather in&hellip;</p>
+								<h3>Cancun, Mexico</h3>
+								<p><a href="#book">Book now ></a></p>
+							</div>
+						</div>
+						<div class="img" style="background-image: url('assets/images/destinations/cancun.jpg')">
+					</li>
+					<li class="splide__slide">
+						<div class="caption-wrapper">
+							<div class="caption">
+								<p>Explore the art and architecture of&hellip;</p>
+								<h3>Barcelona, Spain</h3>
+								<p><a href="#book">Book now ></a></p>
+							</div>
+						</div>
+						<div class="img" style="background-image: url('assets/images/destinations/barcelona.jpg')">
+					</li>
+					<li class="splide__slide">
+						<div class="caption-wrapper">
+							<div class="caption">
+								<p>See a world class performance in&hellip;</p>
+								<h3>Sydney, Australia</h3>
+								<p><a href="#book">Book now ></a></p>
+							</div>
+						</div>
+						<div class="img" style="background-image: url('assets/images/destinations/sydney.jpg')">
+					</li>
+					<li class="splide__slide">
+						<div class="caption-wrapper">
+							<div class="caption">
+								<p>Take in the culture and traditions of&hellip;</p>
+								<h3>Tokyo, Japan</h3>
+								<p><a href="#book">Book now ></a></p>
+							</div>
+						</div>
+						<div class="img" style="background-image: url('assets/images/destinations/tokyo.jpg')">
+					</li>
+				</ul>
+		  	</div>
+		</div>
+
+		<main>
+			<hr class="big">
+
+			<h2 id="book">Book a Trip</h2>
+			<p style="margin-bottom:var(--gutter-large)">Booking coming soon</p>
+
+			<hr class="big">
+
+			<h2 id="destinations">Explore Destinations</h2>
+
+			<div class="control-elem">
+				<label for="hub-select">Filter by Hub</label>
+				<select id="hub-select" onchange="drawMap(this.value)">
+					<option value="">All</option>
+					<option value="ewr">Newark Liberty International (EWR)</option>
+					<option value="iah">George Bush Intercontinental (IAH)</option>
+					<option value="sfo">San Francisco International (SFO)</option>
+				</select>
+			</div>
+
+		 	<div id="route-map"></div>
+
+		 	<hr class="big">
+
+			<h2 id="fleet">Our Fleet</h2>
+
+			<table class="fleet-table">
+				<tr><td colspan="2"><h3>Boeing 747-400</h3></td></tr>
+				<tr>
+					<td>
+						<strong>Cruise Speed:</strong> 561 mph (903 kph)<br>
+						<strong>Range:</strong> 8,360 miles (13,454 km)<br>
+						<strong>Capacity:</strong> 483 passengers, 16 tons cargo<br>
+						<strong>Propulsion:</strong> Four General Electric CF6-80C2B engines<br>
+						<strong>Wingspan:</strong> 211 feet (64 meters)<br>
+					</td>
+					<td><img src="assets/images/aircraft/mba-744.png" alt=""></td>
+				</tr>
+
+				<tr><td colspan="2"><hr><h3>Boeing 777-300 / 300ER</h3></td></tr>
+				<tr>
+					<td>
+						<strong>Cruise Speed:</strong> 554 mph (892 kph)<br>
+						<strong>Range:</strong> 6,909-9,131 miles (11,119-14,695 km)<br>
+						<strong>Capacity:</strong> 426-466 passengers, 16-21 tons cargo<br>
+						<strong>Propulsion:</strong> Two General Electric GE90 engines<br>
+						<strong>Wingspan:</strong> 212 feet (65 meters)<br>
+					</td>
+					<td><img src="assets/images/aircraft/mba-773.png" alt=""></td>
+				</tr>
+
+				<tr><td colspan="2"><hr><h3>Airbus A330-300</h3></td></tr>
+				<tr>
+					<td>
+						<strong>Cruise Speed:</strong> 541 mph (871 kph)<br>
+						<strong>Range:</strong> 6,713 miles (10,804 km)<br>
+						<strong>Capacity:</strong> 322-376 passengers, 11-16 tons cargo<br>
+						<strong>Propulsion:</strong> Two General Electric CF6 engines<br>
+						<strong>Wingspan:</strong> 198 feet (60 meters)<br>
+					</td>
+					<td><img src="assets/images/aircraft/mba-a333.png" alt=""></td>
+				</tr>
+
+				<tr><td colspan="2"><hr><h3>Boeing 767-400ER</h3></td></tr>
+				<tr>
+					<td>
+						<strong>Cruise Speed:</strong> 528 mph (850 kph)<br>
+						<strong>Range:</strong> 6,477 miles (10,424 km)<br>
+						<strong>Capacity:</strong> 304 passengers, 14 tons cargo<br>
+						<strong>Propulsion:</strong> Two General Electric CF6-80C2B engines<br>
+						<strong>Wingspan:</strong> 170 feet (52 meters)<br>
+					</td>
+					<td><img src="assets/images/aircraft/mba-764.png" alt=""></td>
+				</tr>
+
+				<tr><td colspan="2"><hr><h3>Boeing 757-200 / 300</h3></td></tr>
+				<tr>
+					<td>
+						<strong>Cruise Speed:</strong> 528 mph (850 kph)<br>
+						<strong>Range:</strong> 4,520-4,718 miles (6,840-7593 km)<br>
+						<strong>Capacity:</strong> 166-200 passengers, 8 tons cargo<br>
+						<strong>Propulsion:</strong> Two Rolls-Royce RB211-535 engines<br>
+						<strong>Wingspan:</strong> 134 feet (41 meters)<br>
+					</td>
+					<td><img src="assets/images/aircraft/mba-753.png" alt=""></td>
+				</tr>
+
+				<tr><td colspan="2"><hr><h3>Boeing 737-900ER</h3></td></tr>
+				<tr>
+					<td>
+						<strong>Cruise Speed:</strong> 518 mph (834 kph)<br>
+						<strong>Range:</strong> 3,759 miles (6,050 km)<br>
+						<strong>Capacity:</strong> 160 passengers, 5 tons cargo<br>
+						<strong>Propulsion:</strong> Two General Electric CFM56 engines<br>
+						<strong>Wingspan:</strong> 117 feet (36 meters)<br>
+					</td>
+					<td><img src="assets/images/aircraft/mba-739.png" alt=""></td>
+				</tr>
+
+				<tr><td colspan="2"><hr><h3>Airbus A321-200</h3></td></tr>
+				<tr>
+					<td>
+						<strong>Cruise Speed:</strong> 514 mph (828 kph)<br>
+						<strong>Range:</strong> 3,697 miles (5,950 km)<br>
+						<strong>Capacity:</strong> 154 passengers, 5 tons cargo<br>
+						<strong>Propulsion:</strong> Two IAE V2500-A5 engines<br>
+						<strong>Wingspan:</strong> 111 feet (34 meters)<br>
+					</td>
+					<td><img src="assets/images/aircraft/mba-a321.png" alt=""></td>
+				</tr>
+
+				<tr><td colspan="2"><hr><h3>Embraer ERJ-175</h3></td></tr>
+				<tr>
+					<td>
+						<strong>Cruise Speed:</strong> 514 mph (828 kph)<br>
+						<strong>Range:</strong> 2,303 miles (3,706 km)<br>
+						<strong>Capacity:</strong> 56-68 passengers, 3-4 tons cargo<br>
+						<strong>Propulsion:</strong> Two General Electric CF34-8E engines<br>
+						<strong>Wingspan:</strong> 76 feet (23 meters)<br>
+					</td>
+					<td><img src="assets/images/aircraft/mba-e175.png" alt=""></td>
+				</tr>
+			</table>
+		</main>
+
+		<footer>
+			<p><a href="#">Back to Top</a></p>
+			<p>
+				<a href="https://docs.google.com/spreadsheets/d/1_0dFQOtc81NVhO2qsdYMIULKBv7Y8pRAW9cN5jS5MzU/edit#gid=947281195" target="_blank">Admin</a> |
+				<a href="https://destinations.noway.info/en/index.html" target="_blank">Destinations Finder</a>
+			</p>
+			<p>Copyright &copy; 2022 <a href="https://www.airlines-manager.com/company/profile/airline/6743843" target="_blank">MB Airways</a>. All rights reserved.</p>
+		</footer>
+
+		<script src="assets/scripts/initSplide.js"></script>
+		<script src="assets/scripts/initLeaflet.js"></script>
+		
+	</body>
+</html>
