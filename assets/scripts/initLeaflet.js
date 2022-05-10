@@ -32,6 +32,16 @@ const DESTINATIONS = [
 		hubs: ['sfo'],
 	},
 	{
+		name: 'Amsterdam Schiphol (AMS)',
+		pos: [52.310623851948954, 4.768263669222851],
+		hubs: ['ewr'],
+	},
+	{
+		name: 'Athens International (ATH)',
+		pos: [37.93572283626069, 23.948437055281335],
+		hubs: ['ewr'],
+	},
+	{
 		name: 'Hartsfield-Jackson Atlanta International (ATL)',
 		pos: [33.64083507608079, -84.42787180090849],
 		hubs: ['ewr', 'sfo', 'iah'],
@@ -162,6 +172,11 @@ const DESTINATIONS = [
 		hubs: ['iah'],
 	},
 	{
+		name: 'Adolfo Suarez Madrid-Barajas (MAD)',
+		pos: [40.49847903162269, -3.5676089311550063],
+		hubs: ['ewr'],
+	},
+	{
 		name: 'Orlando International (MCO)',
 		pos: [28.418822273035058, -81.30431680312665],
 		hubs: ['ewr', 'sfo', 'iah'],
@@ -180,6 +195,11 @@ const DESTINATIONS = [
 		name: 'Minneapolis-Saint Paul International (MSP)',
 		pos: [44.88624650092833, -93.22250729555996],
 		hubs: ['ewr', 'iah'],
+	},
+	{
+		name: 'Louis Armstrong New Orleans International (MSY)',
+		pos: [29.99117411228903, -90.25927281791947],
+		hubs: ['ewr'],
 	},
 	{
 		name: 'Narita International (NRT)',
@@ -227,6 +247,11 @@ const DESTINATIONS = [
 		hubs: ['iah'],
 	},
 	{
+		name: 'Salt Lake City International (SLC)',
+		pos: [40.79051939628816, -111.97902094610347],
+		hubs: ['ewr'],
+	},
+	{
 		name: 'Sydney Airport (SYD)',
 		pos: [-33.94985609315001, 151.1818694507839],
 		hubs: ['sfo'],
@@ -260,6 +285,11 @@ const DESTINATIONS = [
 		name: 'Toronto Pearson International (YYZ)',
 		pos: [43.67779523959123, -79.6247972173393],
 		hubs: ['iah'],
+	},
+	{
+		name: 'Zurich Airport (ZRH)',
+		pos: [47.461358490923374, 8.553454682550841],
+		hubs: ['ewr'],
 	},
 ];
 
