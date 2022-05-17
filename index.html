@@ -52,7 +52,7 @@
 						<div class="caption-wrapper">
 							<div class="caption">
 								<p>Plan your next family vacation to&hellip;</p>
-								<h3>Orlando, USA</h3>
+								<h3>Orlando, Florida</h3>
 								<p><a href="#book">Book now ></a></p>
 							</div>
 						</div>
@@ -118,6 +118,7 @@
 					<option value="">All</option>
 					<option value="ewr">Newark Liberty International (EWR)</option>
 					<option value="iah">George Bush Intercontinental (IAH)</option>
+					<option value="mia">Miami International (MIA)</option>
 					<option value="sfo">San Francisco International (SFO)</option>
 				</select>
 			</div>
@@ -243,21 +244,27 @@
 					code: 'ewr',
 					name: 'Newark Liberty International (EWR)',
 					pos: [40.70340156126785, -74.17330276840164],
-					hubs: ['sfo', 'iah'],
+					hubs: ['sfo', 'iah', 'mia'],
 					isHub: true
 				},
 				{
 					code: 'sfo',
 					name: 'San Francisco International (SFO)',
 					pos: [37.62141455145011, -122.37878377625846],
-					hubs: ['ewr', 'iah'],
+					hubs: ['ewr', 'iah', 'mia'],
 					isHub: true
 				},
 				{
 					code: 'iah',
 					name: 'George Bush Intercontinental (IAH)',
 					pos: [29.99029394928301, -95.33691148715191],
-					hubs: ['ewr', 'sfo'],
+					hubs: ['ewr', 'sfo', 'mia'],
+					isHub: true
+				},
+				{
+					name: 'Miami International (MIA)',
+					pos: [25.796412980391715, -80.28700802739922],
+					hubs: ['ewr', 'sfo', 'iah'],
 					isHub: true
 				},
 				{
@@ -294,6 +301,11 @@
 					name: 'Barcelona-El Prat (BCN)',
 					pos: [41.29799278042036, 2.0833798949812197],
 					hubs: ['ewr'],
+				},
+				{
+					name: 'L.F. Wade International (BDA)',
+					pos: [32.359855537423016, -64.70471205965694],
+					hubs: ['mia'],
 				},
 				{
 					name: 'Brasilia International (BSB)',
@@ -411,6 +423,11 @@
 					hubs: ['ewr'],
 				},
 				{
+					name: 'Sangster International (MBJ)',
+					pos: [18.502391775768107, -77.91451690151644],
+					hubs: ['mia'],
+				},
+				{
 					name: 'Orlando International (MCO)',
 					pos: [28.418822273035058, -81.30431680312665],
 					hubs: ['ewr', 'sfo', 'iah'],
@@ -421,14 +438,14 @@
 					hubs: ['iah'],
 				},
 				{
-					name: 'Miami International (MIA)',
-					pos: [25.796412980391715, -80.28700802739922],
-					hubs: ['ewr', 'sfo', 'iah'],
-				},
-				{
 					name: 'Minneapolis-Saint Paul International (MSP)',
 					pos: [44.88624650092833, -93.22250729555996],
 					hubs: ['ewr', 'iah'],
+				},
+				{
+					name: 'Lynden Pindling International (NAS)',
+					pos: [25.04400654513227, -77.46580015121297],
+					hubs: ['mia'],
 				},
 				{
 					name: 'Narita International (NRT)',
@@ -459,6 +476,16 @@
 					name: 'Phoenix Sky Harbor International (PHX)',
 					pos: [33.43582170243552, -112.0101240396323],
 					hubs: ['ewr', 'iah'],
+				},
+				{
+					name: 'Providenciales International (PLS)',
+					pos: [21.776326359168177, -72.27128035731569],
+					hubs: ['mia'],
+				},
+				{
+					name: 'Punta Cana International (PUJ)',
+					pos: [18.563260946101263, -68.36852528802461],
+					hubs: ['mia'],
 				},
 				{
 					name: 'San Diego International (SAN)',
