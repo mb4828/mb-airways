@@ -102,6 +102,6 @@ function onMarkerMouseout(event) {
 	LINES = [];
 }
 
-(function init() {
+(function initLeaflet() {
 	drawMap();
 }());

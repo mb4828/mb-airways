@@ -12,6 +12,9 @@
 		<link rel="stylesheet" href="assets/styles/normalize.css">
 		<link rel="stylesheet" href="assets/styles/main.css">
 
+		<!-- Luxon -->
+		<script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js" integrity="sha256-DIsAGD2EF8Qq2PCH9yzX/yt9FliJfWf+aGcdgR6tKwo=" crossorigin="anonymous"></script>
+
 		<!-- Splide -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/css/splide.min.css" integrity="sha256-6YrKt7vMU9e4bwtlblASqhvvEt4/0JEQJ/zyWOFKnaM=" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js" integrity="sha256-bPFHGtlzinBbML+yf5JBexDq8KynAuUMXc3ksBY9Eyo=" crossorigin="anonymous"></script>
@@ -103,10 +106,60 @@
 		</div>
 
 		<main>
-			<hr class="big">
-
 			<h2 id="book">Book a Trip</h2>
-			<p style="margin-bottom:var(--gutter-large)">Booking coming soon</p>
+
+			<form id="booking-form">
+				<div class="booking-row">
+					<select id="booking-direction" name="direction">
+						<option value="round trip">Round trip</option>
+						<option value="one way">One way</option>
+					</select>
+
+					<select id="booking-travelers" name="travelers">
+						<option value="one adult">1 traveler</option>
+						<option value="two adults">2 travelers</option>
+						<option value="three adults">3 travelers</option>
+						<option value="four adults">4 travelers</option>
+						<option value="five adults">5 travelers</option>
+						<option value="six adults">6 travelers</option>
+						<option value="seven adults">7 travelers</option>
+						<option value="eight adults">8 travelers</option>
+						<option value="nine adults">9 travelers</option>
+					</select>
+
+					<select id="booking-class" name="bookingClass">
+						<option value="coach class">Economy</option>
+						<option value="business class">Business</option>
+						<option value="first class">First</option>
+					</select>
+				</div>
+
+				<div class="booking-row space-between">
+					<fieldset>
+						<label for="booking-from">From</label>
+						<input type="text" id="booking-from" name="from">
+					</fieldset>
+
+					<button id="booking-swap" type="button">⇄</button>
+
+					<fieldset>
+						<label for="booking-to">To</label>
+						<input type="text" id="booking-to" name="to">
+					</fieldset>
+
+					<fieldset>
+						<label for="booking-depart">Depart</label>
+						<input type="date" id="booking-depart" name="departDate">
+					</fieldset>
+
+					<fieldset>
+						<label for="booking-return">Return</label>
+						<input type="date" id="booking-return" name="returnDate">
+					</fieldset>
+
+					<input type="submit" value="Search flights">
+				</div>
+			</form>
 
 			<hr class="big">
 
@@ -563,6 +616,7 @@
 			];
 		</script>
 		
+		<script src="assets/scripts/initBooking.js"></script>
 		<script src="assets/scripts/initSplide.js"></script>
 		<script src="assets/scripts/initLeaflet.js"></script>
 		

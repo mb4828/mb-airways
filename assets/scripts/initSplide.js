@@ -1,3 +1,5 @@
+'use strict';
+
 new Splide( '.splide', {
     width: '100%',
     height: 'clamp(300px, 75vh, 700px)',

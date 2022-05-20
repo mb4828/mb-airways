@@ -5,6 +5,7 @@
 	--gutter-large: 40px;
 	--gutter-medium: 20px;
 	--gutter-small: 10px;
+	--gutter-tiny: 5px;
 
 	--primary-color: #2a3c8f;
 	--accent-color: #31abe0;
@@ -158,6 +159,7 @@ hr.big {
 	display: inline-block;
 	background-color: var(--primary-color);
 	border: 0;
+	font-weight: 600;
 	color: var(--white-color);
 	padding: var(--gutter-small) var(--gutter-large);
 	transition: filter 150ms ease-out;
@@ -190,3 +192,88 @@ hr.big {
 .fleet-table {
 	width: 100%;
 }
+
+/* forms */
+
+select {
+	border: 0;
+	padding: var(--gutter-tiny);
+	font-weight: 600;
+	font-size: 90%;
+	color: var(--primary-color);
+}
+
+input:not([type='submit']) {
+	border: 0;
+	border-radius: 0;
+	padding: var(--gutter-small);
+	font-size: 90%;
+}
+
+input[type='submit'] {
+	margin: 0;
+	padding: var(--gutter-small);
+	border: 0;
+	background: var(--primary-color);
+	color: var(--white-color);
+	text-decoration: none;
+	font-weight: 600;
+	cursor: pointer;
+	transition: filter 150ms ease-out;
+}
+input[type='submit']:hover {
+	filter:  brightness(1.5);
+}
+
+input:focus-visible, select:focus-visible {
+	outline: 3px solid var(--accent-color);
+}
+
+label {
+ 	color: var(--primary-color);
+ 	font-size: 90%;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+}
+
+#booking-form {
+	background: var(--light-gray-color);
+	padding: var(--gutter-large) var(--gutter-medium);
+	margin-bottom: var(--gutter-large);
+}
+#booking-form select {
+	border: 0;
+	background: transparent;
+	margin-right: var(--gutter-small);
+	margin-bottom: var(--gutter-small);
+}
+
+#booking-swap {
+	width: 38px;
+	border: 0;
+	border-radius: 50%;
+	background-color: var(--white-color);
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 150ms ease-out;
+}
+#booking-swap:hover {
+	background-color: var(--primary-color);
+	color: var(--white-color);
+}
+#booking-swap:focus-visible {
+	outline: 3px solid var(--accent-color);
+}
+
+.booking-row {
+	display: flex;
+}
+
+.space-between {
+	justify-content: space-around;
+}
+
+
