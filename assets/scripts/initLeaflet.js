@@ -25,7 +25,7 @@ function drawGeodesic(map, pos1, pos2) {
 function drawMarker(map, dest, options={}) {
 	const marker = L.marker(dest.pos, {icon: dest.isHub ? HUB_ICON : MARKER_ICON}).addTo(map);
 
-	const caption = `${dest.isHub ? 'Hub - ' : ''}${dest.name}<br><small>${dest.city}</small><hr><a href="#book">Book a trip ></a>`;
+	const caption = `&#9992; ${dest.isHub ? 'Hub - ' : ''}${dest.name}<br><small>${dest.city}</small><hr><a href="#book">Book a trip ></a>`;
 	marker.bindPopup(caption);
 
 	if (!document.getElementById('hub-select').value) {
