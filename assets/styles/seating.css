@@ -1,0 +1,140 @@
+:root {
+	--fuselage-width: 155px;
+	--seat-width-f: 27px;
+	--seat-width-e: 18px;
+}
+
+body {
+	background: #f6f6f6;
+}
+
+main {
+	width: var(--fuselage-width);
+	padding: 0 var(--gutter-small);
+	margin: 0 auto;
+}
+
+.seating-fuselage {
+	width: var(--fuselage-width);
+	margin: 0 auto;
+	border-left: 3px solid var(--light-gray-color);
+	border-right: 3px solid var(--light-gray-color);
+	background: var(--white-color);
+	padding: 0 4px;
+	color: var(--dark-gray-color);
+}
+.seating-nose {
+	height: 120px;
+	width: calc(var(--fuselage-width) + 8px);
+	margin-top: 10px;
+	margin-bottom: -2px;
+}
+.seating-tail {
+	height: 40px;
+	width: calc(var(--fuselage-width) + 8px);
+	margin: 0 auto;
+	margin-bottom: 10px;
+	border: 3px solid var(--light-gray-color);
+	border-top: 0;
+	border-radius: 0 0 75px 75px;
+	background: var(--white-color);
+}
+
+.seating-row {
+	display: flex;
+	align-items: center;
+}
+
+.seating-row-number {
+	width: 20px;
+	margin: 5px 6px 0 -26px;
+	font-size: 12px;
+	text-align: center;
+}
+
+.seating-exit {
+	display: flex;
+	align-items: center;
+	padding: 8px 0;
+	font-size: 12px;
+}
+.seating-exit-row {
+	margin: -4px 0;
+	padding: 0;
+}
+.seating-exit .fa-solid {
+	font-size: 1rem;
+	margin: 0 4px;
+}
+
+.seating-amenity {
+	width: calc(var(--seat-width-f) * 2 + 5px);
+	background: var(--light-gray-color);
+	margin: 2px -4px 0 -4px;
+	padding: 4px;
+	text-align: center;
+}
+.seating-amenity-empty {
+	background: white;
+}
+.seating-rear-galley {
+	width: 100%;
+}
+
+.seating-seat {
+	margin-right: 2px;
+	border: 1px solid var(--dark-gray-color);
+	border-radius: 0 0 4px 4px;
+}
+.seating-class-f .seating-seat {
+	width: var(--seat-width-f);
+	height: var(--seat-width-f);
+	margin-top: 8px;
+	margin-bottom: 2px;
+	background: var(--primary-color);
+	border-radius:  0 0 6px 6px;
+}
+.seating-class-f-erj .seating-seat {
+	width: var(--seat-width-f);
+	height: var(--seat-width-f);
+	margin-top: 14px;
+	margin-bottom: 2px;
+	background: var(--primary-color);
+	border-radius:  0 0 6px 6px;
+}
+.seating-seat-empty-f-erj {
+	margin-top: 14px;
+	margin-bottom: 2px;
+	background: transparent !important;
+	border: transparent !important;
+}
+.seating-class-b .seating-seat {
+	width: var(--seat-width-e);
+	height: var(--seat-width-e);
+	margin-top: 8px;
+	margin-bottom: 2px;
+	background: var(--accent-color);
+}
+.seating-class-b-erj .seating-seat {
+	width: var(--seat-width-f);
+	height: var(--seat-width-f);
+	margin-top: 8px;
+	margin-bottom: 2px;
+	background: var(--accent-color);
+}
+.seating-class-e .seating-seat {
+	width: var(--seat-width-e);
+	height: var(--seat-width-e);
+	margin-top: 3px;
+	margin-bottom: 2px;
+}
+.seating-class-e-erj .seating-seat {
+	width: var(--seat-width-f);
+	height: var(--seat-width-f);
+	margin-top: 3px;
+	margin-bottom: 2px;
+}
+
+.seating-aisle {
+	flex-grow: 1;
+}
