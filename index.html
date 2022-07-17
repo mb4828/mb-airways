@@ -170,6 +170,7 @@
 				<select id="hub-select" onchange="drawMap(this.value)">
 					<option value="">All</option>
 					<option value="ewr">Newark Liberty International (EWR)</option>
+					<option value="hnl">Daniel K. Inouye International (HNL)</option>
 					<option value="iah">George Bush Intercontinental (IAH)</option>
 					<option value="mia">Miami International (MIA)</option>
 					<option value="sfo">San Francisco International (SFO)</option>
@@ -303,6 +304,35 @@
 					<td><img src="assets/images/aircraft/mba-c700.png" alt=""></td>
 				</tr>
 			</table>
+
+			<h2>MB Aloha Fleet</h2>
+
+			<table class="fleet-table">
+				<tr><td colspan="2"><h3>Boeing 717-200</h3></td></tr>
+				<tr>
+					<td>
+						<strong>Cruise Speed:</strong> 514 mph (828 kph)<br>
+						<strong>Range:</strong> 2,370 miles (3,815 km)<br>
+						<strong>Capacity:</strong> 85 passengers, 4 tons cargo<br>
+						<strong>Propulsion:</strong> Two Rolls-Royce BR715 engines<br>
+						<strong>Wingspan:</strong> 93 feet (28 meters)<br>
+					</td>
+					<td><img src="assets/images/aircraft/mba-717.png" alt=""></td>
+				</tr>
+
+				<tr><td colspan="2"><hr><h3>Bombardier Q-200</h3></td></tr>
+				<tr>
+					<td>
+						<strong>Cruise Speed:</strong> 334 mph (537 kph)<br>
+						<strong>Range:</strong> 1,116 miles (1,796 km)<br>
+						<strong>Capacity:</strong> 36 passengers, 1 ton cargo<br>
+						<strong>Propulsion:</strong> Two Pratt & Whitney PW100 engines<br>
+						<strong>Wingspan:</strong> 85 feet (26 meters)<br>
+					</td>
+					<td><img src="assets/images/aircraft/mba-q200.png" alt=""></td>
+				</tr>
+			</table>
+
 		</main>
 
 		<footer>
@@ -330,7 +360,7 @@
 					name: 'San Francisco International (SFO)',
 					city: 'San Francisco, California (CA), USA',
 					pos: [37.62141455145011, -122.37878377625846],
-					hubs: ['ewr', 'iah', 'mia'],
+					hubs: ['ewr', 'iah', 'mia', 'hnl'],
 					isHub: true
 				},
 				{
@@ -347,6 +377,14 @@
 					city: 'Miami, Florida (FL), USA',
 					pos: [25.796412980391715, -80.28700802739922],
 					hubs: ['ewr', 'sfo', 'iah'],
+					isHub: true
+				},
+				{
+					code: 'hnl',
+					name: 'Daniel K. Inouye International (HNL)',
+					city: 'Honolulu, Hawaii (HI), USA',
+					pos: [21.319087239318254, -157.9254318902438],
+					hubs: ['sfo'],
 					isHub: true
 				},
 				{
@@ -530,16 +568,16 @@
 					hubs: ['sfo'],
 				},
 				{
-					name: 'Daniel K. Inouye International (HNL)',
-					city: 'Honolulu, Hawaii (HI), USA',
-					pos: [21.319087239318254, -157.9254318902438],
-					hubs: ['sfo'],
-				},
-				{
 					name: 'Incheon International (ICN)',
 					city: 'Seoul, South Korea',
 					pos: [37.460632804087396, 126.44057390291141],
 					hubs: ['sfo'],
+				},
+				{
+					name: 'Hilo International (ITO)',
+					city: 'Hilo, Hawaii (HI), USA',
+					pos: [19.71828308321948, -155.04165378827003],
+					hubs: ['hnl'],
 				},
 				{
 					name: 'John F. Kennedy International (JFK)',
@@ -552,6 +590,12 @@
 					city: 'Johannesburg, South Africa',
 					pos: [-26.136691994110528, 28.241156617041295],
 					hubs: ['mia'],
+				},
+				{
+					name: 'Kona International (KOA)',
+					city: 'Kailua-Kona, Hawaii (HI), USA',
+					pos: [19.737769862987626, -156.0428956900814],
+					hubs: ['hnl'],
 				},
 				{
 					name: 'Harry Reid International (LAS)',
@@ -572,10 +616,22 @@
 					hubs: ['ewr'],
 				},
 				{
+					name: 'Lihue Airport (LIH)',
+					city: 'Lihue, Hawaii (HI), USA',
+					pos: [21.978913933768247, -159.34382035743394],
+					hubs: ['hnl'],
+				},
+				{
 					name: 'Jorge Chavez International (LIM)',
 					city: 'Lima, Peru',
 					pos: [-12.023590851622739, -77.11199313107029],
 					hubs: ['iah'],
+				},
+				{
+					name: 'Lanai Airport (LNY)',
+					city: 'Lanai City, Hawaii (HI), USA',
+					pos: [20.79129049571412, -156.95037799977516],
+					hubs: ['hnl'],
 				},
 				{
 					name: 'Murtala Muhammed International (LOS)',
@@ -624,6 +680,12 @@
 					city: 'Tokyo, Japan',
 					pos: [35.77226493717075, 140.39293589386335],
 					hubs: ['sfo'],
+				},
+				{
+					name: 'Kahului Airport (OGG)',
+					city: 'Kahului, Hawaii (HI), USA',
+					pos: [20.894645227300344, -156.43600538629138],
+					hubs: ['hnl'],
 				},
 				{
 					name: 'O\'Hare International (ORD)',
