@@ -11,19 +11,17 @@ body {
 main {
 	width: var(--fuselage-width);
 	padding: 0 var(--gutter-small);
-	margin: 0 auto;
+	transform-origin: top right;
+	transform: rotate(-90deg) translate(-100%, -60%);
+	transition: transform .25s;
 }
+
 .page-banner {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0 var(--gutter-small);
 	background: var(--white-color);
-}
-@media (max-width: 800px) {
-	.page-banner {
-		flex-direction: column;
-	}
 }
 
 .seating-fuselage {
@@ -62,12 +60,14 @@ main {
 	margin: 5px 6px 0 -26px;
 	font-size: 12px;
 	text-align: center;
+	transform: rotate(90deg);
 }
 .seating-row-number-wb {
 	width: 20px;
 	margin: 2px 6px 0 -26px;
 	font-size: 7px;
 	text-align: center;
+	transform: rotate(90deg);
 }
 
 .seating-exit {
@@ -95,6 +95,9 @@ main {
 }
 .seating-amenity-empty {
 	background: transparent;
+}
+.seating-amenity .fa-solid {
+	transform: rotate(90deg);
 }
 .seating-rear-galley {
 	width: 100%;
@@ -204,4 +207,13 @@ main {
 .seating-aisle {
 	width: var(--seat-width-e);
 	flex-grow: 1;
+}
+
+@media (max-width: 800px) {
+	.page-banner {
+		flex-direction: column;
+	}
+	main, .seating-row-number, .seating-row-number-wb, .fa-solid  {
+		transform: none !important;
+	}
 }
