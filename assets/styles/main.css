@@ -203,6 +203,20 @@ hr.big {
 	width: 100%;
 }
 
+.fleet-table ul {
+	padding: 0;
+	list-style-type: none;
+}
+.fleet-table td ul:first-child {
+	margin-top: 0;
+}
+.fleet-table td[colspan]:not([colspan="1"]) {
+	border-top: 1px solid var(--light-gray-color);
+}
+.fleet-table tr:first-child td {
+	border: 0 !important;
+}
+
 /* forms */
 
 select {
