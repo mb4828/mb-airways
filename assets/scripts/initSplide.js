@@ -1,6 +1,6 @@
 'use strict';
 
-new Splide( '.splide', {
+new Splide( '.lead-splide', {
     width: '100%',
     height: 'clamp(300px, 75vh, 700px)',
     start: Math.floor(Math.random() * 5),
@@ -8,5 +8,14 @@ new Splide( '.splide', {
     autoplay: true,
     rewind: true,
     speed: 3000,
+    interval: 7000
+}).mount();
+
+new Splide( '.fleet-table-splide', {
+    width: '500px',
+    height: '150px',
+    type: 'loop',
+    autoplay: true,
+    speed: 4000,
     interval: 7000
 }).mount();
