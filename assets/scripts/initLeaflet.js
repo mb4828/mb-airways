@@ -17,13 +17,35 @@ const MARKER_ICON = L.icon({
     popupAnchor:  [0, -20] // point from which the popup should open relative to the iconAnchor
 });
 
+const MARKER_ICON_SECONDARY = L.icon({
+	iconUrl: 'assets/images/marker-secondary.png',
+    iconSize:     [18, 18], // size of the icon
+    iconAnchor:   [9, 18], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -18] // point from which the popup should open relative to the iconAnchor
+})
+
+const FLOWER_ICON = L.icon({
+	iconUrl: 'assets/images/livery/mb_aloha_flower.png',
+    iconSize:     [18, 18], // size of the icon
+    iconAnchor:   [9, 18], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -18] // point from which the popup should open relative to the iconAnchor
+})
+
 function drawGeodesic(map, pos1, pos2) {
 	const line = L.geodesic([pos1, pos2], {weight: 2, opacity: 0.4, color: 'var(--primary-color)'}).addTo(map);
 	LINES.push(line);
 }
 
 function drawMarker(map, dest, options={}) {
-	const marker = L.marker(dest.pos, {icon: dest.isHub ? HUB_ICON : MARKER_ICON}).addTo(map);
+	let icon = MARKER_ICON;
+	if (dest.isHub) {
+		icon = HUB_ICON;
+	} else if (dest.city.includes('Hawaii')) {
+		icon = FLOWER_ICON;
+	} else if (dest.city.includes('🇺🇸') && dest.hubs.length <= 2) {
+		icon = MARKER_ICON_SECONDARY;
+	}
+	const marker = L.marker(dest.pos, {icon: icon}).addTo(map);
 
 	const caption = `&#9992; ${dest.isHub ? 'Hub - ' : ''}${dest.name}<br><small>${dest.city}</small><hr><a href="#book">Book a trip ></a>`;
 	marker.bindPopup(caption);
