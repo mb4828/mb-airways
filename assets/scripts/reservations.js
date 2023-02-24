@@ -76,11 +76,12 @@ function setupForm() {
 	const r = $('#booking-return');
 	const now = luxon.DateTime.now();
 
-	d.min = r.min = now.toFormat('yyyy-MM-dd');
+	d.attr({min: now.toFormat('yyyy-MM-dd')});
+	r.attr({min: now.toFormat('yyyy-MM-dd')});
 	d.change(() => {
-		r.min = d.value;
-		if (r.value < d.value) {
-			r.value = d.value;
+		r.attr({'min': d.val()});
+		if (r.val() < d.val()) {
+			r.val(d.val());
 		}
 	});
 
