@@ -1,0 +1,164 @@
+select {
+	max-width: 175px;
+	border: 0;
+	padding: var(--gutter-tiny);
+	font-weight: 600;
+	font-size: 90%;
+	color: var(--primary-color);
+}
+
+input {
+	border: 0;
+	border-radius: 0;
+	padding: var(--gutter-small);
+	font-size: 90%;
+}
+
+button.search-button {
+	margin: 0;
+	padding: var(--gutter-small);
+	border: 0;
+	border-radius: 1px;
+	background: var(--primary-color);
+	color: var(--white-color);
+	text-decoration: none;
+	font-weight: 600;
+	cursor: pointer;
+	transition: filter 200ms;
+}
+button.search-button:hover {
+	filter:  brightness(1.5);
+}
+
+input:focus-visible, select:focus-visible {
+	outline: 3px solid var(--accent-color);
+}
+
+label {
+ 	color: var(--primary-color);
+ 	font-size: 90%;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+}
+
+#booking-wrapper {
+	width: 100%;
+	min-width: calc(var(--content-width) + var(--gutter-medium));
+	background: var(--light-gray-color);
+	position: sticky;
+	top: 0;
+	margin-bottom: var(--gutter-medium);
+	z-index: 999;
+}
+
+#booking-form {
+	width: var(--content-width);
+	margin: 0 auto;
+	padding: var(--gutter-medium);
+}
+#booking-form select {
+	border: 0;
+	background: transparent;
+	margin-right: var(--gutter-small);
+	margin-bottom: var(--gutter-small);
+}
+
+#booking-swap {
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+#booking-swap .fa-stack-2x {
+	color: var(--white-color);
+}
+#booking-swap .fa-stack-1x {
+	color: var(--accent-color);
+	transition: color 200ms;
+}
+#booking-swap .fa-stack-1x:hover {
+	color: var(--primary-color);
+}
+
+.booking-row {
+	display: flex;
+	justify-content: space-around;
+	align-items: baseline;
+}
+
+.loading {
+	text-align: center;
+	color: var(--primary-color);
+	padding: var(--gutter-medium);
+}
+
+.trip-wrapper {
+	line-height: 2;
+}
+
+.trip-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: var(--primary-color);
+	color: var(--white-color);
+	margin-bottom: var(--gutter-medium);
+	padding: var(--gutter-medium);
+	border-radius: 1px;
+	cursor: pointer;
+}
+
+.trip-details li {
+	display: flex;
+	align-items: flex-start;
+	position: relative;
+	list-style-type: none;
+	margin: 0;
+  	padding: 0;
+}
+
+.trip-details li .fa-stack {
+	margin-right: var(--gutter-medium);
+}
+.trip-details li .fas {
+	color: var(--accent-color);
+}
+.trip-details li .fa-stack-2x {
+	opacity: .25;
+}
+
+/* The actual line being placed before each list item */
+.trip-details li:before {
+	border: 0;
+	border-left: 4px dotted var(--accent-color);
+  	content: '';
+  	position: absolute;
+  	top: 0px;
+  	bottom: 0px;
+  	left: 14px;
+}
+
+/* Start the line further down on the first list item */
+.trip-details li:first-child:before { top: 32px;  }
+
+/* Stop the line short on the final list item */
+.trip-details li:last-child:before { height: 0px; }
+
+.trip-details small {
+	font-weight: 200;
+}
+
+.trip-layover {
+	padding: var(--gutter-tiny) var(--gutter-medium);
+	border-top: 1px solid var(--light-gray-color);
+	border-bottom: 1px solid var(--light-gray-color);
+}
+
+.fa-chevron-up {
+	transition: transform .4s;
+}
+.flip-me {
+	transform: scaleY(-1);;
+}
