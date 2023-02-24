@@ -25,7 +25,7 @@ function getDuration(dep, arr) {
 function getAirportCity(code) {
 	const airport = AIRPORTS.get(code);
 	if (airport) {
-		return airport['city'].slice(0,-9);
+		return airport['city'];
 	}
 	console.error('Missing city for ' + code);
 	return '';
