@@ -171,7 +171,7 @@ function searchFlights() {
 				for (const f2 of SCHEDULE) {
 					if (f1['d'] === f2['o'] && luxon.DateTime.fromJSDate(f1['at']).plus(luxon.Duration.fromObject({minutes: 15})) < f2['dt']) { // at least 15 min layover
 						// 1 stop
-						if (f2['d'] === dest && !foundFlights.has(f1.flight)) {
+						if (isHub(f1['d']) && f2['d'] === dest && !foundFlights.has(f1.flight)) {
 							flights.push([f1, f2]);
 							foundFlights.add(f1.flight);
 						}
