@@ -16,9 +16,12 @@ function getTodayTime(tm, code) {
 	return luxon.DateTime.fromJSDate(tm).setZone(airport.tz).set({year: now.year, month: now.month, day: now.day});
 }
 
-function getDuration(dep, arr) {
+function getDuration(dep, arr, raw=false) {
 	const d = luxon.DateTime.fromJSDate(dep);
 	const a = luxon.DateTime.fromJSDate(arr);
+	if (raw) {
+		return a.diff(d).toMillis();
+	}
 	return a.diff(d).shiftTo('hours','minutes').normalize().toHuman({ unitDisplay: "short" });
 }
 
@@ -160,7 +163,7 @@ function searchFlights() {
 		const origin = $('#booking-from :selected').val();
 		const dest = $('#booking-to :selected').val();
 		const foundFlights = new Set();
-		const flights = [];
+		let flights = [];
 		for (const f1 of SCHEDULE) {
 			if (f1['o'] === origin) {
 				// non-stop
@@ -191,6 +194,11 @@ function searchFlights() {
 				}
 			}
 		}
+		// keep the top 10 fastest trips and get rid of the rest
+		flights.sort((a,b) => getDuration(a[0]['dt'], a[a.length-1]['at'], true) < getDuration(b[0]['dt'], b[b.length-1]['at'], true) ? -1 : 1);
+		flights = flights.slice(0,10);
+
+		// sort by departure time
 		flights.sort((a,b) => getTodayTime(a[0].dt, a[0].o) < getTodayTime(b[0].dt, b[0].o) ? -1 : 1);
 		setTimeout(() => displayFlights(flights), 500);
 	});
