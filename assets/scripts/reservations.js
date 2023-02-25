@@ -125,7 +125,7 @@ function displayFlights(flights) {
 							<span style="flex-basis:200px">
 								${f.length === 1 ? '<span style="color: var(--accent-color)"><i class="fas fa-fw fa-map-marker-alt"></i> Nonstop</span>' :
 								  f.length === 2 ? `<i class="fas fa-fw fa-map-marker-alt"></i> 1 stop <small>${f[0]['d']}</small>` :
-								  `<i class="fas fa-fw fa-map-marker-alt"></i> ${f.length-1} stops <small>${f[0]['d']}, ${f[1]['d']}</small>` }
+								  `<i class="fas fa-fw fa-map-marker-alt"></i> ${f.length-1} stops <small>${f[0].d}, ${f[1].d}}</small>` }
 							</span>
 							<i class="fas fa-chevron-up"></i>
 						</div>`);
@@ -133,16 +133,20 @@ function displayFlights(flights) {
 		for (let i=0; i < f.length; i++) {
 			const s = f[i];
 			details.append(`<ul>
-								<li><span class="fa-stack fa-1x">
+								<li>
+									<span class="fa-stack fa-1x">
 								    	<i class="fas fa-circle fa-stack-2x"></i>
 								    	<i class="fas fa-plane-departure fa-stack-1x fa-inverse"></i>
 								  	</span>
-									<span>${getTime(s.dt, s.o)} &bull; ${getAirportName(s.o)}<br><small>Flight time: ${getDuration(s['dt'],s['at'])}</small></span></li>
-								<li><span class="fa-stack fa-1x">
+									<span>${getTime(s.dt, s.o)} &bull; ${getAirportName(s.o)}<br><small>Flight time: ${getDuration(s['dt'],s['at'])}</small></span>
+								</li>
+								<li>
+									<span class="fa-stack fa-1x">
 								    	<i class="fas fa-circle fa-stack-2x"></i>
 								    	<i class="fas fa-plane-arrival fa-stack-1x fa-inverse"></i>
 								  	</span>
-								  	<span>${getTime(s.at, s.d)} &bull; ${getAirportName(s.d)}<br><small>Flight MBA ${s.flight} &bull; ${s.type}</small></span></li>
+								  	<span>${getTime(s.at, s.d)} &bull; ${getAirportName(s.d)}<br><small>Flight MBA ${s.flight} &bull; ${s.type}</small></span>
+							  	</li>
 							</ul>`);
 			if (i !== last) {
 				details.append(`<div class="trip-layover">${getDuration(s.at, f[i+1].dt)} layover &bull; ${s.d}</div>`);
@@ -227,7 +231,7 @@ function setupSchedule(rawSchedule) {
 			arr = arr.plus(luxon.Duration.fromObject({day: 1})); 
 			dur = arr.diff(dep);
 		}
-		if (['747-400','777-300','787-10'].includes(tpe) && dur.toMillis() <= 21600000) {
+		if (['747-400','777-300','787-10'].includes(tpe) && dest !== 'CUN' && dur.toMillis() <= 21600000) {
 			// make sure ultra-long-haul flights have correct duration
 			arr = arr.plus(luxon.Duration.fromObject({day: 1}));
 			dur = arr.diff(dep);

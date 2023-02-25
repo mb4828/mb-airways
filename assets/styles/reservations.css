@@ -88,6 +88,10 @@ fieldset {
 	align-items: baseline;
 }
 
+#search-results {
+	min-height: 55vh;
+}
+
 .loading {
 	text-align: center;
 	color: var(--primary-color);
