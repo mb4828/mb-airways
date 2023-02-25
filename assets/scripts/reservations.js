@@ -125,7 +125,7 @@ function displayFlights(flights) {
 							<span style="flex-basis:200px">
 								${f.length === 1 ? '<span style="color: var(--accent-color)"><i class="fas fa-fw fa-map-marker-alt"></i> Nonstop</span>' :
 								  f.length === 2 ? `<i class="fas fa-fw fa-map-marker-alt"></i> 1 stop <small>${f[0]['d']}</small>` :
-								  `<i class="fas fa-fw fa-map-marker-alt"></i> ${f.length-1} stops <small>${f[0].d}, ${f[1].d}}</small>` }
+								  `<i class="fas fa-fw fa-map-marker-alt"></i> ${f.length-1} stops <small>${f[0].d}, ${f[1].d}</small>` }
 							</span>
 							<i class="fas fa-chevron-up"></i>
 						</div>`);
