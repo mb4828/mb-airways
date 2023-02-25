@@ -64,6 +64,13 @@ function setupForm() {
 		$('#booking-to').append(`<option value="${d}">${city}</option>`);
 	}
 
+	// set destination from query params
+	const queryDest = new Proxy(new URLSearchParams(window.location.search), {get: (searchParams, prop) => searchParams.get(prop)}).d;
+	if (queryDest) {
+		$('#booking-to').val(queryDest);
+	}
+	$('#booking-from').val('EWR'); // default from to EWR for now
+
 	// swap
 	const f = $('#booking-from');
 	const t = $('#booking-to');

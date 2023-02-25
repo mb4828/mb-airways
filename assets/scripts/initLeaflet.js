@@ -58,7 +58,8 @@ function drawMarker(map, dest, options={}) {
 	}
 	const marker = L.marker(dest.pos, markerOpts).addTo(map);
 
-	const caption = `&#9992; ${dest.isHub ? 'Hub - ' : ''}${dest.name}<br><small>${dest.city}</small><hr><a href="#book">Book a trip ></a>`;
+	const codeIdx = dest.name.indexOf('(')+1;
+	const caption = `&#9992; ${dest.isHub ? 'Hub - ' : ''}${dest.name}<br><small>${dest.city}</small><hr><a href="reservations.html?d=${dest.name.slice(codeIdx, codeIdx+3)}">Book a trip ></a>`;
 	marker.bindPopup(caption);
 
 	if (!options.hub) {

@@ -24,7 +24,7 @@ button.search-button {
 	text-decoration: none;
 	font-weight: 600;
 	cursor: pointer;
-	transition: filter 200ms;
+	transition: filter 300ms;
 }
 button.search-button:hover {
 	filter:  brightness(1.5);
@@ -76,10 +76,11 @@ fieldset {
 }
 #booking-swap .fa-stack-1x {
 	color: var(--accent-color);
-	transition: color 200ms;
+	transition: all 300ms;
 }
 #booking-swap .fa-stack-1x:hover {
 	color: var(--primary-color);
+	transform: rotate(180deg);
 }
 
 .booking-row {
@@ -161,7 +162,7 @@ fieldset {
 }
 
 .fa-chevron-up {
-	transition: transform .4s;
+	transition: transform 400ms;
 }
 .flip-me {
 	transform: scaleY(-1);;
