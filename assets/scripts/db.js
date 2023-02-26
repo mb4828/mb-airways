@@ -181,7 +181,7 @@ var DESTINATIONS = [
 		name: 'Western Nebraska-Scottsbluff Regional Airport (BFF)',
 		city: 'Scottsbluff, Nebraska (NE), USA 🇺🇸',
 		pos: [41.87180880453483, -103.5942995049976],
-		hubs: ['iah'],
+		hubs: ['sfo', 'iah'],
 		tz: 'US/Mountain'
 	},
 	{
@@ -220,10 +220,10 @@ var DESTINATIONS = [
 		tz: 'US/Eastern'
 	},
 	{
-		name: 'Hollywood Burbank Airport Airport (BUR)',
+		name: 'Hollywood Burbank Airport (BUR)',
 		city: 'Burbank, California (CA), USA 🇺🇸',
 		pos: [34.19832105435531, -118.35736068695542],
-		hubs: ['mia'],
+		hubs: ['sfo', 'mia'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -251,7 +251,7 @@ var DESTINATIONS = [
 		name: 'Charleston International Airport (CHS)',
 		city: 'Charleston, South Carolina (SC), USA 🇺🇸',
 		pos: [32.89249643, -80.037666516],
-		hubs: ['ewr', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -391,7 +391,7 @@ var DESTINATIONS = [
 		name: 'El Paso International Airport (ELP)',
 		city: 'El Paso, Texas (TX), USA 🇺🇸',
 		pos: [31.80542655947106, -106.38241304461272],
-		hubs: ['ewr', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Mountain'
 	},
 	{
@@ -510,7 +510,7 @@ var DESTINATIONS = [
 		name: 'Dwight D. Eisenhower Airport (ICT)',
 		city: 'Wichita, Kansas (KS), USA 🇺🇸',
 		pos: [37.65083588295067, -97.42868807453723],
-		hubs: ['ewr', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Central'
 	},
 	{
@@ -531,7 +531,7 @@ var DESTINATIONS = [
 		name: 'Jackson-Medgar Wiley Evers International Airport (JAN)',
 		city: 'Jackson, Mississippi (MS), USA 🇺🇸',
 		pos: [32.31234643525699, -90.07632339635566],
-		hubs: ['ewr', 'iah'],
+		hubs: ['ewr', 'sfo', 'iah'],
 		tz: 'US/Central'
 	},
 	{
@@ -692,7 +692,7 @@ var DESTINATIONS = [
 		name: 'Manchester-Boston Regional Airport (MHT)',
 		city: 'Manchester, New Hampshire (NH), USA 🇺🇸',
 		pos: [42.9297832621787, -71.43505763213719],
-		hubs: ['iah'],
+		hubs: ['sfo', 'iah'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -891,6 +891,13 @@ var DESTINATIONS = [
 	// 	hubs: ['ewr'],
 	// },
 	{
+		name: 'Palm Springs International Airport (PSP)',
+		city: 'Palm Springs, California (CA), USA 🇺🇸',
+		pos: [33.830568637238926, -116.50696100322521],
+		hubs: ['sfo'],
+		tz: 'US/Pacific'
+	},
+	{
 		name: 'Punta Cana International Airport (PUJ)',
 		city: 'Punta Cana, Dominican Republic 🇩🇴',
 		pos: [18.563260946101263, -68.36852528802461],
@@ -929,7 +936,7 @@ var DESTINATIONS = [
 		name: 'Savannah/Hilton Head International Airport (SAV)',
 		city: 'Savannah, Georgia (GA), USA 🇺🇸',
 		pos: [32.12939158823519, -81.20176254594122],
-		hubs: ['ewr', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
