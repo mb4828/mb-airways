@@ -1017,7 +1017,7 @@ var DESTINATIONS = [
 		tz: 'US/Pacific'
 	},
 	{
-		name: 'Arturo Merino Benitez Airport Airport (SCL)',
+		name: 'Arturo Merino Benitez Airport (SCL)',
 		city: 'Santiago, Chile 🇨🇱',
 		pos: [-33.38938543980737, -70.79442733965293],
 		hubs: ['iah'],
@@ -1031,7 +1031,7 @@ var DESTINATIONS = [
 		tz: 'Asia/Shanghai'
 	},
 	{
-		name: 'Singapore Changi Airport Airport (SIN)',
+		name: 'Singapore Changi Airport (SIN)',
 		city: 'Singapore 🇸🇬',
 		pos: [1.3655760814659688, 103.99134627431354],
 		hubs: ['hnl'],
@@ -1073,7 +1073,7 @@ var DESTINATIONS = [
 		tz: 'US/Central'
 	},
 	{
-		name: 'Sydney Airport Airport (SYD)',
+		name: 'Sydney Airport (SYD)',
 		city: 'Sydney, Australia 🇦🇺',
 		pos: [-33.94985609315001, 151.1818694507839],
 		hubs: ['hnl'],
