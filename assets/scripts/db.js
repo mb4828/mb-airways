@@ -98,7 +98,7 @@ var DESTINATIONS = [
 		city: 'Antigua and Barbuda 🇦🇬',
 		pos: [17.141264458109006, -61.79075921641097],
 		hubs: ['mia'],
-		tz: 'AST'
+		tz: 'America/Puerto_Rico'
 	},
 	{
 		name: 'Athens International Airport (ATH)',
@@ -119,7 +119,7 @@ var DESTINATIONS = [
 		city: 'Oranjestad, Aruba 🇦🇼',
 		pos: [12.502909500135036, -70.00820204601975],
 		hubs: ['mia'],
-		tz: 'AST'
+		tz: 'America/Puerto_Rico'
 	},
 	{
 		name: 'Austin-Bergstrom International Airport (AUS)',
@@ -189,7 +189,7 @@ var DESTINATIONS = [
 		city: 'Barbados 🇧🇧',
 		pos: [13.080035627493604, -59.48774184440369],
 		hubs: ['mia'],
-		tz: 'AST'
+		tz: 'America/Puerto_Rico'
 	},
 	{
 		name: 'Brisbane Airport (BNE)',
@@ -308,7 +308,7 @@ var DESTINATIONS = [
 		city: 'Curacao 🇨🇼',
 		pos: [12.189339619252113, -68.96166422979832],
 		hubs: ['mia'],
-		tz: 'AST'
+		tz: 'America/Puerto_Rico'
 	},
 	{
 		name: 'Cincinnati/Northern Kentucky International Airport (CVG)',
@@ -868,7 +868,7 @@ var DESTINATIONS = [
 		city: 'Piarco, Trinidad and Tobago 🇹🇹',
 		pos: [10.597664754910571, -61.33951627377069],
 		hubs: ['mia'],
-		tz: 'AST'
+		tz: 'America/Puerto_Rico'
 	},
 	{
 		name: 'Pago Pago International Airport (PPG)',
@@ -902,7 +902,7 @@ var DESTINATIONS = [
 		city: 'Punta Cana, Dominican Republic 🇩🇴',
 		pos: [18.563260946101263, -68.36852528802461],
 		hubs: ['mia'],
-		tz: 'AST'
+		tz: 'America/Puerto_Rico'
 	},
 	{
 		name: 'T.F. Green International Airport (PVD)',
@@ -958,7 +958,7 @@ var DESTINATIONS = [
 		city: 'St. Kitts & Nevis 🇰🇳',
 		pos: [17.3108341120326, -62.71916974592183],
 		hubs: ['mia'],
-		tz: 'AST'
+		tz: 'America/Puerto_Rico'
 	},
 	{
 		name: 'Shannon Airport (SNN)',
@@ -972,7 +972,7 @@ var DESTINATIONS = [
 		city: 'St. Maarten 🇸🇽',
 		pos: [18.04192078940854, -63.113028459403225],
 		hubs: ['mia'],
-		tz: 'AST'
+		tz: 'America/Puerto_Rico'
 	},
 	{
 		name: 'Raleigh-Durham International Airport (RDU)',
