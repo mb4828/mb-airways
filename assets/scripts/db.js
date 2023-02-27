@@ -1146,7 +1146,7 @@ var DESTINATIONS = [
 		name: 'Montreal-Pierre Elliott Trudeau International Airport (YUL)',
 		city: 'Montreal, Quebec, Canada 🇨🇦',
 		pos: [45.461698664876224, -73.7478869554127],
-		hubs: ['ewr', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'Canada/Eastern'
 	},
 	{
@@ -1167,7 +1167,7 @@ var DESTINATIONS = [
 		name: 'Toronto Pearson International Airport (YYZ)',
 		city: 'Toronto, Ontario, Canada 🇨🇦',
 		pos: [43.67779523959123, -79.6247972173393],
-		hubs: ['ewr', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'Canada/Eastern'
 	},
 	{
