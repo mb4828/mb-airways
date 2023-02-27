@@ -48,6 +48,10 @@ function isUSA(code) {
 	return airport ? airport['city'].includes('USA') : false;
 }
 
+function canConnect(f1, f2) {
+	return luxon.DateTime.fromJSDate(f1['at']).plus(luxon.Duration.fromObject({minutes: 15})) < f2['dt']; // 15 minute minimum conection
+}
+
 // ui control
 
 function setupForm() {
@@ -184,7 +188,7 @@ function searchFlights() {
 				}
 				
 				for (const f2 of SCHEDULE) {
-					if (f1['d'] === f2['o'] && luxon.DateTime.fromJSDate(f1['at']).plus(luxon.Duration.fromObject({minutes: 15})) < f2['dt']) { // at least 15 min layover
+					if (f1['d'] === f2['o'] && canConnect(f1, f2)) {
 						// 1 stop
 						if (isHub(f1['d']) && f2['d'] === dest && !foundFlights.has(f1.flight)) {
 							flights.push([f1, f2]);
@@ -193,10 +197,11 @@ function searchFlights() {
 
 						// 2 stops
 						for (const f3 of SCHEDULE) {
-							if ((!isUSA(f1['o']) || !isUSA(f3['d'])) && // 2 stops only allowed for intl destinations
+							if (f2['d'] === f3['o'] &&
+								(!isUSA(f1['o']) || !isUSA(f3['d'])) && // 2 stops only allowed for intl destinations
 								 isHub(f1['d']) && isHub(f2['d']) && // connections only allowed through hubs
 								 new Set([f1.o, f2.o, f3.o, f1.d, f2.d, f3.d]).size === 4 && // no repeat cities (sanity check)
-								 f2['d'] === f3['o'] && luxon.DateTime.fromJSDate(f2['at']).plus(luxon.Duration.fromObject({minutes: 15})) < f3['dt'] && !foundFlights.has(f1.flight) && f3['d'] === dest) {
+								 canConnect(f2, f3) && !foundFlights.has(f1.flight) && f3['d'] === dest) {
 									flights.push([f1, f2, f3]);
 									foundFlights.add(f1.flight);
 							}
