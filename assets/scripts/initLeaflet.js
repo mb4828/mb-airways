@@ -72,7 +72,7 @@ function drawMarker(map, dest, options={}) {
 	}
 }
 
-function drawMap(hub) {
+function drawMap(hub, usOnly) {
 	const bounds = L.latLngBounds(L.latLng(-60, -177), L.latLng(80, 195)); // cutoff intl date line
 	if (MAP) {
 		MAP.remove();
@@ -96,13 +96,14 @@ function drawMap(hub) {
 	}).addTo(MAP);
 
 	// draw destinations
+	const tempDestinations = DESTINATIONS.filter(d => usOnly ? d.city.includes('USA') && !d.city.match('Alaska|Guam|Hawaii|Puerto Rico|Samoa') : true);
 	const originPos = hub ? DESTINATIONS.find(h => h.code === hub).pos : null;
-	for (const d of DESTINATIONS) {
+	for (const d of tempDestinations) {
 		drawMarker(MAP, d, {hub, originPos});
 	}
 
 	// set view
-	const destList = DESTINATIONS.filter(d => !hub || d.hubs.includes(hub) || d.code === hub);
+	const destList = tempDestinations.filter(d => !hub || d.hubs.includes(hub) || d.code === hub);
 	MAP.fitBounds(destList.map(d => d.pos));
 }
 

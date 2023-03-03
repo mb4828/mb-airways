@@ -195,7 +195,12 @@ hr.big {
 	line-height:  1.5;
 }
 
-.control-elem {
+.map-control-wrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.map-control-elem {
 	margin-bottom: var(--gutter-small);
 }
 

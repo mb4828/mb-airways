@@ -121,16 +121,23 @@
 		<main>
 			<h2 id="destinations">Explore Destinations</h2>
 
-			<div class="control-elem">
-				<label for="hub-select">Filter by Hub</label>
-				<select id="hub-select" onchange="drawMap(this.value)">
-					<option value="">All</option>
-					<option value="ewr">Newark Liberty International (EWR)</option>
-					<option value="hnl">Daniel K. Inouye International (HNL)</option>
-					<option value="iah">George Bush Intercontinental (IAH)</option>
-					<option value="mia">Miami International (MIA)</option>
-					<option value="sfo">San Francisco International (SFO)</option>
-				</select>
+			<div class="map-control-wrapper">
+				<div class="map-control-elem">
+					<label for="hub-select">Filter by Hub</label>
+					<select id="hub-select" onchange="drawMap(this.value, document.getElementById('us-only').checked)">
+						<option value="">All</option>
+						<option value="ewr">Newark Liberty International (EWR)</option>
+						<option value="hnl">Daniel K. Inouye International (HNL)</option>
+						<option value="iah">George Bush Intercontinental (IAH)</option>
+						<option value="mia">Miami International (MIA)</option>
+						<option value="sfo">San Francisco International (SFO)</option>
+					</select>
+				</div>
+
+				<div class="map-control-elem">
+					<input type="checkbox" id="us-only" onchange="drawMap(document.getElementById('hub-select').value, this.checked)">
+					<label for="us-only">Continental U.S. Only</label>
+				</div>
 			</div>
 
 		 	<div id="route-map"></div>
