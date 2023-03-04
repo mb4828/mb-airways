@@ -95,7 +95,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'V.C. Bird International Airport (ANU)',
-		city: 'Antigua and Barbuda 🇦🇬',
+		city: 'Saint John\'s, Antigua and Barbuda 🇦🇬',
 		pos: [17.141264458109006, -61.79075921641097],
 		hubs: ['mia'],
 		tz: 'America/Puerto_Rico'
@@ -158,7 +158,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'L.F. Wade International Airport (BDA)',
-		city: 'Bermuda 🇧🇲',
+		city: 'Hamilton, Bermuda 🇧🇲',
 		pos: [32.359855537423016, -64.70471205965694],
 		hubs: ['mia'],
 		tz: 'Atlantic/Bermuda'
@@ -186,7 +186,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Grantley Adams International Airport (BGI)',
-		city: 'Barbados 🇧🇧',
+		city: 'Christ Church, Barbados 🇧🇧',
 		pos: [13.080035627493604, -59.48774184440369],
 		hubs: ['mia'],
 		tz: 'America/Puerto_Rico'
@@ -199,8 +199,8 @@ var DESTINATIONS = [
 		tz: 'Australia/Brisbane'
 	},
 	{
-		name: 'Brasilia International Airport (BSB)',
-		city: 'Brasilia, Brazil 🇧🇷',
+		name: 'Brasília International Airport (BSB)',
+		city: 'Brasília, Brazil 🇧🇷',
 		pos: [-15.869654340657481, -47.91706316214675],
 		hubs: ['iah'],
 		tz: 'Brazil/East'
@@ -297,15 +297,15 @@ var DESTINATIONS = [
 		tz: 'Africa/Johannesburg'
 	},
 	{
-		name: 'Cancun International Airport (CUN)',
-		city: 'Cancun, Mexico 🇲🇽',
+		name: 'Cancún International Airport (CUN)',
+		city: 'Cancún, Mexico 🇲🇽',
 		pos: [21.04198345163572, -86.87396332895656],
 		hubs: ['ewr', 'iah'],
 		tz: 'America/Cancun'
 	},
 	{
-		name: 'Curacao International Airport (CUR)',
-		city: 'Curacao 🇨🇼',
+		name: 'Curaçao International Airport (CUR)',
+		city: 'Willemstad, Curaçao 🇨🇼',
 		pos: [12.189339619252113, -68.96166422979832],
 		hubs: ['mia'],
 		tz: 'America/Puerto_Rico'
@@ -375,14 +375,14 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Dubai International Airport (DXB)',
-		city: 'Dubai, United Arab Emirates (UAE) 🇦🇪',
+		city: 'Dubai, United Arab Emirates 🇦🇪',
 		pos: [25.25309661391826, 55.36567275706557],
 		hubs: ['sfo'],
 		tz: 'Asia/Dubai'
 	},
 	{
 		name: 'Edinburgh Airport (EDI)',
-		city: 'Edinburgh, Scotland, United Kingdom (UK) 🇬🇧',
+		city: 'Edinburgh, United Kingdom 🇬🇧',
 		pos: [55.95077897347942, -3.3614102862399537],
 		hubs: ['ewr'],
 		tz: 'Europe/London'
@@ -465,15 +465,15 @@ var DESTINATIONS = [
 		tz: 'Brazil/East'
 	},
 	{
-		name: 'Sao Paulo/Guarulhos International Airport (GRU)',
-		city: 'Sao Paulo, Brazil 🇧🇷',
+		name: 'São Paulo/Guarulhos International Airport (GRU)',
+		city: 'São Paulo, Brazil 🇧🇷',
 		pos: [-23.4301397120531, -46.47291429752642],
 		hubs: ['iah'],
 		tz: 'Brazil/East'
 	},
 	{
 		name: 'Antonio B. Won Pat International Airport (GUM)',
-		city: 'Guam, USA 🇬🇺',
+		city: 'Guam 🇬🇺, US Territories',
 		pos: [13.4863791493778, 144.80040397596647],
 		hubs: ['hnl'],
 		tz: 'Pacific/Guam'
@@ -556,8 +556,8 @@ var DESTINATIONS = [
 		tz: 'Africa/Johannesburg'
 	},
 	{
-		name: 'Keflavik International Airport (KEF)',
-		city: 'Reykjavik, Iceland 🇮🇸',
+		name: 'Keflavík International Airport (KEF)',
+		city: 'Reykjavík, Iceland 🇮🇸',
 		pos: [63.98070701155434, -22.627620001362224],
 		hubs: ['ewr'],
 		tz: 'Iceland'
@@ -592,7 +592,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Heathrow Airport (LHR)',
-		city: 'London, United Kingdom (UK) 🇬🇧',
+		city: 'London, United Kingdom 🇬🇧',
 		pos: [51.47058336357465, -0.4544242756733526],
 		hubs: ['ewr'],
 		tz: 'Europe/London'
@@ -872,7 +872,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Pago Pago International Airport (PPG)',
-		city: 'Pago Pago, American Samoa, USA 🇦🇸',
+		city: 'Pago Pago, American Samoa 🇦🇸, US Territories',
 		pos: [-14.328529463205866, -170.71318872964144],
 		hubs: ['hnl'],
 		tz: 'Pacific/Pago_Pago'
@@ -955,7 +955,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Robert L. Bradshaw International Airport (SKB)',
-		city: 'St. Kitts & Nevis 🇰🇳',
+		city: 'Basseterre, Saint Kitts & Nevis 🇰🇳',
 		pos: [17.3108341120326, -62.71916974592183],
 		hubs: ['mia'],
 		tz: 'America/Puerto_Rico'
@@ -969,7 +969,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Princess Juliana International Airport (SXM)',
-		city: 'St. Maarten 🇸🇽',
+		city: 'Sint Maarten 🇸🇽',
 		pos: [18.04192078940854, -63.113028459403225],
 		hubs: ['mia'],
 		tz: 'America/Puerto_Rico'
@@ -1039,14 +1039,14 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Los Cabos International Airport (SJD)',
-		city: 'San Jose del Cabo, Mexico 🇲🇽',
+		city: 'San José del Cabo, Mexico 🇲🇽',
 		pos: [23.1456048417308, -109.71832014651572],
 		hubs: ['iah'],
 		tz: 'Mexico/BajaSur'
 	},
 	{
 		name: 'Luis Munoz Marin International Airport (SJU)',
-		city: 'San Juan, Puerto Rico, USA 🇵🇷',
+		city: 'San Juan, Puerto Rico 🇵🇷, US Territories',
 		pos: [18.439669035343876, -65.99915740046777],
 		hubs: ['ewr', 'mia'],
 		tz: 'America/Puerto_Rico'
@@ -1102,7 +1102,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Taiwan Taoyuan International Airport (TPE)',
-		city: 'Taipei 🇹🇼',
+		city: 'Taipei, Taiwan 🇹🇼',
 		pos: [25.078385372504524, 121.23404549362135],
 		hubs: ['sfo'],
 		tz: 'Asia/Taipei'
@@ -1137,35 +1137,35 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Ottawa International Airport (YOW)',
-		city: 'Ottawa, Ontario, Canada 🇨🇦',
+		city: 'Ottawa, Canada 🇨🇦',
 		pos: [45.31923461124119, -75.66914374429483],
 		hubs: ['ewr', 'iah'],
 		tz: 'Canada/Eastern'
 	},
 	{
 		name: 'Montreal-Pierre Elliott Trudeau International Airport (YUL)',
-		city: 'Montreal, Quebec, Canada 🇨🇦',
+		city: 'Montreal, Canada 🇨🇦',
 		pos: [45.461698664876224, -73.7478869554127],
 		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'Canada/Eastern'
 	},
 	{
 		name: 'Calgary International Airport (YYC)',
-		city: 'Calgary, Alberta, Canada 🇨🇦',
+		city: 'Calgary, Canada 🇨🇦',
 		pos: [51.12150310000004, -114.00819495762246],
 		hubs: ['ewr', 'iah', 'mia'],
 		tz: 'Canada/Mountain'
 	},
 	{
 		name: 'Vancouver International Airport (YVR)',
-		city: 'Vancouver, British Columbia, Canada 🇨🇦',
+		city: 'Vancouver, Canada 🇨🇦',
 		pos: [49.19675521104217, -123.18147272578588],
 		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
 		tz: 'Canada/Pacific'
 	},
 	{
 		name: 'Toronto Pearson International Airport (YYZ)',
-		city: 'Toronto, Ontario, Canada 🇨🇦',
+		city: 'Toronto, Canada 🇨🇦',
 		pos: [43.67779523959123, -79.6247972173393],
 		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'Canada/Eastern'

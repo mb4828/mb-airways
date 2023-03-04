@@ -27,8 +27,22 @@ function getDuration(dep, arr, raw=false) {
 
 function getAirportCity(code) {
 	const airport = AIRPORTS.get(code);
-	if (airport) {
-		return airport['city'];
+	if (airport && airport.city) {
+		const temp = airport.city.split(',');
+		if (temp.length > 1) {
+			return temp.slice(0, temp.length-1).join(',');
+		}
+		return temp.join('').match(/[a-zA-Z. ]*/g).join('');
+	}
+	console.error('Missing city for ' + code);
+	return '';
+}
+
+function getAirportCountry(code) {
+	const airport = AIRPORTS.get(code);
+	if (airport && airport.city) {
+		const temp = airport.city.split(',');
+		return temp[temp.length-1].trim();
 	}
 	console.error('Missing city for ' + code);
 	return '';
@@ -54,18 +68,40 @@ function canConnect(f1, f2) {
 
 // ui control
 
+function getDestinationMap() {
+	// extract destinations from schedule db
+	const destSet = new Set();
+	for (const s of SCHEDULE) {
+		destSet.add(s['o']);
+		destSet.add(s['d']);
+	}
+	const destList = Array.from(destSet).sort((a,b) => getAirportCity(a) < getAirportCity(b) ? -1 : 1);
+
+	// generate destination map
+	const destMap = new Map();
+	for (const d of destList) {
+		const country = getAirportCountry(d);
+		if (destMap.has(country)) {
+			destMap.set(country, destMap.get(country).concat([{label: getAirportCity(d), value: d}]));
+		} else {
+			destMap.set(country, [{label: getAirportCity(d), value: d}]);
+		}
+	}
+
+	return destMap;
+}
+
 function setupForm() {
 	// from/to
-	const destinations = new Set();
-	for (const s of SCHEDULE) {
-		destinations.add(s['o']);
-		destinations.add(s['d']);
-	}
-	const destList = Array.from(destinations).filter(a => !!getAirportCity(a)).sort((a,b) => getAirportCity(a) < getAirportCity(b) ? -1 : 1);
-	for (const d of destList) {
-		const city = getAirportCity(d);
-		$('#booking-from').append(`<option value="${d}">${city}</option>`);
-		$('#booking-to').append(`<option value="${d}">${city}</option>`);
+	const destMap = getDestinationMap();
+	const countries = Array.from(destMap.keys()).filter(d => !!d).sort((a,b) => a < b ? -1 : 1);
+	for (const c of countries) {
+		const group = $(`<optgroup label="${c}">`);
+		for (const d of destMap.get(c)) {
+			group.append(`<option value="${d.value}">${d.label}</option>`);
+		}
+		$('#booking-from').append(group.clone());
+		$('#booking-to').append(group.clone());
 	}
 
 	// set destination from query params
