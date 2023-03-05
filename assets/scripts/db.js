@@ -487,7 +487,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Hong Kong International Airport (HKG)',
-		city: 'Hong Kong 🇭🇰',
+		city: 'Hong Kong, China 🇨🇳',
 		pos: [22.308602611679753, 113.91835201005935],
 		hubs: ['sfo'],
 		tz: 'Asia/Hong_Kong'
