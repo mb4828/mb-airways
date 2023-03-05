@@ -221,7 +221,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Hollywood Burbank Airport (BUR)',
-		city: 'Burbank, USA - California🇺🇸',
+		city: 'Burbank, USA - California 🇺🇸',
 		pos: [34.19832105435531, -118.35736068695542],
 		hubs: ['sfo', 'mia'],
 		tz: 'US/Pacific'
@@ -312,7 +312,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Cincinnati/Northern Kentucky International Airport (CVG)',
-		city: 'Hebron, USA - Kentucky 🇺🇸',
+		city: 'Cincinnati, USA - Ohio 🇺🇸',
 		pos: [39.05091119818685, -84.66749507901761],
 		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Eastern'
@@ -774,7 +774,7 @@ var DESTINATIONS = [
 	},
 	{
 		name: 'Kahului Airport (OGG)',
-		city: 'Kahului, Hawaii (HI), USA 🇺🇸',
+		city: 'Kahului, USA - Hawaii 🇺🇸',
 		pos: [20.894645227300344, -156.43600538629138],
 		hubs: ['sfo', 'hnl'],
 		tz: 'US/Hawaii'
