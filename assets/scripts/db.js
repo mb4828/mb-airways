@@ -1136,7 +1136,7 @@ var DESTINATIONS = [
 		tz: 'America/Lima'
 	},
 	{
-		name: 'Edmonton International Airport (YOW)',
+		name: 'Edmonton International Airport (YEG)',
 		city: 'Edmonton, Canada 🇨🇦',
 		pos: [53.30623686908562, -113.58276804327605],
 		hubs: ['ewr'],
