@@ -160,7 +160,7 @@ var DESTINATIONS = [
 		name: 'L.F. Wade International Airport (BDA)',
 		city: 'Hamilton, Bermuda 🇧🇲',
 		pos: [32.359855537423016, -64.70471205965694],
-		hubs: ['mia'],
+		hubs: ['ewr', 'mia'],
 		tz: 'Atlantic/Bermuda'
 	},
 	{
@@ -181,7 +181,7 @@ var DESTINATIONS = [
 		name: 'Western Nebraska-Scottsbluff Regional Airport (BFF)',
 		city: 'Scottsbluff, Nebraska (NE), USA 🇺🇸',
 		pos: [41.87180880453483, -103.5942995049976],
-		hubs: ['sfo', 'iah'],
+		hubs: ['ewr', 'sfo', 'iah'],
 		tz: 'US/Mountain'
 	},
 	{
@@ -237,7 +237,7 @@ var DESTINATIONS = [
 		name: 'Akron-Canton Airport (CAK)',
 		city: 'Akron, Ohio (OH), USA 🇺🇸',
 		pos: [40.91539520193488, -81.4415358425859],
-		hubs: ['sfo'],
+		hubs: ['sfo', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -531,7 +531,7 @@ var DESTINATIONS = [
 		name: 'Jackson-Medgar Wiley Evers International Airport (JAN)',
 		city: 'Jackson, Mississippi (MS), USA 🇺🇸',
 		pos: [32.31234643525699, -90.07632339635566],
-		hubs: ['ewr', 'sfo', 'iah'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Central'
 	},
 	{
@@ -692,7 +692,7 @@ var DESTINATIONS = [
 		name: 'Manchester-Boston Regional Airport (MHT)',
 		city: 'Manchester, New Hampshire (NH), USA 🇺🇸',
 		pos: [42.9297832621787, -71.43505763213719],
-		hubs: ['sfo', 'iah'],
+		hubs: ['sfo', 'iah', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -811,7 +811,7 @@ var DESTINATIONS = [
 		name: 'Norfolk International Airport (ORF)',
 		city: 'Norfolk, Virginia (VA), USA 🇺🇸',
 		pos: [36.89570942043663, -76.20000537338909],
-		hubs: ['ewr', 'sfo', 'iah'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1134,6 +1134,13 @@ var DESTINATIONS = [
 		pos: [-0.1234546241729393, -78.3604826167644],
 		hubs: ['iah'],
 		tz: 'America/Lima'
+	},
+	{
+		name: 'Edmonton International Airport (YOW)',
+		city: 'Edmonton, Canada 🇨🇦',
+		pos: [53.30623686908562, -113.58276804327605],
+		hubs: ['ewr'],
+		tz: 'Canada/Mountain'
 	},
 	{
 		name: 'Ottawa International Airport (YOW)',
