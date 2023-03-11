@@ -192,6 +192,20 @@ var DESTINATIONS = [
 		tz: 'America/Puerto_Rico'
 	},
 	{
+		name: 'Birmingham-Shuttlesworth International Airport (BHM)',
+		city: 'Birmingham, USA - Alabama 🇺🇸',
+		pos: [33.5624358209084, -86.75405090040849],
+		hubs: ['ewr'],
+		tz: 'US/Central'
+	},
+	{
+		name: 'Billings-Logan International Airport (BIL)',
+		city: 'Billings, USA - Montana 🇺🇸',
+		pos: [45.80363522704425, -108.53800003259418],
+		hubs: ['ewr'],
+		tz: 'US/Mountain'
+	},
+	{
 		name: 'Brisbane Airport (BNE)',
 		city: 'Brisbane, Australia 🇦🇺',
 		pos: [-27.39418580574182, 153.1218517553009],
@@ -209,7 +223,7 @@ var DESTINATIONS = [
 		name: 'Burlington International Airport (BTV)',
 		city: 'Burlington, USA - Vermont 🇺🇸',
 		pos: [44.470755128608445, -73.1516788038435],
-		hubs: ['sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -234,10 +248,17 @@ var DESTINATIONS = [
 		tz: 'US/Eastern'
 	},
 	{
+		name: 'Bozeman Yellowstone International Airport (BZN)',
+		city: 'Bozeman, USA - Montana 🇺🇸',
+		pos: [45.77835940397085, -111.16142041964636],
+		hubs: ['ewr'],
+		tz: 'US/Mountain'
+	},
+	{
 		name: 'Akron-Canton Airport (CAK)',
 		city: 'Akron, USA - Ohio 🇺🇸',
 		pos: [40.91539520193488, -81.4415358425859],
-		hubs: ['sfo', 'mia'],
+		hubs: ['ewr', 'sfo', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -253,6 +274,13 @@ var DESTINATIONS = [
 		pos: [32.89249643, -80.037666516],
 		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Eastern'
+	},
+	{
+		name: 'Eastern Iowa Airport (CID)',
+		city: 'Cedar Rapids, USA - Iowa 🇺🇸',
+		pos: [41.88633815541166, -91.70700758853724],
+		hubs: ['ewr'],
+		tz: 'US/Central'
 	},
 	{
 		name: 'Cleveland Hopkins International Airport (CLE)',
@@ -416,6 +444,13 @@ var DESTINATIONS = [
 		tz: 'US/Pacific'
 	},
 	{
+		name: 'Glacier Park International Airport (FCA)',
+		city: 'Kalispell, USA - Montana 🇺🇸',
+		pos: [48.30775754813589, -114.25254443066616],
+		hubs: ['ewr'],
+		tz: 'US/Mountain'
+	},
+	{
 		name: 'Leonardo da Vinci International Airport (FCO)',
 		city: 'Rome, Italy 🇮🇹',
 		pos: [41.80413085802929, 12.251849849230378],
@@ -463,6 +498,13 @@ var DESTINATIONS = [
 		pos: [-22.804592230082836, -43.25675808978346],
 		hubs: ['iah'],
 		tz: 'Brazil/East'
+	},
+	{
+		name: 'Gerald R. Ford International Airport (GRR)',
+		city: 'Grand Rapids, USA - Michigan 🇺🇸',
+		pos: [42.8824264791552, -85.52425954433107],
+		hubs: ['ewr'],
+		tz: 'US/Eastern'
 	},
 	{
 		name: 'São Paulo/Guarulhos International Airport (GRU)',
@@ -692,7 +734,7 @@ var DESTINATIONS = [
 		name: 'Manchester-Boston Regional Airport (MHT)',
 		city: 'Manchester, USA - New Hampshire 🇺🇸',
 		pos: [42.9297832621787, -71.43505763213719],
-		hubs: ['sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -708,6 +750,13 @@ var DESTINATIONS = [
 		pos: [14.505164646, 121.01833326],
 		hubs: ['hnl'],
 		tz: 'Asia/Manila'
+	},
+	{
+		name: 'Dane County Regional Airport (MSN)',
+		city: 'Madison, USA - Wisconsin 🇺🇸',
+		pos: [43.139089365511055, -89.33638061548804],
+		hubs: ['ewr'],
+		tz: 'US/Central'
 	},
 	{
 		name: 'Missoula Montana Airport (MSO)',
@@ -924,6 +973,13 @@ var DESTINATIONS = [
 		pos: [43.64570214332969, -70.31004072274055],
 		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Eastern'
+	},
+	{
+		name: 'Rapid City Regional Airport (RAP)',
+		city: 'Rapid City, USA - South Dakota 🇺🇸',
+		pos: [44.038372066425026, -103.06043047128412],
+		hubs: ['ewr'],
+		tz: 'US/Mountain'
 	},
 	{
 		name: 'San Diego International Airport (SAN)',
