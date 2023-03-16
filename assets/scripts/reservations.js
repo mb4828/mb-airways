@@ -292,7 +292,7 @@ function setupSchedule(rawSchedule) {
 			'd': dest,
 			'at': midpoint.minus(luxon.Duration.fromObject({minutes: 20})).toJSDate(),
 			'dt': dep.toJSDate(),
-			'flight': i*2,
+			'flight': (i*2)-1,
 			'type': tpe,
 		}));
 		SCHEDULE.push(new Object({
@@ -300,7 +300,7 @@ function setupSchedule(rawSchedule) {
 			'd': origin,
 			'at': arr.minus(luxon.Duration.fromObject({minutes: 20})).toJSDate(),
 			'dt': midpoint.toJSDate(),
-			'flight': (i*2)+1,
+			'flight': i*2,
 			'type': tpe,
 		}));
 	}
