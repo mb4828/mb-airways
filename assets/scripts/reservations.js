@@ -267,6 +267,9 @@ function setupAirports() {
 function setupSchedule(rawSchedule) {
 	for (let i=1; i < rawSchedule.length; i++) {
 		const r = rawSchedule[i];
+		if (r['Pax'] == 0) {
+			continue; // skip cargo only flights
+		}
 		const origin = r['Route'].slice(0,3);
 		const dest = r['Route'].slice(-3);
 		const tpe = r['Type'];
