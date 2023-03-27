@@ -146,7 +146,7 @@ var DESTINATIONS = [
 		name: 'Boston Logan International Airport (BOS)',
 		city: 'Boston, USA - Massachusetts 🇺🇸',
 		pos: [42.365961658704904, -71.00960315045923],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -370,7 +370,7 @@ var DESTINATIONS = [
 		name: 'Dallas/Fort Worth International Airport (DFW)',
 		city: 'Dallas, USA - Texas 🇺🇸',
 		pos: [32.90175623187377, -97.04011304308536],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
 		tz: 'US/Central'
 	},
 	{
@@ -391,7 +391,7 @@ var DESTINATIONS = [
 		name: 'Detroit Metropolitan Wayne County Airport (DTW)',
 		city: 'Detroit, USA - Michigan 🇺🇸',
 		pos: [42.21640799753565, -83.35532128673535],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
 		tz: 'US/Eastern'
 	},
 	{
