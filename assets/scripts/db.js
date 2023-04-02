@@ -164,6 +164,13 @@ var DESTINATIONS = [
 		tz: 'Atlantic/Bermuda'
 	},
 	{
+		name: 'Berlin Branderburg Airport (BER)',
+		city: 'Berlin, Germany 🇩🇪',
+		pos: [52.36421598862855, 13.509032947271669],
+		hubs: ['ewr'],
+		tz: 'Europe/Berlin'
+	},
+	{
 		name: 'Nashville International Airport (BNA)',
 		city: 'Nashville, USA - Tennessee 🇺🇸',
 		pos: [36.126169659792566, -86.67743567520559],
@@ -211,6 +218,13 @@ var DESTINATIONS = [
 		pos: [-27.39418580574182, 153.1218517553009],
 		hubs: ['hnl'],
 		tz: 'Australia/Brisbane'
+	},
+	{
+		name: 'Brussels Airport (BRU)',
+		city: 'Brussels, Belgium 🇧🇪',
+		pos: [50.90105310968497, 4.485595855926779],
+		hubs: ['ewr'],
+		tz: 'Europe/Brussels'
 	},
 	{
 		name: 'Brasília International Airport (BSB)',
@@ -815,6 +829,13 @@ var DESTINATIONS = [
 		tz: 'Europe/Berlin'
 	},
 	{
+		name: 'Malpensa Airport (MXP)',
+		city: 'Milan, Italy 🇮🇹',
+		pos: [45.63003246889486, 8.725487782741581],
+		hubs: ['ewr'],
+		tz: 'Europe/Rome'
+	},
+	{
 		name: 'Nadi Airport (NAN)',
 		city: 'Nadi, Fiji 🇫🇯',
 		pos: [-17.75183452525651, 177.45078438213463],
@@ -954,12 +975,13 @@ var DESTINATIONS = [
 		hubs: ['hnl'],
 		tz: 'Pacific/Tahiti'
 	},
-	// {
-	// 	name: 'Vaclav Havel Airport (PRG)',
-	// 	city: 'Prague, Czechia 🇨🇿',
-	// 	pos: [50.101859796884526, 14.263234742416973],
-	// 	hubs: ['ewr'],
-	// },
+	{
+		name: 'Vaclav Havel Airport (PRG)',
+		city: 'Prague, Czech Republic 🇨🇿',
+		pos: [50.101859796884526, 14.263234742416973],
+		hubs: ['ewr'],
+		tz: 'Europe/Prague'
+	},
 	{
 		name: 'Palm Springs International Airport (PSP)',
 		city: 'Palm Springs, USA - California 🇺🇸',
@@ -1218,6 +1240,13 @@ var DESTINATIONS = [
 		pos: [-0.1234546241729393, -78.3604826167644],
 		hubs: ['iah'],
 		tz: 'America/Lima'
+	},
+	{
+		name: 'Venice Marco Polo Airport (VCE)',
+		city: 'Venice, Italy 🇮🇹',
+		pos: [45.50475205289375, 12.346683142255474],
+		hubs: ['ewr'],
+		tz: 'Europe/Rome'
 	},
 	{
 		name: 'Edmonton International Airport (YEG)',
