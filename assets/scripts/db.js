@@ -101,6 +101,13 @@ var DESTINATIONS = [
 		tz: 'America/Puerto_Rico'
 	},
 	{
+		name: 'Stockholm Arlanda Airport (ARN)',
+		city: 'Stockholm, Sweden 🇸🇪',
+		pos: [59.64946534644474, 17.93417522058218],
+		hubs: ['ewr'],
+		tz: 'Europe/Stockholm'
+	},
+	{
 		name: 'Athens International Airport (ATH)',
 		city: 'Athens, Greece 🇬🇷',
 		pos: [37.93572283626069, 23.948437055281335],
@@ -549,6 +556,13 @@ var DESTINATIONS = [
 		tz: 'Cuba'
 	},
 	{
+		name: 'Helsinki Airport (HEL)',
+		city: 'Helsinki, Finland 🇫🇮',
+		pos: [60.31828039473722, 24.94972532743364],
+		hubs: ['ewr'],
+		tz: 'Europe/Helsinki'
+	},
+	{
 		name: 'Hong Kong International Airport (HKG)',
 		city: 'Hong Kong, China 🇨🇳',
 		pos: [22.308602611679753, 113.91835201005935],
@@ -720,7 +734,7 @@ var DESTINATIONS = [
 		name: 'Sangster International Airport (MBJ)',
 		city: 'Montego Bay, Jamaica 🇯🇲',
 		pos: [18.502391775768107, -77.91451690151644],
-		hubs: ['mia'],
+		hubs: ['ewr', 'mia'],
 		tz: 'America/Jamaica'
 	},
 	{
@@ -904,6 +918,13 @@ var DESTINATIONS = [
 		pos: [36.89570942043663, -76.20000537338909],
 		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Eastern'
+	},
+	{
+		name: 'Oslo Airport (OSL)',
+		city: 'Oslo, Norway 🇳🇴',
+		pos: [60.197550081971016, 11.100372283252447],
+		hubs: ['ewr'],
+		tz: 'Europe/Oslo'
 	},
 	{
 		name: 'Palm Beach International Airport (PBI)',
