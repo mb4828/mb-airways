@@ -13,6 +13,9 @@
 		<link rel="stylesheet" href="assets/styles/normalize.css">
 		<link rel="stylesheet" href="assets/styles/main.css">
 
+		<!-- JQuery -->
+		<script src="assets/scripts/lib/jquery.js"></script>
+
 		<!-- Luxon -->
 		<script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js" integrity="sha256-DIsAGD2EF8Qq2PCH9yzX/yt9FliJfWf+aGcdgR6tKwo=" crossorigin="anonymous"></script>
 
@@ -151,11 +154,11 @@
 					<td>
 						<h3>Boeing 747-400</h3>
 						<ul>
-							<li><strong>Cruise Speed:</strong> 561 mph (903 kph)</li>
-							<li><strong>Range:</strong> 8,360 miles (13,454 km)</li>
-							<li><strong>Capacity:</strong> 492-524 passengers, 13-15 tons cargo</li>
-							<li><strong>Propulsion:</strong> Four General Electric CF6-80C2B engines</li>
-							<li><strong>Wingspan:</strong> 211 feet (64 meters)</li>
+							<li><strong>Cruise Speed:</strong> <kph>903</kph></li>
+							<li><strong>Range:</strong> <km>13454</km></li>
+							<li><strong>Capacity:</strong> 523-562 passengers, 9-12 tons cargo</li>
+							<li><strong>Length:</strong> <mtr>71</mtr></li>
+							<li><strong>Wingspan:</strong> <mtr>64</mtr></li>
 						</ul>
 					</td>
 					<td><img src="assets/images/aircraft/mba-744.png" alt=""></td>
@@ -165,11 +168,11 @@
 					<td>
 						<h3>Boeing 777-300</h3>
 						<ul>
-							<li><strong>Cruise Speed:</strong> 554 mph (892 kph)</li>
-							<li><strong>Range:</strong> 6,909 miles (11,119 km)</li>
-							<li><strong>Capacity:</strong> 416-466 passengers, 16-21 tons cargo</li>
-							<li><strong>Propulsion:</strong> Two General Electric GE90 engines</li>
-							<li><strong>Wingspan:</strong> 212 feet (65 meters)</li>
+							<li><strong>Cruise Speed:</strong> <kph>892</kph></li>
+							<li><strong>Range:</strong> <km>11119</km></li>
+							<li><strong>Capacity:</strong> 374-481 passengers, 17-25 tons cargo</li>
+							<li><strong>Length:</strong> <mtr>74</mtr></li>
+							<li><strong>Wingspan:</strong> <mtr>61</mtr></li>
 						</ul>
 					</td>
 					<td><img src="assets/images/aircraft/mba-773.png" alt=""></td>
@@ -179,11 +182,11 @@
 					<td>
 						<h3>Boeing 787-10</h3>
 						<ul>
-							<li><strong>Cruise Speed:</strong> 566 mph (911 kph)</li>
-							<li><strong>Range:</strong> 6,503 miles (10,467 km)</li>
-							<li><strong>Capacity:</strong> 296 passengers, 11 tons cargo</li>
-							<li><strong>Propulsion:</strong> Two General Electric GEnx engines</li>
-							<li><strong>Wingspan:</strong> 197 feet (60 meters)</li>
+							<li><strong>Cruise Speed:</strong> <kph>911</kph></li>
+							<li><strong>Range:</strong> <km>10467</km></li>
+							<li><strong>Capacity:</strong> 296-324 passengers, 9-11 tons cargo</li>
+							<li><strong>Length:</strong> <mtr>68</mtr></li>
+							<li><strong>Wingspan:</strong> <mtr>60</mtr></li>
 						</ul>
 					</td>
 					<td><img src="assets/images/aircraft/mba-7810.png" alt=""></td>
@@ -193,11 +196,11 @@
 					<td>
 						<h3>Boeing 757-300</h3>
 						<ul>
-							<li><strong>Cruise Speed:</strong> 528 mph (850 kph)</li>
-							<li><strong>Range:</strong> 4,520 miles (6,840 km)</li>
+							<li><strong>Cruise Speed:</strong> <kph>850</kph></li>
+							<li><strong>Range:</strong> <km>6840</km></li>
 							<li><strong>Capacity:</strong> 200 passengers, 8 tons cargo</li>
-							<li><strong>Propulsion:</strong> Two Rolls-Royce RB211-535 engines</li>
-							<li><strong>Wingspan:</strong> 134 feet (41 meters)</li>
+							<li><strong>Length:</strong> <mtr>54</mtr></li>
+							<li><strong>Wingspan:</strong> <mtr>38</mtr></li>
 						</ul>
 					</td>
 					<td><img src="assets/images/aircraft/mba-753.png" alt=""></td>
@@ -205,42 +208,57 @@
 
 				<tr>
 					<td>
-						<h3>Boeing 737-900ER</h3>
+						<h3>Boeing 737</h3>
 						<ul>
-							<li><strong>Cruise Speed:</strong> 518 mph (834 kph)</li>
-							<li><strong>Range:</strong> 3,759 miles (6,050 km)</li>
-							<li><strong>Capacity:</strong> 160 passengers, 5 tons cargo</li>
-							<li><strong>Propulsion:</strong> Two General Electric CFM56 engines</li>
-							<li><strong>Wingspan:</strong> 117 feet (36 meters)</li>
+							<li>Boeing 737-900ER</li>
+							<li>Boeing 737-MAX8</li>
+						</ul>
+						<ul>
+							<li><strong>Cruise Speed:</strong> <kph>834</kph> - <kph>839</kph></li>
+							<li><strong>Range:</strong> <km>5846</km> - <km>6050</km></li>
+							<li><strong>Capacity:</strong> 135-160 passengers, 5 tons cargo</li>
+							<li><strong>Length:</strong> <mtr>39</mtr> - <mtr>42</mtr></li>
+							<li><strong>Wingspan:</strong> <mtr>36</mtr></li>
 						</ul>
 					</td>
-					<td><img src="assets/images/aircraft/mba-739.png" alt=""></td>
+					<td>
+						<div class="fleet-table-splide-wrapper">
+							<div class="fleet-table-splide-1 splide" role="group">
+							  <div class="splide__track">
+								<ul class="splide__list">
+									<li class="splide__slide"><img src="assets/images/aircraft/mba-739.png" alt=""></li>
+									<li class="splide__slide"><img src="assets/images/aircraft/mba-7m8.png" alt=""></li>
+								</ul>
+							  </div>
+							</div>
+						</div>
+					</td>
 				</tr>
 
 				<tr>
 					<td>
 						<h3>Airbus</h3>
 						<ul>
-							<li>Airbus A319-100</li>
-							<li>Airbus A321-200</li>
 							<li>Airbus A321neo</li>
+							<li>Airbus A321-200</li>
+							<li>Airbus A319-100</li>
 						</ul>
 						<ul>
-							<li><strong>Cruise Speed:</strong> 514-521 mph (828-839 kph)</li>
-							<li><strong>Range:</strong> 3,697-4,430 miles (5,950-7,130 km)</li>
-							<li><strong>Capacity:</strong> 104-169 passengers, 4-5 tons cargo</li>
-							<li><strong>Propulsion:</strong> Two IAE V2500-A5 engines</li>
-							<li><strong>Wingspan:</strong> 111 feet (34 meters)</li>
+							<li><strong>Cruise Speed:</strong> <kph>828</kph> - <kph>839</kph></li>
+							<li><strong>Range:</strong> <km>5950</km> - <km>7130</km></li>
+							<li><strong>Capacity:</strong> 99-169 passengers, 4-5 tons cargo</li>
+							<li><strong>Length:</strong> <mtr>34</mtr> - <mtr>45</mtr></li>
+							<li><strong>Wingspan:</strong> <mtr>36</mtr></li>
 						</ul>
 					</td>
 					<td>
 						<div class="fleet-table-splide-wrapper">
-							<div class="fleet-table-splide splide" role="group">
+							<div class="fleet-table-splide-2 splide" role="group">
 							  <div class="splide__track">
 								<ul class="splide__list">
-									<li class="splide__slide"><img src="assets/images/aircraft/mba-a319.png" alt=""></li>
-									<li class="splide__slide"><img src="assets/images/aircraft/mba-a321.png" alt=""></li>
 									<li class="splide__slide"><img src="assets/images/aircraft/mba-a321n.png" alt=""></li>
+									<li class="splide__slide"><img src="assets/images/aircraft/mba-a321.png" alt=""></li>
+									<li class="splide__slide"><img src="assets/images/aircraft/mba-a319.png" alt=""></li>
 								</ul>
 							  </div>
 							</div>
@@ -257,11 +275,11 @@
 					<td>
 						<h3>Embraer ERJ-175</h3>
 						<ul>
-							<li><strong>Cruise Speed:</strong> 514 mph (828 kph)</li>
-							<li><strong>Range:</strong> 2,303 miles (3,706 km)</li>
-							<li><strong>Capacity:</strong> 56-68 passengers, 3-4 tons cargo</li>
-							<li><strong>Propulsion:</strong> Two General Electric CF34-8E engines</li>
-							<li><strong>Wingspan:</strong> 76 feet (23 meters)</li>
+							<li><strong>Cruise Speed:</strong> <kph>828</kph></li>
+							<li><strong>Range:</strong> <km>3706</km></li>
+							<li><strong>Capacity:</strong> 56 passengers, 4 tons cargo</li>
+							<li><strong>Length:</strong> <mtr>32</mtr></li>
+							<li><strong>Wingspan:</strong> <mtr>29</mtr></li>
 						</ul>
 					</td>
 					<td><img src="assets/images/aircraft/mba-e175.png" alt=""></td>
@@ -276,11 +294,11 @@
 					<td>
 						<h3>Boeing 717-200</h3>
 						<ul>
-							<li><strong>Cruise Speed:</strong> 514 mph (828 kph)</li>
-							<li><strong>Range:</strong> 2,370 miles (3,815 km)</li>
+							<li><strong>Cruise Speed:</strong> <kph>828</kph></li>
+							<li><strong>Range:</strong> <km>3815</km></li>
 							<li><strong>Capacity:</strong> 85 passengers, 4 tons cargo</li>
-							<li><strong>Propulsion:</strong> Two Rolls-Royce BR715 engines</li>
-							<li><strong>Wingspan:</strong> 93 feet (28 meters)</li>
+							<li><strong>Length:</strong> <mtr>38</mtr></li>
+							<li><strong>Wingspan:</strong> <mtr>28</mtr></li>
 						</ul>
 					</td>
 					<td><img src="assets/images/aircraft/mba-717.png" alt=""></td>
@@ -291,11 +309,11 @@
 					<td>
 						<h3>Bombardier Q-400</h3>
 						<ul>
-							<li><strong>Cruise Speed:</strong> 414 mph (667 kph)</li>
-							<li><strong>Range:</strong> 1,491 miles (2,400 km)</li>
+							<li><strong>Cruise Speed:</strong> <kph>667</kph></li>
+							<li><strong>Range:</strong> <km>2400</km></li>
 							<li><strong>Capacity:</strong> 58 passengers, 2 ton cargo</li>
-							<li><strong>Propulsion:</strong> Two Pratt & Whitney PW150 engines</li>
-							<li><strong>Wingspan:</strong> 93 feet (28 meters)</li>
+							<li><strong>Length:</strong> <mtr>33</mtr></li>
+							<li><strong>Wingspan:</strong> <mtr>28</mtr></li>
 						</ul>
 					</td>
 					<td><img src="assets/images/aircraft/mba-q400.png" alt=""></td>
@@ -314,6 +332,7 @@
 			<p>Copyright &copy; 2023 <a href="https://www.airlines-manager.com/company/profile/airline/6743843" target="_blank">MB Airways</a>. All rights reserved.</p>
 		</footer>
 		
+		<script src="assets/scripts/home.js"></script>
 		<script src="assets/scripts/db.js"></script>
 		<script src="assets/scripts/initSplide.js"></script>
 		<script src="assets/scripts/initLeaflet.js"></script>

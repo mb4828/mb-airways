@@ -272,7 +272,7 @@ function setupSchedule(rawSchedule) {
 		}
 		const origin = r['Route'].slice(0,3);
 		const dest = r['Route'].slice(-3);
-		const tpe = r['Type'];
+		const tpe = r['Type'].replace('MAX8-200', 'MAX8');
 
 		let arr = luxon.DateTime.fromFormat(r['Arrival'], 'H:mm', {zone: 'utc'});
 		let dep = luxon.DateTime.fromFormat(r['Departure'], 'H:mm', {zone: 'utc'});

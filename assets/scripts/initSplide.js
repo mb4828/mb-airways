@@ -11,7 +11,16 @@ new Splide( '.lead-splide', {
     interval: 7000
 }).mount();
 
-new Splide( '.fleet-table-splide', {
+new Splide( '.fleet-table-splide-1', {
+    width: '500px',
+    height: '150px',
+    type: 'loop',
+    autoplay: true,
+    speed: 4000,
+    interval: 7000
+}).mount();
+
+new Splide( '.fleet-table-splide-2', {
     width: '500px',
     height: '150px',
     type: 'loop',
