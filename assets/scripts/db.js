@@ -447,7 +447,7 @@ var DESTINATIONS = [
 		name: 'Eugene Airport (EUG)',
 		city: 'Eugene, USA - Oregon 🇺🇸',
 		pos: [44.12185809726057, -123.21588957302129],
-		hubs: ['ewr', 'sfo', 'iah'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -475,7 +475,7 @@ var DESTINATIONS = [
 		name: 'Glacier Park International Airport (FCA)',
 		city: 'Kalispell, USA - Montana 🇺🇸',
 		pos: [48.30775754813589, -114.25254443066616],
-		hubs: ['ewr', 'iah'],
+		hubs: ['ewr', 'iah', 'mia'],
 		tz: 'US/Mountain'
 	},
 	{
@@ -545,7 +545,7 @@ var DESTINATIONS = [
 		name: 'Piedmont Triad International Airport (GSO)',
 		city: 'Greensboro, USA - North Carolina 🇺🇸',
 		pos: [36.10435840414433, -79.935191232335],
-		hubs: ['ewr', 'iah'],
+		hubs: ['ewr', 'iah', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -790,7 +790,7 @@ var DESTINATIONS = [
 		name: 'Rogue Valley International Medford Airport (MFR)',
 		city: 'Medford, USA - Oregon 🇺🇸',
 		pos: [42.369094888174644, -122.87312247409928],
-		hubs: ['ewr', 'sfo', 'iab'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -1084,7 +1084,7 @@ var DESTINATIONS = [
 		name: 'Greater Rochester International Airport (ROC)',
 		city: 'Rochester, USA - New York 🇺🇸',
 		pos: [43.12253070204068, -77.6666258473552],
-		hubs: ['ewr', 'iah'],
+		hubs: ['ewr', 'iah', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1238,7 +1238,7 @@ var DESTINATIONS = [
 		name: 'Syracuse Hancock International Airport (SYR)',
 		city: 'Syracuse, USA - New York 🇺🇸',
 		pos: [43.113949680808936, -76.11362234818714],
-		hubs: ['ewr', 'iah'],
+		hubs: ['ewr', 'iah', 'mia'],
 		tz: 'US/Eastern'
 	},
 	{
