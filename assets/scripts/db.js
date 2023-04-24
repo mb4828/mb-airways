@@ -1084,7 +1084,7 @@ var DESTINATIONS = [
 		name: 'Greater Rochester International Airport (ROC)',
 		city: 'Rochester, USA - New York 🇺🇸',
 		pos: [43.12253070204068, -77.6666258473552],
-		hubs: ['ewr', 'iah', 'mia'],
+		hubs: ['ewr', 'iah'],
 		tz: 'US/Eastern'
 	},
 	{
