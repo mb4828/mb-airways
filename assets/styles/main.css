@@ -57,6 +57,11 @@ footer a {
 	color: var(--white-color) !important;
 }
 
+fieldset {
+	border: 0;
+	padding: 0;
+}
+
 /* elements */
 
 h1 {

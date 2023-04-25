@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MB Airways - Flight Status</title>
+
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Vary" content="*" />
+		<meta http-equiv="Expires" content="0" />
+		<meta name="viewport" content="width=1048">
+
+		<link rel="icon" type="image/x-icon" href="assets/images/logos/mb_globe_blue_bk_2.png">		
+		<link rel="stylesheet" href="assets/styles/normalize.css">
+        <link rel="stylesheet" href="assets/styles/main.css">
+		<link rel="stylesheet" href="assets/styles/flight-status.css">
+
+        <!-- JQuery -->
+		<script src="assets/scripts/lib/jquery.js"></script>
+		<script src="assets/scripts/lib/jquery-csv.js"></script>
+
+		<!-- Luxon -->
+		<script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js" integrity="sha256-DIsAGD2EF8Qq2PCH9yzX/yt9FliJfWf+aGcdgR6tKwo=" crossorigin="anonymous"></script>
+
+		<!-- Fontawesome -->
+		<script src="https://use.fontawesome.com/e23711170c.js"></script>
+	</head>
+	<body>
+        <header>
+			<div class="gu-section">
+				<span>A Global Unity Alliance Member</span>
+			 	<img src="assets/images/logos/gu_big.png">
+		 	</div>
+
+			<div class="flex-section">
+				<a href="index.html"><img class="logo-img" src="assets/images/logos/mb_logo_web_4.png" alt="MB Airways" /></a>
+				<nav>
+					<a href="reservations.html">Book a Trip</a>
+					<a href="flight-status.html">Flight Status</a>
+					<a href="index.html#destinations">Explore Destinations</a>
+					<a href="https://mb-airways.blogspot.com">Newsroom</a>
+				</nav>
+			</div>
+		</header>
+
+        <div id="status-wrapper">
+            <form id="status-form">
+                <fieldset class="flex-1">
+                    <label for="status-airport">Airport</label>
+                    <select id="status-airport"></select>
+                </fieldset>
+
+                <fieldset>
+                    <label>Local Time</label>
+                    <input type="text" id="status-time" readonly style="width: 75px">
+                </fieldset>
+            </form>
+        </div>
+        
+        <main>
+            <div class="d-flex">
+                <div class="width-50">
+                    <h2 class="mt-0">Arrivals</h2>
+                    <table class="flight-table" id="arrivals">
+                        <thead>
+                            <tr>
+                                <th>Flight</th>
+                                <th>Type</th>
+                                <th>From</th>
+                                <th>Status</th>
+                                <th>Arrives</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="width-50">
+                    <h2 class="mt-0">Departures</h2>
+                    <table class="flight-table" id="departures">
+                        <thead>
+                            <tr>
+                                <th>Flight</th>
+                                <th>Type</th>
+                                <th>To</th>
+                                <th>Status</th>
+                                <th>Departs</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+			<p>MB Airways is a fictitious airline. No products or services are being offered for sale.</p>
+			<p>Copyright &copy; 2023 <a href="https://www.airlines-manager.com/company/profile/airline/6743843" target="_blank">MB Airways</a>. All rights reserved.</p>
+		</footer>
+
+        <script src="assets/scripts/db.js"></script>
+		<script src="assets/scripts/flight-status.js"></script>
+    </body>
+</html>

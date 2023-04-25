@@ -1,8 +1,5 @@
 'use strict';
 
-var AIRPORTS = new Map();
-var SCHEDULE = [];
-
 // helper methods
 
 function getTime(tm, code) {
@@ -63,7 +60,7 @@ function isUSA(code) {
 }
 
 function canConnect(f1, f2) {
-	return luxon.DateTime.fromJSDate(f1['at']).plus(luxon.Duration.fromObject({minutes: 15})) < f2['dt']; // 15 minute minimum conection
+	return luxon.DateTime.fromJSDate(f1['at']).plus(luxon.Duration.fromObject({minutes: 20})) < f2['dt']; // 20 minute minimum connection
 }
 
 // ui control
@@ -71,7 +68,7 @@ function canConnect(f1, f2) {
 function getDestinationMap() {
 	// extract destinations from schedule db
 	const destSet = new Set();
-	for (const s of SCHEDULE) {
+	for (const s of FLIGHTS) {
 		destSet.add(s['o']);
 		destSet.add(s['d']);
 	}
@@ -215,7 +212,7 @@ function searchFlights() {
 		const dest = $('#booking-to :selected').val();
 		const foundFlights = new Set();
 		let flights = [];
-		for (const f1 of SCHEDULE) {
+		for (const f1 of FLIGHTS) {
 			if (f1['o'] === origin) {
 				// non-stop
 				if (f1['d'] === dest && !foundFlights.has(f1.flight)) {
@@ -223,7 +220,7 @@ function searchFlights() {
 					foundFlights.add(f1.flight);
 				}
 				
-				for (const f2 of SCHEDULE) {
+				for (const f2 of FLIGHTS) {
 					if (f1['d'] === f2['o'] && canConnect(f1, f2)) {
 						// 1 stop
 						if (isHub(f1['d']) && f2['d'] === dest && !foundFlights.has(f1.flight)) {
@@ -232,7 +229,7 @@ function searchFlights() {
 						}
 
 						// 2 stops
-						for (const f3 of SCHEDULE) {
+						for (const f3 of FLIGHTS) {
 							if (f2['d'] === f3['o'] &&
 								(!isUSA(f1['o']) || !isUSA(f3['d'])) && // 2 stops only allowed for intl destinations
 								 isHub(f1['d']) && isHub(f2['d']) && // connections only allowed through hubs
@@ -256,61 +253,6 @@ function searchFlights() {
 	});
 }
 
-function setupAirports() {
-	for (const d of DESTINATIONS) {
-		const codeIdx = d['name'].indexOf('(')+1;
-		const code = d['name'].slice(codeIdx, codeIdx+3);
-		AIRPORTS.set(code, d);
-	}
-}
-
-function setupSchedule(rawSchedule) {
-	for (let i=1; i < rawSchedule.length; i++) {
-		const r = rawSchedule[i];
-		if (r['Pax'] == 0) {
-			continue; // skip cargo only flights
-		}
-		const origin = r['Route'].slice(0,3);
-		const dest = r['Route'].slice(-3);
-		const tpe = r['Type'].replace('MAX8-200', 'MAX8');
-
-		let arr = luxon.DateTime.fromFormat(r['Arrival'], 'H:mm', {zone: 'utc'});
-		let dep = luxon.DateTime.fromFormat(r['Departure'], 'H:mm', {zone: 'utc'});
-		let dur = arr.diff(dep);
-		if (arr < dep) {
-			// make sure flights don't arrive before they depart
-			arr = arr.plus(luxon.Duration.fromObject({day: 1})); 
-			dur = arr.diff(dep);
-		}
-		if (['747-400','777-300','787-10'].includes(tpe) && dest !== 'CUN' && dur.toMillis() <= 21600000) {
-			// make sure ultra-long-haul flights have correct duration
-			arr = arr.plus(luxon.Duration.fromObject({day: 1}));
-			dur = arr.diff(dep);
-		}
-		const halfDur = dur.toMillis()/2;
-		const midpoint = dep.plus(luxon.Duration.fromObject({milliseconds: halfDur}));
-
-		SCHEDULE.push(new Object({
-			'o': origin,
-			'd': dest,
-			'at': midpoint.minus(luxon.Duration.fromObject({minutes: 20})).toJSDate(),
-			'dt': dep.toJSDate(),
-			'flight': (i*2)-1,
-			'type': tpe,
-		}));
-		SCHEDULE.push(new Object({
-			'o': dest,
-			'd': origin,
-			'at': arr.minus(luxon.Duration.fromObject({minutes: 20})).toJSDate(),
-			'dt': midpoint.toJSDate(),
-			'flight': i*2,
-			'type': tpe,
-		}));
-	}
+(function init() {
 	setupForm();
-}
-
-(function initReservations() {
-	setupAirports();
-	setupSchedule($.csv.toObjects(FLIGHT_SCHEDULE));
 }());

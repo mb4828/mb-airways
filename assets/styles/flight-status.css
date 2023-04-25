@@ -1,0 +1,113 @@
+select, form Time {
+	max-width: 400px;
+	border: 0;
+	padding: var(--gutter-tiny);
+	font-weight: 600;
+	font-size: 90%;
+	color: var(--primary-color);
+}
+
+input {
+	border: 0;
+	border-radius: 0;
+	padding: var(--gutter-small);
+	font-size: 90%;
+}
+
+#status-wrapper {
+	width: 100%;
+	min-width: calc(var(--content-width) + var(--gutter-medium));
+	background: var(--light-gray-color);
+	position: sticky;
+	top: 0;
+	margin-bottom: var(--gutter-medium);
+	z-index: 999;
+}
+
+#status-form {
+	width: var(--content-width);
+	margin: 0 auto;
+	padding: var(--gutter-medium);
+    display: flex;
+    align-items: center;
+}
+
+#status-form select {
+	border: 0;
+	background: transparent;
+	margin-right: var(--gutter-small);
+	margin-bottom: var(--gutter-small);
+}
+
+label {
+    color: var(--primary-color);
+    font-size: 90%;
+}
+
+.flight-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.flight-table thead {
+    color: var(--white-color);
+    background: var(--primary-color);
+}
+
+.flight-table thead tr {
+    display: block;
+}
+
+.flght-table thead th {
+    position: sticky;
+}
+
+.flight-table tbody {
+    display: block;
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+}
+
+.flight-table tbody tr:nth-child(even) {
+    background: var(--light-gray-color);
+}
+
+.flight-table th, .flight-table td {
+    padding: var(--gutter-tiny);
+    text-align: left;
+    width: 100px;
+}
+
+.flight-table img {
+    height: 18px;
+    margin-right: 5px;
+    transform: scaleX(-1);
+}
+
+.flight-table .now td {
+    height: 15px;
+    background: var(--accent-color) !important;
+    color: var(--white-color);
+    text-align: center;
+    font-size: 60%;
+    padding: 0;
+}
+
+.d-flex {
+    display: flex;
+    gap: var(--gutter-medium);
+}
+
+.flex-1 {
+    flex-grow: 1;
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
