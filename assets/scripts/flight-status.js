@@ -86,7 +86,6 @@ function updateUITable(id, data) {
                 <td>${d.status}</td>
                 <td>${getTime(tm, code)}</td>
             </tr>
-            ${tm < now && nextTm > now && nextTm !== tm ? `<tr class="now"><td colspan="5"><Time></Time></td></tr>` : ''}
         `;
     }).join(''));
 }
@@ -102,7 +101,6 @@ function updateUI(code) {
 function updateTime() {
     const time = getTime(new Date(), CODE, luxon.DateTime.TIME_WITH_SECONDS);
     $('#status-time').val(time)
-    $('Time').text(time);
 }
 
 (function init() {

@@ -1,4 +1,4 @@
-select, form Time {
+select {
 	max-width: 400px;
 	border: 0;
 	padding: var(--gutter-tiny);
@@ -84,15 +84,6 @@ label {
     height: 18px;
     margin-right: 5px;
     transform: scaleX(-1);
-}
-
-.flight-table .now td {
-    height: 15px;
-    background: var(--accent-color) !important;
-    color: var(--white-color);
-    text-align: center;
-    font-size: 60%;
-    padding: 0;
 }
 
 .d-flex {
