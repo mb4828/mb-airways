@@ -15,7 +15,10 @@ function getArrivals(code) {
     const now = new Date();
     const maxArr = luxon.DateTime.now().plus(luxon.Duration.fromObject({hours: 2})); // arriving in the next 2 hours
     const minArr = luxon.DateTime.now().minus(luxon.Duration.fromObject({hours: .5})); // arrived .5 hour ago or less
-    const arrivals = FLIGHTS.filter(f => f.d === code && f.at < maxArr && f.at > minArr)
+    const arrivals = FLIGHTS
+        .filter(f => f.d === code && f.at < maxArr && f.at > minArr)
+        .sort((f1, f2) => f1.flight < f2.flight ? -1 : 1)
+        .filter((f, idx, arr) => f.flight !== arr[idx-1]?.flight)
         .map(f => {
             if (f.at < now) {
                 f['status'] = 'Arrived';
@@ -36,7 +39,10 @@ function getDepartures(code) {
     const nowPlus20 = luxon.DateTime.now().plus(luxon.Duration.fromObject({minutes: 20}));
     const maxDep = luxon.DateTime.now().plus(luxon.Duration.fromObject({hours: 2})); // departing in the next 2 hours
     const minDep = luxon.DateTime.now().minus(luxon.Duration.fromObject({hours: .5})); // departed .5 hour ago or less
-    const departures = FLIGHTS.filter(f => f.o === code && f.dt < maxDep && f.dt > minDep)
+    const departures = FLIGHTS
+        .filter(f => f.o === code && f.dt < maxDep && f.dt > minDep)
+        .sort((f1, f2) => f1.flight < f2.flight ? -1 : 1)
+        .filter((f, idx, arr) => f.flight !== arr[idx-1]?.flight)
         .map(f => {
             if (f.dt < now) {
                 f['status'] = 'Departed';
@@ -49,7 +55,7 @@ function getDepartures(code) {
             }
             return f;
         })
-        .sort((f1, f2) => f1.dt < f2.dt ? -1 : 1);
+        .sort((f1, f2) => f1.dt < f2.dt ? -1 : 1)
     return departures;
 }
 
