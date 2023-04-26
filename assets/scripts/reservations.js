@@ -17,9 +17,15 @@ function getDuration(dep, arr, raw=false) {
 	const d = luxon.DateTime.fromJSDate(dep);
 	const a = luxon.DateTime.fromJSDate(arr);
 	if (raw) {
-		return a.diff(d).toMillis();
+		return a.diff(d);
 	}
 	return a.diff(d).shiftTo('hours','minutes').normalize().toHuman({ unitDisplay: "short" });
+}
+
+function getNumDays(dep, arr, codeDep, codeArr) {
+	const airportDep = AIRPORTS.get(codeDep);
+	const airportArr = AIRPORTS.get(codeArr);
+	return luxon.DateTime.fromJSDate(arr).setZone(airportArr.tz).ordinal - luxon.DateTime.fromJSDate(dep).setZone(airportDep.tz).ordinal;
 }
 
 function getAirportCity(code) {
@@ -162,9 +168,10 @@ function displayFlights(flights) {
 	let id = 0;
 	for (const f of flights) {
 		const last = f.length-1;
+		const numDays = getNumDays(f[0]['dt'], f[last]['at'], f[0]['o'], f[last]['d']);
 		const wrapper = $('<div class="trip-wrapper">');
 		wrapper.append(`<div class="trip-header" id="trip-header-${id}" onclick="toggleTrip('${id}')">
-							<strong style="flex-grow:1">${getTime(f[0]['dt'], f[0]['o'])} &ndash; ${getTime(f[last]['at'], f[last]['d'])}</strong>
+							<strong style="flex-grow:1">${getTime(f[0]['dt'], f[0]['o'])} &ndash; ${getTime(f[last]['at'], f[last]['d'])}${numDays > 0 ? `<sup>+${numDays}</sup>` : ''}</strong>
 							<span style="flex-basis:250px"><i class="fas fa-fw fa-stopwatch"></i> ${getDuration(f[0]['dt'], f[last]['at'])}</span>
 							<span style="flex-basis:200px">
 								${f.length === 1 ? '<span style="color: var(--accent-color)"><i class="fas fa-fw fa-map-marker-alt"></i> Nonstop</span>' :
@@ -189,7 +196,7 @@ function displayFlights(flights) {
 								    	<i class="fas fa-circle fa-stack-2x"></i>
 								    	<i class="fas fa-plane-arrival fa-stack-1x fa-inverse"></i>
 								  	</span>
-								  	<span>${getTime(s.at, s.d)} &bull; ${getAirportName(s.d)}<br><small>Flight MBA ${s.flight} &bull; ${s.type}</small></span>
+								  	<span>${getTime(s.at, s.d)} &bull; ${getAirportName(s.d)}<br><small><img class="tail-logo" src="assets/images/logos/${['717-200','Q-400'].includes(s.type) ? 'aloha' : 'mb'}-tail.png"> Flight ${s.flight} &bull; ${s.type}</small></span>
 							  	</li>
 							</ul>`);
 			if (i !== last) {
@@ -213,9 +220,12 @@ function searchFlights() {
 		const foundFlights = new Set();
 		let flights = [];
 		for (const f1 of FLIGHTS) {
+			if (foundFlights.has(f1.flight)) {
+				continue; // skip duplicate itineraries
+			}
 			if (f1['o'] === origin) {
 				// non-stop
-				if (f1['d'] === dest && !foundFlights.has(f1.flight)) {
+				if (f1['d'] === dest) {
 					flights.push([f1]);
 					foundFlights.add(f1.flight);
 				}
@@ -223,9 +233,10 @@ function searchFlights() {
 				for (const f2 of FLIGHTS) {
 					if (f1['d'] === f2['o'] && canConnect(f1, f2)) {
 						// 1 stop
-						if (isHub(f1['d']) && f2['d'] === dest && !foundFlights.has(f1.flight)) {
+						if (isHub(f1['d']) && f2['d'] === dest) {
 							flights.push([f1, f2]);
 							foundFlights.add(f1.flight);
+							break; // skip duplicate itineraries
 						}
 
 						// 2 stops
@@ -234,9 +245,10 @@ function searchFlights() {
 								(!isUSA(f1['o']) || !isUSA(f3['d'])) && // 2 stops only allowed for intl destinations
 								 isHub(f1['d']) && isHub(f2['d']) && // connections only allowed through hubs
 								 new Set([f1.o, f2.o, f3.o, f1.d, f2.d, f3.d]).size === 4 && // no repeat cities (sanity check)
-								 canConnect(f2, f3) && !foundFlights.has(f1.flight) && f3['d'] === dest) {
+								 canConnect(f2, f3) && f3['d'] === dest) {
 									flights.push([f1, f2, f3]);
 									foundFlights.add(f1.flight);
+									break; // skip duplicate itineraries
 							}
 						}
 					}
@@ -244,13 +256,13 @@ function searchFlights() {
 			}
 		}
 		// keep the top 10 fastest trips and get rid of the rest
-		flights.sort((a,b) => getDuration(a[0]['dt'], a[a.length-1]['at'], true) < getDuration(b[0]['dt'], b[b.length-1]['at'], true) ? -1 : 1);
+		flights.sort((a,b) => getDuration(a[0]['dt'], a[a.length-1]['at'], true).toMillis() < getDuration(b[0]['dt'], b[b.length-1]['at'], true).toMillis() ? -1 : 1);
 		flights = flights.slice(0,10);
 
 		// sort by departure time
 		flights.sort((a,b) => getTodayTime(a[0].dt, a[0].o) < getTodayTime(b[0].dt, b[0].o) ? -1 : 1);
 		setTimeout(() => displayFlights(flights), 500);
-	});
+	}, 1000);
 }
 
 (function init() {

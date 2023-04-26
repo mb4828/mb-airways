@@ -162,3 +162,10 @@ label {
 .flip-me {
 	transform: scaleY(-1);;
 }
+
+img.tail-logo {
+	position: relative;
+	top: 2px;
+    height: 15px;
+    transform: scaleX(-1);
+}
