@@ -84,10 +84,6 @@ label {
 	align-items: baseline;
 }
 
-#search-results {
-	min-height: 60vh;
-}
-
 .loading {
 	text-align: center;
 	color: var(--primary-color);

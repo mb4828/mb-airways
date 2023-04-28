@@ -39,6 +39,7 @@ header nav a {
 
 main {
 	width: var(--content-width);
+	min-height: calc(100vh - 500px);
 	padding: 0 var(--gutter-small);
 	margin: 0 auto;
 }
@@ -50,8 +51,6 @@ footer {
 	color: var(--white-color);
 	padding: var(--gutter-medium) 0 var(--gutter-large) 0;
 	margin-top: var(--gutter-large);
-	position: relative;
-	bottom: 0;
 }
 
 footer .footer-content {
