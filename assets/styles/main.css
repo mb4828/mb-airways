@@ -39,9 +39,9 @@ header nav a {
 
 main {
 	width: var(--content-width);
-	min-height: calc(100vh - 500px);
 	padding: 0 var(--gutter-small);
 	margin: 0 auto;
+	min-height: calc(100vh - 500px);
 }
 
 footer {

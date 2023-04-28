@@ -84,6 +84,8 @@ label {
 	align-items: baseline;
 }
 
+#search-results {}
+
 .loading {
 	text-align: center;
 	color: var(--primary-color);
