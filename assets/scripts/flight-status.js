@@ -1,6 +1,8 @@
 'use strict';
 
-var CODE = 'EWR';
+var CODE;
+var MAP;
+var MARKERS;
 
 function getTime(tm, code, locale=luxon.DateTime.TIME_SIMPLE) {
 	const airport = AIRPORTS.get(code);
@@ -59,14 +61,83 @@ function getDepartures(code) {
     return departures;
 }
 
-function setupForm() {
-    const airports = [];
-    for (const a of AIRPORTS.keys()) {
-        airports.push(`<option value="${a}">${AIRPORTS.get(a).name}</option>`);
+function getAircraftPos(flight) {
+    const originPos = AIRPORTS.get(flight.o).pos;
+    const destPos = AIRPORTS.get(flight.d).pos;
+    const timeLeft = Math.abs(luxon.DateTime.fromJSDate(flight.at).diffNow().toMillis());
+    const timeTotal = luxon.DateTime.fromJSDate(flight.at).diff(luxon.DateTime.fromJSDate(flight.dt)).toMillis();
+    const pct =  (timeTotal - timeLeft) / timeTotal; 
+
+    if (pct < 0) {
+        return [null, null]; // flight hasn't taken off yet
     }
-    const el = $('#status-airport');
-    el.append(airports);
-    el.change(() => updateUI(el.val()));
+    
+    const line = L.geodesic([originPos, destPos], {steps: 8}).getLatLngs()[0];
+    const step = Math.floor(line.length * pct);
+    let angle = 90;
+    if (step > 0 && step < line.length-1) {
+        angle = Math.atan2(line[step+1].lng - line[step-1].lng, line[step+1].lat - line[step-1].lat) * 180 / Math.PI;
+    }
+    return [line[step], angle];
+}
+
+function updateUIMap(prevId, id, arrivals, departures) {
+    const bounds = L.latLngBounds(L.latLng(-60, -177), L.latLng(80, 195)); // cutoff intl date line
+    const points = [];
+	if (!MAP) {
+        MAP = L.map('flight-map', { scrollWheelZoom: false, minZoom: 2, maxBounds: bounds, maxBoundsViscosity: 1 });
+        MARKERS = L.layerGroup().addTo(MAP);
+	} else {
+        MARKERS.clearLayers();
+    }
+
+	// map imagery
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+	    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
+	    maxZoom: 8,
+	    id: 'mapbox/outdoors-v11',
+	    tileSize: 512,
+	    zoomOffset: -1,
+	    accessToken: 'pk.eyJ1IjoibWI0ODI4IiwiYSI6ImNsMnFweGpuYTAwNXAzY3Bob3lqaG9rMG4ifQ.O8yYprih5CDw3tH0bDrCHw'
+	}).addTo(MAP);
+
+    // airport
+    const airportPos = AIRPORTS.get(id).pos;
+    L.marker(airportPos, {icon: L.icon({iconUrl: 'assets/images/tower.png', iconSize: [30,30]})}).addTo(MARKERS);
+    points.push(airportPos);
+
+
+    // aircraft
+    const now = new Date();
+    const flights = [].concat(arrivals, departures).filter(f => (f.d === id && f.at >= now) || (f.o === id && f.dt <= now));
+    for (const flight of flights) {
+        const [pos, angle] = getAircraftPos(flight);
+        if (!pos || !angle) {
+            continue;
+        }
+        const marker = L.marker(pos, {icon: L.divIcon(
+            { html: `<img class='plane-icon' src='assets/images/plane.png' data-angle='${angle}' title='MB${flight.flight}: ${flight.o} - ${flight.d} | ${flight.type}'>` }
+        )});
+        marker.addTo(MARKERS);
+        points.push(pos);
+    }
+
+    // set view
+    if (prevId !== id) {
+        MAP.fitBounds(points, {maxZoom: 7});
+    }
+
+    $('.ui-tooltip').remove();
+    $('.plane-icon').each(function() {
+        const angle = $(this).data('angle');
+        const tooltip = $(this).data('tooltip');
+
+        // rotate planes
+        $(this).css('rotate', `${angle}deg`);
+
+        // tooltip
+        $(this).tooltip();
+    });
 }
 
 function updateUITable(id, data) {
@@ -91,11 +162,12 @@ function updateUITable(id, data) {
 }
 
 function updateUI(code) {
-    CODE = code;
-    const arrivals = getArrivals(CODE);
-    const departures = getDepartures(CODE);
+    const arrivals = getArrivals(code);
+    const departures = getDepartures(code);
     updateUITable('#arrivals', arrivals);
     updateUITable('#departures', departures);
+    updateUIMap(CODE, code, arrivals, departures);
+    CODE = code;
 }
 
 function updateTime() {
@@ -103,11 +175,21 @@ function updateTime() {
     $('#status-time').val(time)
 }
 
+function setupForm() {
+    const airports = [];
+    for (const a of AIRPORTS.keys()) {
+        airports.push(`<option value="${a}">${AIRPORTS.get(a).name}</option>`);
+    }
+    const el = $('#status-airport');
+    el.append(airports);
+    el.change(() => updateUI(el.val()));
+}
+
 (function init() {
     setupForm();
 
-	updateUI(CODE);
-    setInterval(() => updateUI(CODE), 60 * 1000);
+	updateUI('EWR');
+    setInterval(() => updateUI(CODE), 15 * 1000);
 
     updateTime();
     setInterval(() => updateTime(), 1000);

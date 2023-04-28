@@ -1,3 +1,8 @@
+label {
+    color: var(--primary-color);
+    font-size: 90%;
+}
+
 select {
 	max-width: 400px;
 	border: 0;
@@ -39,9 +44,22 @@ input {
 	margin-bottom: var(--gutter-small);
 }
 
-label {
-    color: var(--primary-color);
-    font-size: 90%;
+#flight-map { 
+	height: max(25vh, 500px); 
+	margin-bottom: var(--gutter-large);
+}
+.leaflet-div-icon {
+    border: 0 !important;
+    background: transparent !important;
+}
+
+img.plane-icon {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: -9px;
+    top: -8px;
+    filter: drop-shadow(4px 4px .5px rgba(125,125,125,.5));
 }
 
 .flight-table {
@@ -66,7 +84,7 @@ label {
 .flight-table tbody {
     display: block;
     width: 100%;
-    height: max(50vh, 400px);
+    height: max(25vh, 400px);
     overflow: auto;
 }
 

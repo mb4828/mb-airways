@@ -17,10 +17,17 @@
         <!-- JQuery -->
 		<script src="assets/scripts/lib/jquery.js"></script>
 		<script src="assets/scripts/lib/jquery-csv.js"></script>
+		<script src="assets/scripts/lib/jquery-ui.js"></script>
+		<link rel="stylesheet" href="assets/styles/lib/jquery-ui.css">
 
 		<!-- Luxon -->
 		<script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js" integrity="sha256-DIsAGD2EF8Qq2PCH9yzX/yt9FliJfWf+aGcdgR6tKwo=" crossorigin="anonymous"></script>
 
+		<!-- Leaflet -->
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" />
+		<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+		<script src="https://cdn.jsdelivr.net/npm/leaflet.geodesic@2.6.1/dist/leaflet.geodesic.umd.min.js" integrity="sha256-p0rKTX8EVkTqoKNnB6YUjgLpX/fO+AF/7Wp+npazFt4=" crossorigin="anonymous"></script>
+		
 		<!-- Fontawesome -->
 		<script src="https://use.fontawesome.com/e23711170c.js"></script>
 	</head>
@@ -57,6 +64,8 @@
         </div>
         
         <main>
+			<div id="flight-map"></div>
+
             <div class="d-flex">
                 <div class="width-50">
                     <h2 class="mt-0">Arrivals</h2>
