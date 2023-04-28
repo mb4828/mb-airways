@@ -45,18 +45,39 @@ main {
 
 footer {
 	width: max(var(--content-width), 100%);
-	text-align: center;
 	background-color: var(--primary-color);
-	font-size: 80%;
+	font-size: 90%;
 	color: var(--white-color);
-	padding: var(--gutter-medium) 0;
+	padding: var(--gutter-medium) 0 var(--gutter-large) 0;
 	margin-top: var(--gutter-large);
 	position: relative;
 	bottom: 0;
 }
 
+footer .footer-content {
+	width: var(--content-width);
+	margin: 0 auto;
+	padding: 0 var(--gutter-small);
+	display: flex;
+}
+
+footer .footer-content div {
+	flex-basis: 33%;
+}
+
+footer h2, footer h3 {
+	color: var(--light-gray-color);
+}
+
+footer ul {
+	list-style-type: none;
+	padding: 0;
+	line-height: 200%;
+}
+
 footer a {
 	color: var(--white-color) !important;
+	text-decoration: none;
 }
 
 fieldset {
