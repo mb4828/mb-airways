@@ -67,7 +67,8 @@ function getAircraftPos(flight) {
     const timeLeft = Math.abs(luxon.DateTime.fromJSDate(flight.at).diffNow().toMillis());
     const timeTotal = luxon.DateTime.fromJSDate(flight.at).diff(luxon.DateTime.fromJSDate(flight.dt)).toMillis();
     const pct =  (timeTotal - timeLeft) / timeTotal; 
-    const line = L.geodesic([originPos, destPos], {steps: 8}).getLatLngs()[0];
+    let line = L.geodesic([originPos, destPos], {steps: 8}).getLatLngs();
+    line = line[line.length-1];
 
     if (pct < 0 || line[line.length-1].lat !== destPos[0]) {
         return [null, null]; // flight hasn't taken off yet or line was calculated wrong
