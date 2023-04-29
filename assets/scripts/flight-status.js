@@ -82,6 +82,22 @@ function getAircraftPos(flight) {
     return [line[step], angle];
 }
 
+function getAircraftIcon(type) {
+    if (type.includes('747')) {
+        return 'assets/images/747.png'
+    } else if (type.includes('777') || type.includes('787')) {
+        return 'assets/images/WB.png';
+    } else if (type.includes('757') || type.includes('737') || type.includes('A3')) {
+        return 'assets/images/NB.png'
+    } else if (type.includes('ERJ')) {
+        return 'assets/images/E175.png';
+    } else if (type.includes('717')) {
+        return 'assets/images/717.png'
+    } else {
+        return 'assets/images/Q400.png'
+    }
+}
+
 function updateUIMap(prevId, id, arrivals, departures) {
     const bounds = L.latLngBounds(L.latLng(-60, -177), L.latLng(80, 195)); // cutoff intl date line
     const points = [];
@@ -117,7 +133,7 @@ function updateUIMap(prevId, id, arrivals, departures) {
             continue;
         }
         const marker = L.marker(pos, {icon: L.divIcon(
-            { html: `<img class='plane-icon' src='assets/images/plane.png' data-angle='${angle}' title='MB${flight.flight}: ${flight.o} - ${flight.d} | ${flight.type}'>` }
+            { html: `<img class='plane-icon' src='${getAircraftIcon(flight.type)}' data-angle='${angle}' title='MB${flight.flight}: ${flight.o} - ${flight.d} | ${flight.type}'>` }
         )});
         marker.addTo(MARKERS);
         points.push(pos);
