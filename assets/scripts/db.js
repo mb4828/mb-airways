@@ -748,7 +748,7 @@ var DESTINATIONS = [
 		name: 'Midland International Air & Space Port (MAF)',
 		city: 'Midland, USA - Texas 🇺🇸',
 		pos: [31.942135201414416, -102.20496125514411],
-		hubs: ['sfo'],
+		hubs: ['sfo', 'iah'],
 		tz: 'US/Central'
 	},
 	{
@@ -792,6 +792,13 @@ var DESTINATIONS = [
 		pos: [19.43624818319543, -99.07194048906919],
 		hubs: ['ewr', 'sfo', 'iah'],
 		tz: 'America/Mexico_City'
+	},
+	{
+		name: 'McAllen International Airport (MFE)',
+		city: 'McAllen, USA - Texas 🇺🇸',
+		pos: [26.176721835265095, -98.2393465159593],
+		hubs: ['iah'],
+		tz: 'US/Central'
 	},
 	{
 		name: 'Rogue Valley International Medford Airport (MFR)',
