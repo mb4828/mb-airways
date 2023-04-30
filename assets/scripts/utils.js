@@ -39,16 +39,16 @@ function setupSchedule(rawSchedule) {
 		FLIGHTS.push(new Object({
 			'o': origin,
 			'd': dest,
-			'at': midpoint.minus(luxon.Duration.fromObject({minutes: 29})).toJSDate(),
-			'dt': dep.toJSDate(),
+			'at': midpoint.minus(luxon.Duration.fromObject({minutes: 24})).toJSDate(),
+			'dt': dep.plus(luxon.Duration.fromObject({minutes: 15})).toJSDate(),
 			'flight': (i*2)-1,
 			'type': tpe,
 		}));
 		FLIGHTS.push(new Object({
 			'o': dest,
 			'd': origin,
-			'at': arr.minus(luxon.Duration.fromObject({minutes: 29})).toJSDate(),
-			'dt': midpoint.toJSDate(),
+			'at': arr.minus(luxon.Duration.fromObject({minutes: 24})).toJSDate(),
+			'dt': midpoint.plus(luxon.Duration.fromObject({minutes: 15})).toJSDate(),
 			'flight': i*2,
 			'type': tpe,
 		}));
