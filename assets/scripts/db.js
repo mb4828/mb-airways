@@ -440,7 +440,7 @@ var DESTINATIONS = [
 		name: 'Northwest Florida Beaches International Airport (ECP)',
 		city: 'Panama City, USA - Florida 🇺🇸',
 		pos: [30.355281862622725, -85.7980485671208],
-		hubs: ['iah'],
+		hubs: ['ewr', 'iah'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -769,7 +769,7 @@ var DESTINATIONS = [
 		name: 'Midland International Air & Space Port (MAF)',
 		city: 'Midland, USA - Texas 🇺🇸',
 		pos: [31.942135201414416, -102.20496125514411],
-		hubs: ['sfo', 'iah'],
+		hubs: ['ewr', 'sfo', 'iah'],
 		tz: 'US/Central'
 	},
 	{
@@ -881,7 +881,7 @@ var DESTINATIONS = [
 		name: 'Montrose Regional Airport (MTJ)',
 		city: 'Montrose, USA - Colorado 🇺🇸',
 		pos: [38.50095072330021, -107.89509828021419],
-		hubs: ['iah'],
+		hubs: ['ewr', 'iah'],
 		tz: 'US/Mountain'
 	},
 	{
@@ -909,7 +909,7 @@ var DESTINATIONS = [
 		name: 'Myrtle Beach International Airport (MYR)',
 		city: 'Myrtle Beach, USA - South Carolina 🇺🇸',
 		pos: [33.68213937915149, -78.92800159200796],
-		hubs: ['iah'],
+		hubs: ['ewr', 'iah'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1119,7 +1119,7 @@ var DESTINATIONS = [
 		name: 'Redmond Municipal Airport (RDM)',
 		city: 'Redmond, USA - Oregon 🇺🇸',
 		pos: [44.253250764843884, -121.15877034247316],
-		hubs: ['sfo'],
+		hubs: ['ewr', 'sfo'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -1280,7 +1280,7 @@ var DESTINATIONS = [
 		name: 'Sarasota Bradenton International Airport (SRQ)',
 		city: 'Sarasota, USA - Florida 🇺🇸',
 		pos: [27.395100025167416, -82.5539055345659],
-		hubs: ['iah'],
+		hubs: ['ewr', 'iah'],
 		tz: 'US/Eastern'
 	},
 	{
