@@ -286,7 +286,7 @@ var DESTINATIONS = [
 		name: 'Paris Charles de Gaulle Airport (CDG)',
 		city: 'Paris, France 🇫🇷',
 		pos: [49.01088754570143, 2.5481856293293754],
-		hubs: ['ewr'],
+		hubs: ['ewr', 'sfo'],
 		tz: 'Europe/Paris'
 	},
 	{
@@ -675,6 +675,13 @@ var DESTINATIONS = [
 		tz: 'Iceland'
 	},
 	{
+		name: 'Kansai International Airport (KIX)',
+		city: 'Osaka, Japan 🇯🇵',
+		pos: [34.43207316594882, 135.23039389643088],
+		hubs: ['sfo'],
+		tz: 'Asia/Tokyo'
+	},
+	{
 		name: 'Kona International Airport (KOA)',
 		city: 'Kailua-Kona, USA - Hawaii 🇺🇸',
 		pos: [19.737769862987626, -156.0428956900814],
@@ -713,7 +720,7 @@ var DESTINATIONS = [
 		name: 'Heathrow Airport (LHR)',
 		city: 'London, United Kingdom 🇬🇧',
 		pos: [51.47058336357465, -0.4544242756733526],
-		hubs: ['ewr'],
+		hubs: ['ewr', 'sfo'],
 		tz: 'Europe/London'
 	},
 	{
@@ -925,6 +932,13 @@ var DESTINATIONS = [
 		pos: [25.04400654513227, -77.46580015121297],
 		hubs: ['ewr', 'mia'],
 		tz: 'US/Eastern'
+	},
+	{
+		name: 'Chubu Centrair International Airport (NGO)',
+		city: 'Nagoya, Japan 🇯🇵',
+		pos: [34.8574416073902, 136.81089517130727],
+		hubs: ['sfo'],
+		tz: 'Asia/Tokyo'
 	},
 	{
 		name: 'Narita International Airport (NRT)',
