@@ -6,6 +6,8 @@ var DESTINATIONS = [
 		pos: [40.70340156126785, -74.17330276840164],
 		hubs: ['sfo', 'iah', 'mia', 'hnl'],
 		isHub: true,
+		arrRwy: 4,
+		depRwy: 4,
 		tz: 'US/Eastern'
 	},
 	{
@@ -15,6 +17,8 @@ var DESTINATIONS = [
 		pos: [37.62141455145011, -122.37878377625846],
 		hubs: ['ewr', 'iah', 'mia', 'hnl'],
 		isHub: true,
+		arrRwy: 28,
+		depRwy: 28,
 		tz: 'US/Pacific'
 	},
 	{
@@ -24,6 +28,8 @@ var DESTINATIONS = [
 		pos: [29.99029394928301, -95.33691148715191],
 		hubs: ['ewr', 'sfo', 'mia', 'hnl'],
 		isHub: true,
+		arrRwy: 8,
+		depRwy: 15,
 		tz: 'US/Central'
 	},
 	{
@@ -33,6 +39,8 @@ var DESTINATIONS = [
 		pos: [25.796412980391715, -80.28700802739922],
 		hubs: ['ewr', 'sfo', 'iah', 'hnl'],
 		isHub: true,
+		arrRwy: 8,
+		depRwy: 8,
 		tz: 'US/Eastern'
 	},
 	{
@@ -42,6 +50,8 @@ var DESTINATIONS = [
 		pos: [21.319087239318254, -157.9254318902438],
 		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		isHub: true,
+		arrRwy: 8,
+		depRwy: 8,
 		tz: 'US/Hawaii'
 	},
 	{

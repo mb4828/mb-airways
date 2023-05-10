@@ -61,9 +61,7 @@ function getDepartures(code) {
     return departures;
 }
 
-function getAircraftPos(flight, airportPos) {
-    const originPos = AIRPORTS.get(flight.o).pos;
-    const destPos = AIRPORTS.get(flight.d).pos;
+function getAircraftPos(flight, airport) {
     const timeLeft = Math.abs(luxon.DateTime.fromJSDate(flight.at).diffNow().toMillis());
     const timeTotal = luxon.DateTime.fromJSDate(flight.at).diff(luxon.DateTime.fromJSDate(flight.dt)).toMillis();
     const pct =  (timeTotal - timeLeft) / timeTotal; 
@@ -71,22 +69,31 @@ function getAircraftPos(flight, airportPos) {
         return[null, null]; // flight hasn't taken off yet
     }
 
-    let lines = L.geodesic([originPos, destPos], {steps: 8}).getLatLngs();
-    console.log(flight, lines, airportPos);
-    const [aLat, aLng] = [Math.round(airportPos[0]), Math.round(airportPos[1])];
-    for (const line of lines) {
-        if ((Math.round(line[0].lat) === aLat && Math.round(line[0].lng) === aLng) || 
-            (Math.round(line[line.length-1].lat) === aLat && Math.round(line[line.length-1].lng) === aLng)) {
-                // if line starts or ends at airport, use it to compute aircraft position
-                const step = Math.floor(line.length * pct);
-                let angle = 90;
-                if (step > 0 && step < line.length-1) {
-                    angle = Math.atan2(line[step+1].lng - line[step-1].lng, line[step+1].lat - line[step-1].lat) * 180 / Math.PI;
-                }
-                return [line[step], angle];
-            }
+    const originPos = AIRPORTS.get(flight.o).pos;
+    const destPos = AIRPORTS.get(flight.d).pos;
+    const airportPos = AIRPORTS.get(airport).pos;
+    const isOutbound = flight.o === airport;
+    const depDir = (AIRPORTS.get(airport)?.depRwy || 0) * 10;
+    const arrDir = (AIRPORTS.get(airport)?.arrRwy || 0) * 10;
+
+    let line = [];
+    const depFixPos = [airportPos[0] + (0.5 * Math.cos(Math.PI * depDir/180)), airportPos[1] + (0.5 * Math.sin(Math.PI * depDir/180))];
+    const arrFixPos = [airportPos[0] - (0.5 * Math.cos(Math.PI * arrDir/180)), airportPos[1] - (0.5 * Math.sin(Math.PI * arrDir/180))];
+    if (isOutbound) {
+        const l1 = L.geodesic([airportPos, depFixPos], {steps: 0}).getLatLngs();
+        const l2 = L.geodesic([depFixPos, destPos], {steps: 8}).getLatLngs();
+        line = l1.concat(l2).reduce((p, c) => p.concat(c), []);
+    } else {
+        const l1 = L.geodesic([originPos, arrFixPos], {steps: 8}).getLatLngs();
+        const l2 = L.geodesic([arrFixPos, airportPos], {steps: 0}).getLatLngs();
+        line = l1.concat(l2).reduce((p, c) => p.concat(c), []);
     }
-    return[null, null];
+    const step = Math.floor(line.length * pct);
+    let angle = 90;
+    if (step > 0 && step < line.length-1) {
+        angle = Math.atan2(line[step+1].lng - line[step-1].lng, line[step+1].lat - line[step-1].lat) * 180 / Math.PI;
+    }
+    return [line[step], angle];
 }
 
 function getAircraftIcon(type) {
@@ -135,7 +142,7 @@ function updateUIMap(prevId, id, arrivals, departures) {
     const now = new Date();
     const flights = [].concat(arrivals, departures).filter(f => (f.d === id && f.at >= now) || (f.o === id && f.dt <= now));
     for (const flight of flights) {
-        const [pos, angle] = getAircraftPos(flight, airportPos);
+        const [pos, angle] = getAircraftPos(flight, id);
         if (!pos || !angle) {
             continue;
         }
