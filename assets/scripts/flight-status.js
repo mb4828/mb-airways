@@ -80,12 +80,12 @@ function getAircraftPos(flight, airport) {
     const depFixPos = [airportPos[0] + (0.5 * Math.cos(Math.PI * depDir/180)), airportPos[1] + (0.5 * Math.sin(Math.PI * depDir/180))];
     const arrFixPos = [airportPos[0] - (0.5 * Math.cos(Math.PI * arrDir/180)), airportPos[1] - (0.5 * Math.sin(Math.PI * arrDir/180))];
     if (isOutbound) {
-        const l1 = L.geodesic([airportPos, depFixPos], {steps: 0}).getLatLngs();
+        const l1 = L.geodesic([airportPos, depFixPos], {steps: 1}).getLatLngs();
         const l2 = L.geodesic([depFixPos, destPos], {steps: 8}).getLatLngs();
         line = l1.concat(l2).reduce((p, c) => p.concat(c), []);
     } else {
         const l1 = L.geodesic([originPos, arrFixPos], {steps: 8}).getLatLngs();
-        const l2 = L.geodesic([arrFixPos, airportPos], {steps: 0}).getLatLngs();
+        const l2 = L.geodesic([arrFixPos, airportPos], {steps: 1}).getLatLngs();
         line = l1.concat(l2).reduce((p, c) => p.concat(c), []);
     }
     const step = Math.floor(line.length * pct);
