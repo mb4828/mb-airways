@@ -89,7 +89,7 @@ function getAircraftPos(flight, airport) {
         line = l1.concat(l2).reduce((p, c) => p.concat(c), []);
     }
     const step = Math.floor(line.length * pct);
-    let angle = 90;
+    let angle = depDir;
     if (step > 0 && step < line.length-1) {
         angle = Math.atan2(line[step+1].lng - line[step-1].lng, line[step+1].lat - line[step-1].lat) * 180 / Math.PI;
     }
