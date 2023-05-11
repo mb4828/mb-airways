@@ -6,8 +6,8 @@ var DESTINATIONS = [
 		pos: [40.70340156126785, -74.17330276840164],
 		hubs: ['sfo', 'iah', 'mia', 'hnl'],
 		isHub: true,
-		arrRwy: 4,
-		depRwy: 4,
+		arrRwy: 22,
+		depRwy: 22,
 		tz: 'US/Eastern'
 	},
 	{
