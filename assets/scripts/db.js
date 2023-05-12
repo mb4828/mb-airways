@@ -219,7 +219,7 @@ var DESTINATIONS = [
 		name: 'Birmingham-Shuttlesworth International Airport (BHM)',
 		city: 'Birmingham, USA - Alabama 🇺🇸',
 		pos: [33.5624358209084, -86.75405090040849],
-		hubs: ['ewr', 'sfo', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia'],
 		tz: 'US/Central'
 	},
 	{
