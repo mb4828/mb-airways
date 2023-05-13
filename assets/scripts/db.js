@@ -356,6 +356,13 @@ var DESTINATIONS = [
 		tz: 'Africa/Johannesburg'
 	},
 	{
+		name: 'West Virginia International Yeager Airport (CRW)',
+		city: 'Charleston, USA - West Virginia 🇺🇸',
+		pos: [38.37143955636435, -81.59352849463419],
+		hubs: ['ewr'],
+		tz: 'US/Eastern'
+	},
+	{
 		name: 'Cancún International Airport (CUN)',
 		city: 'Cancún, Mexico 🇲🇽',
 		pos: [21.04198345163572, -86.87396332895656],
