@@ -7,8 +7,9 @@ new Splide( '.lead-splide', {
     type: 'fade',
     autoplay: true,
     rewind: true,
-    speed: 3000,
-    interval: 7000
+    speed: 2500,
+    interval: 7000,
+    easing: 'ease'
 }).mount();
 
 new Splide( '.fleet-table-splide-1', {
@@ -17,7 +18,7 @@ new Splide( '.fleet-table-splide-1', {
     type: 'loop',
     autoplay: true,
     speed: 4000,
-    interval: 7000
+    interval: 7000,
 }).mount();
 
 new Splide( '.fleet-table-splide-2', {
