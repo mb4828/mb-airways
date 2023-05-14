@@ -8,7 +8,7 @@ new Splide( '.lead-splide', {
     autoplay: true,
     rewind: true,
     speed: 2500,
-    interval: 7000,
+    interval: 8000,
     easing: 'ease'
 }).mount();
 
