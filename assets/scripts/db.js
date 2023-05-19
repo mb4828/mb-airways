@@ -55,6 +55,7 @@ var DESTINATIONS = [
 		tz: 'US/Hawaii'
 	},
 	{
+		code: 'ord',
 		name: 'O\'Hare International Airport (ORD)',
 		city: 'Chicago, USA - Illinois 🇺🇸',
 		pos: [41.980694394637, -87.90899793532991],
