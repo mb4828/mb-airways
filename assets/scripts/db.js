@@ -139,7 +139,7 @@ var DESTINATIONS = [
 		name: 'Hartsfield-Jackson Atlanta International Airport (ATL)',
 		city: 'Atlanta, USA - Georgia 🇺🇸',
 		pos: [33.64083507608079, -84.42787180090849],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -426,7 +426,7 @@ var DESTINATIONS = [
 		name: 'Dallas/Fort Worth International Airport (DFW)',
 		city: 'Dallas, USA - Texas 🇺🇸',
 		pos: [32.90175623187377, -97.04011304308536],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -447,7 +447,7 @@ var DESTINATIONS = [
 		name: 'Detroit Metropolitan Wayne County Airport (DTW)',
 		city: 'Detroit, USA - Michigan 🇺🇸',
 		pos: [42.21640799753565, -83.35532128673535],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -531,7 +531,7 @@ var DESTINATIONS = [
 		name: 'Fort Lauderdale-Hollywood International Airport (FLL)',
 		city: 'Fort Lauderdale, USA - Florida 🇺🇸',
 		pos: [26.074330752581144, -80.1506451175699],
-		hubs: ['ewr', 'sfo', 'iah'],
+		hubs: ['ewr', 'sfo', 'iah', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -685,7 +685,7 @@ var DESTINATIONS = [
 		name: 'John F. Kennedy International Airport (JFK)',
 		city: 'New York, USA - New York 🇺🇸',
 		pos: [40.64189712324801, -73.7779237593459],
-		hubs: ['sfo', 'iah', 'mia', 'hnl'],
+		hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -902,7 +902,7 @@ var DESTINATIONS = [
 		name: 'Minneapolis-Saint Paul International Airport (MSP)',
 		city: 'Minneapolis, USA - Minnesota 🇺🇸',
 		pos: [44.88624650092833, -93.22250729555996],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -979,7 +979,7 @@ var DESTINATIONS = [
 		name: 'Oakland International Airport (OAK)',
 		city: 'Oakland, USA - California 🇺🇸',
 		pos: [37.71148324911222, -122.2193824513291],
-		hubs: ['ewr', 'iah', 'mia'],
+		hubs: ['ewr', 'iah', 'mia', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -1133,7 +1133,7 @@ var DESTINATIONS = [
 		name: 'Licenciado Gustavo Diaz Ordaz International (PVR)',
 		city: 'Puerto Vallarta, Mexico 🇲🇽',
 		pos: [20.68049831115806, -105.2524298465564],
-		hubs: ['iah'],
+		hubs: ['iah', 'ord'],
 		tz: 'America/Mexico_City'
 	},
 	{
@@ -1266,14 +1266,14 @@ var DESTINATIONS = [
 		name: 'Los Cabos International Airport (SJD)',
 		city: 'San José del Cabo, Mexico 🇲🇽',
 		pos: [23.1456048417308, -109.71832014651572],
-		hubs: ['iah'],
+		hubs: ['iah', 'ord'],
 		tz: 'Mexico/BajaSur'
 	},
 	{
 		name: 'Luis Munoz Marin International Airport (SJU)',
 		city: 'San Juan, Puerto Rico 🇵🇷, US Territories',
 		pos: [18.439669035343876, -65.99915740046777],
-		hubs: ['ewr', 'mia'],
+		hubs: ['ewr', 'mia', 'ord'],
 		tz: 'America/Puerto_Rico'
 	},
 	{
@@ -1287,14 +1287,14 @@ var DESTINATIONS = [
 		name: 'Salt Lake City International Airport (SLC)',
 		city: 'Salt Lake City, USA - Utah 🇺🇸',
 		pos: [40.79051939628816, -111.97902094610347],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Mountain'
 	},
 	{
 		name: 'Sacramento International Airport (SMF)',
 		city: 'Sacramento, USA - California 🇺🇸',
 		pos: [38.69506863213448, -121.59003261580382],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -1441,7 +1441,7 @@ var DESTINATIONS = [
 		name: 'Calgary International Airport (YYC)',
 		city: 'Calgary, Canada 🇨🇦',
 		pos: [51.12150310000004, -114.00819495762246],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'Canada/Mountain'
 	},
 	{
@@ -1455,7 +1455,7 @@ var DESTINATIONS = [
 		name: 'Toronto Pearson International Airport (YYZ)',
 		city: 'Toronto, Canada 🇨🇦',
 		pos: [43.67779523959123, -79.6247972173393],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'Canada/Eastern'
 	},
 	{
