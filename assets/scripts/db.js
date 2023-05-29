@@ -1301,7 +1301,7 @@ var DESTINATIONS = [
 		name: 'John Wayne Airport (SNA)',
 		city: 'Santa Ana, USA - California 🇺🇸',
 		pos: [33.67632399877975, -117.86749736129858],
-		hubs: ['iah'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
