@@ -174,7 +174,7 @@ var DESTINATIONS = [
 		name: 'Boston Logan International Airport (BOS)',
 		city: 'Boston, USA - Massachusetts 🇺🇸',
 		pos: [42.365961658704904, -71.00960315045923],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -286,7 +286,7 @@ var DESTINATIONS = [
 		name: 'Baltimore/Washington International Airport (BWI)',
 		city: 'Baltimore, USA - Maryland 🇺🇸',
 		pos: [39.177536943139835, -76.66830640614698],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -328,14 +328,14 @@ var DESTINATIONS = [
 		name: 'Cleveland Hopkins International Airport (CLE)',
 		city: 'Cleveland, USA - Ohio 🇺🇸',
 		pos: [41.405886997309366, -81.85371669778253],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
 		name: 'Charlotte Douglas International Airport (CLT)',
 		city: 'Charlotte, USA - North Carolina 🇺🇸',
 		pos: [35.214358753004724, -80.94714294071665],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -391,7 +391,7 @@ var DESTINATIONS = [
 		name: 'Cincinnati/Northern Kentucky International Airport (CVG)',
 		city: 'Cincinnati, USA - Ohio 🇺🇸',
 		pos: [39.05091119818685, -84.66749507901761],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -622,7 +622,7 @@ var DESTINATIONS = [
 		name: 'Dulles International Airport (IAD)',
 		city: 'Washington, USA - D.C. 🇺🇸',
 		pos: [38.95327013665701, -77.4565514890331],
-		hubs: ['sfo', 'iah', 'mia', 'hnl'],
+		hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -650,7 +650,7 @@ var DESTINATIONS = [
 		name: 'Indianapolis International Airport (IND)',
 		city: 'Indianapolis, USA - Indiana 🇺🇸',
 		pos: [39.716991323244, -86.29558447337403],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -741,7 +741,7 @@ var DESTINATIONS = [
 		name: 'Long Beach Airport (LGB)',
 		city: 'Long Beach, USA - California 🇺🇸',
 		pos: [33.81616877737306, -118.1511592426201],
-		hubs: ['sfo'],
+		hubs: ['sfo', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -874,7 +874,7 @@ var DESTINATIONS = [
 		name: 'General Mitchell International Airport (MKE)',
 		city: 'Milwaukee, USA - Wisconsin 🇺🇸',
 		pos: [42.94783578343849, -87.89664603166004],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -1007,7 +1007,7 @@ var DESTINATIONS = [
 		name: 'Ontario International Airport (ONT)',
 		city: 'Ontario, USA - California 🇺🇸',
 		pos: [34.05596214250547, -117.59904106790037],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -1049,7 +1049,7 @@ var DESTINATIONS = [
 		name: 'Philadelphia International Airport (PHL)',
 		city: 'Philadelphia, USA - Pennsylvania 🇺🇸',
 		pos: [39.87312718764114, -75.24362441975858],
-		hubs: ['sfo', 'iah', 'mia', 'hnl'],
+		hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1175,7 +1175,7 @@ var DESTINATIONS = [
 		name: 'Reno-Tahoe International Airport (RNO)',
 		city: 'Reno, USA - Nevada 🇺🇸',
 		pos: [39.49964863013703, -119.76805218683198],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -1189,7 +1189,7 @@ var DESTINATIONS = [
 		name: 'Southwest Florida International Airport (RSW)',
 		city: 'Fort Myers, USA - Florida 🇺🇸',
 		pos: [26.533753077135888, -81.75534048896644],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1259,7 +1259,7 @@ var DESTINATIONS = [
 		name: 'Norman Y. Mineta San Jose International Airport (SJC)',
 		city: 'San Jose, USA - California 🇺🇸',
 		pos: [37.363665715803144, -121.92895897613796],
-		hubs: ['ewr', 'iah', 'mia'],
+		hubs: ['ewr', 'iah', 'mia', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -1322,7 +1322,7 @@ var DESTINATIONS = [
 		name: 'St. Louis Lambert International Airport (STL)',
 		city: 'St. Louis, USA - Missouri 🇺🇸',
 		pos: [38.74996298137237, -90.37484608851419],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -1420,7 +1420,7 @@ var DESTINATIONS = [
 		name: 'Edmonton International Airport (YEG)',
 		city: 'Edmonton, Canada 🇨🇦',
 		pos: [53.30623686908562, -113.58276804327605],
-		hubs: ['ewr', 'sfo', 'iah'],
+		hubs: ['ewr', 'sfo', 'iah', 'ord'],
 		tz: 'Canada/Mountain'
 	},
 	{
@@ -1434,7 +1434,7 @@ var DESTINATIONS = [
 		name: 'Montreal-Pierre Elliott Trudeau International Airport (YUL)',
 		city: 'Montreal, Canada 🇨🇦',
 		pos: [45.461698664876224, -73.7478869554127],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'Canada/Eastern'
 	},
 	{
