@@ -130,8 +130,7 @@ hr.big {
 }
 
 .gu-section {
-	color: var(--gu-primary-color);
-	font-size: 80%;
+	color: var(--light-gray-color);
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
