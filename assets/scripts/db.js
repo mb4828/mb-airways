@@ -111,7 +111,7 @@ var DESTINATIONS = [
 		name: 'Ted Stevens International Airport (ANC)',
 		city: 'Anchorage, USA - Alaska 🇺🇸',
 		pos: [61.171332648, -149.991162702],
-		hubs: ['ewr', 'sfo', 'iah'],
+		hubs: ['ewr', 'sfo', 'iah', 'ord'],
 		tz: 'US/Alaska'
 	},
 	{
@@ -153,7 +153,7 @@ var DESTINATIONS = [
 		name: 'Austin-Bergstrom International Airport (AUS)',
 		city: 'Austin, USA - Texas 🇺🇸',
 		pos: [30.19868847903938, -97.66571921787173],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -167,7 +167,7 @@ var DESTINATIONS = [
 		name: 'Boise Airport (BOI)',
 		city: 'Boise, USA - Idaho 🇺🇸',
 		pos: [43.56613372250894, -116.22244467737012],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Mountain'
 	},
 	{
@@ -202,7 +202,7 @@ var DESTINATIONS = [
 		name: 'Nashville International Airport (BNA)',
 		city: 'Nashville, USA - Tennessee 🇺🇸',
 		pos: [36.126169659792566, -86.67743567520559],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -279,7 +279,7 @@ var DESTINATIONS = [
 		name: 'Hollywood Burbank Airport (BUR)',
 		city: 'Burbank, USA - California 🇺🇸',
 		pos: [34.19832105435531, -118.35736068695542],
-		hubs: ['sfo', 'iah', 'mia'],
+		hubs: ['sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -342,7 +342,7 @@ var DESTINATIONS = [
 		name: 'John Glenn Columbus International Airport (CMH)',
 		city: 'Columbus, USA - Ohio 🇺🇸',
 		pos: [39.99990700422163, -82.88685483700165],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -510,7 +510,7 @@ var DESTINATIONS = [
 		name: 'Fresno Yosemite International Airport (FAT)',
 		city: 'Fresno, USA - California 🇺🇸',
 		pos: [36.77582349137883, -119.7182263207816],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -664,7 +664,7 @@ var DESTINATIONS = [
 		name: 'Jackson Hole Airport (JAC)',
 		city: 'Jackson Hole, USA - Wyoming 🇺🇸',
 		pos: [43.60337470927696, -110.73625468784289],
-		hubs: ['sfo', 'iah'],
+		hubs: ['sfo', 'iah', 'ord'],
 		tz: 'US/Mountain'
 	},
 	{
@@ -818,7 +818,7 @@ var DESTINATIONS = [
 		name: 'Kansas City International Airport (MCI)',
 		city: 'Kansas City, USA - Missouri 🇺🇸',
 		pos: [39.30346588697873, -94.70907396438118],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -839,7 +839,7 @@ var DESTINATIONS = [
 		name: 'Memphis International Airport (MEM)',
 		city: 'Memphis, USA - Tennessee 🇺🇸',
 		pos: [35.041980059680945, -89.97921581534257],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -909,7 +909,7 @@ var DESTINATIONS = [
 		name: 'Louis Armstrong New Orleans International Airport (MSY)',
 		city: 'New Orleans, USA - Louisiana 🇺🇸',
 		pos: [29.991146272960744, -90.25862783681688],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -1028,7 +1028,7 @@ var DESTINATIONS = [
 		name: 'Palm Beach International Airport (PBI)',
 		city: 'West Palm Beach, USA - Florida 🇺🇸',
 		pos: [26.685785827360075, -80.09283796017972],
-		hubs: ['ewr', 'sfo', 'iah'],
+		hubs: ['ewr', 'sfo', 'iah', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1112,7 +1112,7 @@ var DESTINATIONS = [
 		name: 'Palm Springs International Airport (PSP)',
 		city: 'Palm Springs, USA - California 🇺🇸',
 		pos: [33.830568637238926, -116.50696100322521],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -1161,7 +1161,7 @@ var DESTINATIONS = [
 		name: 'Raleigh-Durham International Airport (RDU)',
 		city: 'Raleigh, USA - North Carolina 🇺🇸',
 		pos: [35.88007898015302, -78.78797484463837],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1203,7 +1203,7 @@ var DESTINATIONS = [
 		name: 'San Antonio International Airport (SAT)',
 		city: 'San Antonio, USA - Texas 🇺🇸',
 		pos: [29.531290632199877, -98.46845569088684],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -1392,7 +1392,7 @@ var DESTINATIONS = [
 		name: 'Tucson International Airport (TUS)',
 		city: 'Tucson, USA - Arizona 🇺🇸',
 		pos: [32.109666228, -110.937996248],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Mountain'
 	},
 	{
