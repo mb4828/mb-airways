@@ -1256,6 +1256,13 @@ var DESTINATIONS = [
 		tz: 'US/Eastern'
 	},
 	{
+		name: 'Kangerlussuaq Airport (SFJ)',
+		city: 'Kangerlussuaq, Greenland 🇬🇱',
+		pos: [67.1775669383681, -50.651060561338205],
+		hubs: ['ord'],
+		tz: 'America/Nuuk'
+	},
+	{
 		name: 'Shanghai Hongqiao International Airport (SHA)',
 		city: 'Shanghai, China 🇨🇳',
 		pos: [31.193096387538194, 121.33369906532243],
