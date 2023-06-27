@@ -714,7 +714,7 @@ var DESTINATIONS = [
 		city: 'Juneau, USA - Alaska 🇺🇸',
 		pos: [58.358352647857295, -134.58387162073254],
 		hubs: ['ord'],
-		tz: 'US/Alaska'
+		tz: 'US/Pacific'
 	},
 	{
 		name: 'Keflavík International Airport (KEF)',
