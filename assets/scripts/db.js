@@ -227,6 +227,13 @@ var DESTINATIONS = [
 		tz: 'US/Mountain'
 	},
 	{
+		name: 'Mobile International Airport (BFM)',
+		city: 'Mobile, USA - Alabama 🇺🇸',
+		pos: [30.63023600345301, -88.07275618205335],
+		hubs: ['ord'],
+		tz: 'US/Central'
+	},
+	{
 		name: 'Grantley Adams International Airport (BGI)',
 		city: 'Christ Church, Barbados 🇧🇧',
 		pos: [13.080035627493604, -59.48774184440369],
@@ -272,7 +279,7 @@ var DESTINATIONS = [
 		name: 'Burlington International Airport (BTV)',
 		city: 'Burlington, USA - Vermont 🇺🇸',
 		pos: [44.470755128608445, -73.1516788038435],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -328,7 +335,7 @@ var DESTINATIONS = [
 		name: 'Eastern Iowa Airport (CID)',
 		city: 'Cedar Rapids, USA - Iowa 🇺🇸',
 		pos: [41.88633815541166, -91.70700758853724],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -531,7 +538,7 @@ var DESTINATIONS = [
 		name: 'Glacier Park International Airport (FCA)',
 		city: 'Kalispell, USA - Montana 🇺🇸',
 		pos: [48.30775754813589, -114.25254443066616],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Mountain'
 	},
 	{
@@ -608,7 +615,7 @@ var DESTINATIONS = [
 		name: 'Piedmont Triad International Airport (GSO)',
 		city: 'Greensboro, USA - North Carolina 🇺🇸',
 		pos: [36.10435840414433, -79.935191232335],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -664,14 +671,14 @@ var DESTINATIONS = [
 		name: 'Dwight D. Eisenhower Airport (ICT)',
 		city: 'Wichita, USA - Kansas 🇺🇸',
 		pos: [37.65083588295067, -97.42868807453723],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
 		name: 'Wilmington International Airport (ILM)',
 		city: 'Wilmington, USA - North Carolina 🇺🇸',
 		pos: [34.26623590568664, -77.90979573247422],
-		hubs: ['iah'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -979,7 +986,7 @@ var DESTINATIONS = [
 		name: 'Myrtle Beach International Airport (MYR)',
 		city: 'Myrtle Beach, USA - South Carolina 🇺🇸',
 		pos: [33.68213937915149, -78.92800159200796],
-		hubs: ['ewr', 'iah', 'mia'],
+		hubs: ['ewr', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1112,7 +1119,7 @@ var DESTINATIONS = [
 		name: 'Pensacola International Airport (PNS)',
 		city: 'Pensacola, USA - Florida 🇺🇸',
 		pos: [30.473625313477296, -87.18674410562464],
-		hubs: ['iah'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1175,7 +1182,7 @@ var DESTINATIONS = [
 		name: 'Portland International Jetport (PWM)',
 		city: 'Portland, USA - Maine 🇺🇸',
 		pos: [43.64570214332969, -70.31004072274055],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1245,7 +1252,7 @@ var DESTINATIONS = [
 		name: 'Savannah/Hilton Head International Airport (SAV)',
 		city: 'Savannah, USA - Georgia 🇺🇸',
 		pos: [32.12939158823519, -81.20176254594122],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1357,7 +1364,7 @@ var DESTINATIONS = [
 		name: 'Sarasota Bradenton International Airport (SRQ)',
 		city: 'Sarasota, USA - Florida 🇺🇸',
 		pos: [27.395100025167416, -82.5539055345659],
-		hubs: ['ewr', 'iah'],
+		hubs: ['ewr', 'iah', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1441,7 +1448,7 @@ var DESTINATIONS = [
 		name: 'McGhee Tyson Airport (TYS)',
 		city: 'Knoxville, USA - Tennessee 🇺🇸',
 		pos: [35.81082427967718, -83.99379244250953],
-		hubs: ['ewr', 'sfo', 'iah', 'mia'],
+		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -1470,6 +1477,13 @@ var DESTINATIONS = [
 		city: 'Ottawa, Canada 🇨🇦',
 		pos: [45.31923461124119, -75.66914374429483],
 		hubs: ['ewr', 'sfo', 'iah', 'ord'],
+		tz: 'Canada/Eastern'
+	},
+	{
+		name: 'Québec City Jean Lesage International Airport (YQB)',
+		city: 'Québec City, Canada 🇨🇦',
+		pos: [46.79067748415006, -71.38816534934894],
+		hubs: ['ord'],
 		tz: 'Canada/Eastern'
 	},
 	{
