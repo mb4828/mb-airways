@@ -493,6 +493,13 @@ var DESTINATIONS = [
 		tz: 'Europe/London'
 	},
 	{
+		name: 'Eagle County Regional Airport (EGE)',
+		city: 'Vail, USA - Colorado 🇺🇸',
+		pos: [39.64211199138697, -106.91683817073384],
+		hubs: ['ord'],
+		tz: 'US/Mountain'
+	},
+	{
 		name: 'El Paso International Airport (ELP)',
 		city: 'El Paso, USA - Texas 🇺🇸',
 		pos: [31.80542655947106, -106.38241304461272],
@@ -868,6 +875,13 @@ var DESTINATIONS = [
 		city: 'Orlando, USA - Florida 🇺🇸',
 		pos: [28.418822273035058, -81.30431680312665],
 		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+		tz: 'US/Eastern'
+	},
+	{
+		name: 'Harrisburg International Airport (MDT)',
+		city: 'Harrisburg, USA - Pennsylvania 🇺🇸',
+		pos: [40.19381950779775, -76.75773157625802],
+		hubs: ['ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1443,6 +1457,13 @@ var DESTINATIONS = [
 		pos: [32.109666228, -110.937996248],
 		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Mountain'
+	},
+	{
+		name: 'Cherry Capital Airport (TVC)',
+		city: 'Traverse City, USA - Michigan 🇺🇸',
+		pos: [44.74086300317933, -85.57965821227184],
+		hubs: ['ord'],
+		tz: 'US/Eastern'
 	},
 	{
 		name: 'McGhee Tyson Airport (TYS)',
