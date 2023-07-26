@@ -384,7 +384,7 @@ var DESTINATIONS = [
 		name: 'West Virginia International Yeager Airport (CRW)',
 		city: 'Charleston, USA - West Virginia 🇺🇸',
 		pos: [38.37143955636435, -81.59352849463419],
-		hubs: ['ewr'],
+		hubs: ['ord'],
 		tz: 'US/Eastern'
 	},
 	{
