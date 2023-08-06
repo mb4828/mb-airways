@@ -472,6 +472,13 @@ var DESTINATIONS = [
 		tz: 'US/Central'
 	},
 	{
+		name: 'Duluth International Airport (DLH)',
+		city: 'Duluth, USA - Minnesota 🇺🇸',
+		pos: [46.83915195495459, -92.18001201632043],
+		hubs: ['ord'],
+		tz: 'US/Central'
+	},
+	{
 		name: 'Des Moines International Airport (DSM)',
 		city: 'Des Moines, USA - Iowa 🇺🇸',
 		pos: [41.53421361181389, -93.65911766543995],
@@ -542,6 +549,13 @@ var DESTINATIONS = [
 		tz: 'US/Pacific'
 	},
 	{
+		name: 'Evansville Regional Airport (EVV)',
+		city: 'Evansville, USA - Indiana 🇺🇸',
+		pos: [38.04311058839397, -87.52691791114265],
+		hubs: ['ord'],
+		tz: 'US/Eastern'
+	},
+	{
 		name: 'Ezeiza International Airport (EZE)',
 		city: 'Buenos Aires, Argentina 🇦🇷',
 		pos: [-34.81472221811849, -58.5349142696793],
@@ -610,6 +624,13 @@ var DESTINATIONS = [
 		pos: [43.58285310955137, -96.74018491546143],
 		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Central'
+	},
+	{
+		name: 'Fort Wayne International Airport (FWA)',
+		city: 'Fort Wayne, USA - Indiana 🇺🇸',
+		pos: [40.97737427230013, -85.19561777847646],
+		hubs: ['ord'],
+		tz: 'US/Eastern'
 	},
 	{
 		name: 'Miguel Hidalgo y Costilla International Airport (GDL)',
