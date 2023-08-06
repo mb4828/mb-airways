@@ -269,6 +269,13 @@ var DESTINATIONS = [
 		tz: 'US/Mountain'
 	},
 	{
+		name: 'Bismark Airport (FAR)',
+		city: 'Bismark, USA - North Dakota 🇺🇸',
+		pos: [46.7756896176948, -100.75653659996863],
+		hubs: ['ord'],
+		tz: 'US/Central'
+	},
+	{
 		name: 'Brisbane Airport (BNE)',
 		city: 'Brisbane, Australia 🇦🇺',
 		pos: [-27.39418580574182, 153.1218517553009],
