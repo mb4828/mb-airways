@@ -129,6 +129,13 @@ var DESTINATIONS = [
 		tz: 'Europe/Stockholm'
 	},
 	{
+		name: 'Aspen/Pitkin County Airport (ASE)',
+		city: 'Aspen, USA - Colorado 🇺🇸',
+		pos: [39.21926437960034, -106.86696149563349],
+		hubs: ['ord'],
+		tz: 'US/Mountain'
+	},
+	{
 		name: 'Athens International Airport (ATH)',
 		city: 'Athens, Greece 🇬🇷',
 		pos: [37.93572283626069, 23.948437055281335],
@@ -241,6 +248,13 @@ var DESTINATIONS = [
 		tz: 'America/Puerto_Rico'
 	},
 	{
+		name: 'Bangor International Airport (BGR)',
+		city: 'Bangor, USA - Maine 🇺🇸',
+		pos: [44.80693350003793, -68.81848626782975],
+		hubs: ['ord'],
+		tz: 'US/Eastern'
+	},
+	{
 		name: 'Birmingham-Shuttlesworth International Airport (BHM)',
 		city: 'Birmingham, USA - Alabama 🇺🇸',
 		pos: [33.5624358209084, -86.75405090040849],
@@ -323,6 +337,13 @@ var DESTINATIONS = [
 		pos: [49.01088754570143, 2.5481856293293754],
 		hubs: ['ewr', 'sfo'],
 		tz: 'Europe/Paris'
+	},
+	{
+		name: 'Chattanooga Metropolitan Airport (CHA)',
+		city: 'Chattanooga, USA - Tennessee 🇺🇸',
+		pos: [35.03692109359861, -85.20001532837085],
+		hubs: ['ord'],
+		tz: 'US/Central'
 	},
 	{
 		name: 'Charleston International Airport (CHS)',
@@ -659,6 +680,13 @@ var DESTINATIONS = [
 		pos: [35.54933206852969, 139.77980640999556],
 		hubs: ['ord'],
 		tz: 'Asia/Tokyo'
+	},
+	{
+		name: 'Huntsville International Airport (HSV)',
+		city: 'Huntsville, USA - Alabama 🇺🇸',
+		pos: [34.63686815027565, -86.77747147166176],
+		hubs: ['ord'],
+		tz: 'US/Central'
 	},
 	{
 		name: 'Dulles International Airport (IAD)',
@@ -1242,6 +1270,13 @@ var DESTINATIONS = [
 		tz: 'US/Eastern'
 	},
 	{
+		name: 'Rochester International Airport (RST)',
+		city: 'Rochester, USA - Minnesota 🇺🇸',
+		pos: [43.90993994364452, -92.49152310388355],
+		hubs: ['ord'],
+		tz: 'US/Central'
+	},
+	{
 		name: 'Southwest Florida International Airport (RSW)',
 		city: 'Fort Myers, USA - Florida 🇺🇸',
 		pos: [26.533753077135888, -81.75534048896644],
@@ -1303,6 +1338,13 @@ var DESTINATIONS = [
 		pos: [67.1775669383681, -50.651060561338205],
 		hubs: ['ord'],
 		tz: 'America/Nuuk'
+	},
+	{
+		name: 'Springfield-Branson National Airport (SGF)',
+		city: 'Springfield, USA - Missouri 🇺🇸',
+		pos: [37.24436166451638, -93.39127718580991],
+		hubs: ['ord'],
+		tz: 'US/Central'
 	},
 	{
 		name: 'Shanghai Hongqiao International Airport (SHA)',
@@ -1415,6 +1457,13 @@ var DESTINATIONS = [
 		pos: [30.271849965598296, 104.44447857901999],
 		hubs: ['sfo'],
 		tz: 'Asia/Shanghai'
+	},
+	{
+		name: 'Tallahassee International Airport (TLH)',
+		city: 'Tallahassee, USA - Florida 🇺🇸',
+		pos: [30.393888865300536, -84.34502031697967],
+		hubs: ['ord'],
+		tz: 'US/Eastern'
 	},
 	{
 		name: 'Ben Gurion Airport (TLV)',
