@@ -1319,6 +1319,13 @@ var DESTINATIONS = [
 		tz: 'US/Pacific'
 	},
 	{
+		name: 'South Bend International Airport (SBN)',
+		city: 'South Bend, USA - Indiana 🇺🇸',
+		pos: [41.70188363585592, -86.31243469699172],
+		hubs: ['ord'],
+		tz: 'US/Eastern'
+	},
+	{
 		name: 'Seattle-Tacoma International Airport (SEA)',
 		city: 'Seattle, USA - Washington 🇺🇸',
 		pos: [47.45358306768111, -122.30824812930476],
