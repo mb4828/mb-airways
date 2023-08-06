@@ -269,8 +269,8 @@ var DESTINATIONS = [
 		tz: 'US/Mountain'
 	},
 	{
-		name: 'Bismark Airport (FAR)',
-		city: 'Bismark, USA - North Dakota 🇺🇸',
+		name: 'Bismarck Airport (FAR)',
+		city: 'Bismarck, USA - North Dakota 🇺🇸',
 		pos: [46.7756896176948, -100.75653659996863],
 		hubs: ['ord'],
 		tz: 'US/Central'
