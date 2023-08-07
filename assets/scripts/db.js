@@ -101,6 +101,13 @@ var DESTINATIONS = [
 		tz: 'Africa/Algiers'
 	},
 	{
+		name: 'Rick Husband Amarillo International Airport (AMA)',
+		city: 'Amarillo, USA - Texas 🇺🇸',
+		pos: [35.219312328500564, -101.70862852371039],
+		hubs: ['iah', 'ord'],
+		tz: 'US/Central'
+	},
+	{
 		name: 'Amsterdam Schiphol Airport (AMS)',
 		city: 'Amsterdam, The Netherlands 🇳🇱',
 		pos: [52.310623851948954, 4.768263669222851],
@@ -237,7 +244,7 @@ var DESTINATIONS = [
 		name: 'Mobile International Airport (BFM)',
 		city: 'Mobile, USA - Alabama 🇺🇸',
 		pos: [30.63023600345301, -88.07275618205335],
-		hubs: ['ord'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -272,7 +279,7 @@ var DESTINATIONS = [
 		name: 'Bismarck Airport (BIS)',
 		city: 'Bismarck, USA - North Dakota 🇺🇸',
 		pos: [46.7756896176948, -100.75653659996863],
-		hubs: ['ord'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -349,7 +356,7 @@ var DESTINATIONS = [
 		name: 'Chattanooga Metropolitan Airport (CHA)',
 		city: 'Chattanooga, USA - Tennessee 🇺🇸',
 		pos: [35.03692109359861, -85.20001532837085],
-		hubs: ['ord'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -412,7 +419,7 @@ var DESTINATIONS = [
 		name: 'West Virginia International Yeager Airport (CRW)',
 		city: 'Charleston, USA - West Virginia 🇺🇸',
 		pos: [38.37143955636435, -81.59352849463419],
-		hubs: ['ord'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -531,7 +538,7 @@ var DESTINATIONS = [
 		name: 'Eagle County Regional Airport (EGE)',
 		city: 'Vail, USA - Colorado 🇺🇸',
 		pos: [39.64211199138697, -106.91683817073384],
-		hubs: ['ord'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Mountain'
 	},
 	{
@@ -643,7 +650,7 @@ var DESTINATIONS = [
 		name: 'Spokane International Airport (GEG)',
 		city: 'Spokane, USA - Washington 🇺🇸',
 		pos: [47.62118457654647, -117.53338283178057],
-		hubs: ['ord'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -713,7 +720,7 @@ var DESTINATIONS = [
 		name: 'Huntsville International Airport (HSV)',
 		city: 'Huntsville, USA - Alabama 🇺🇸',
 		pos: [34.63686815027565, -86.77747147166176],
-		hubs: ['ord'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -937,7 +944,7 @@ var DESTINATIONS = [
 		name: 'Harrisburg International Airport (MDT)',
 		city: 'Harrisburg, USA - Pennsylvania 🇺🇸',
 		pos: [40.19381950779775, -76.75773157625802],
-		hubs: ['ord'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1214,6 +1221,13 @@ var DESTINATIONS = [
 		tz: 'Pacific/Tahiti'
 	},
 	{
+		name: 'Prescott Regional Airport (PRC)',
+		city: 'Prescott, USA - Arizona 🇺🇸',
+		pos: [34.64961150959865, -112.4266704878452],
+		hubs: ['iah'],
+		tz: 'US/Mountain'
+	},
+	{
 		name: 'Vaclav Havel Airport (PRG)',
 		city: 'Prague, Czech Republic 🇨🇿',
 		pos: [50.101859796884526, 14.263234742416973],
@@ -1266,7 +1280,7 @@ var DESTINATIONS = [
 		name: 'Redmond Municipal Airport (RDM)',
 		city: 'Redmond, USA - Oregon 🇺🇸',
 		pos: [44.253250764843884, -121.15877034247316],
-		hubs: ['ewr', 'sfo', 'mia', 'ord'],
+		hubs: ['ewr', 'sfo', 'mia', 'iah', 'ord'],
 		tz: 'US/Pacific'
 	},
 	{
@@ -1310,6 +1324,13 @@ var DESTINATIONS = [
 		pos: [26.533753077135888, -81.75534048896644],
 		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
 		tz: 'US/Eastern'
+	},
+	{
+		name: 'Santa Fe Regional Airport (SAF)',
+		city: 'Santa Fe, USA - New Mexico 🇺🇸',
+		pos: [35.61686038998974, -106.08680606787352],
+		hubs: ['iah'],
+		tz: 'US/Mountain'
 	},
 	{
 		name: 'San Diego International Airport (SAN)',
@@ -1378,7 +1399,7 @@ var DESTINATIONS = [
 		name: 'Springfield-Branson National Airport (SGF)',
 		city: 'Springfield, USA - Missouri 🇺🇸',
 		pos: [37.24436166451638, -93.39127718580991],
-		hubs: ['ord'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Central'
 	},
 	{
@@ -1387,6 +1408,13 @@ var DESTINATIONS = [
 		pos: [31.193096387538194, 121.33369906532243],
 		hubs: ['sfo'],
 		tz: 'Asia/Shanghai'
+	},
+	{
+		name: 'Shreveport Regional Airport (SHV)',
+		city: 'Shreveport, USA - Louisiana 🇺🇸',
+		pos: [32.448798352262486, -93.82920911742895],
+		hubs: ['iah'],
+		tz: 'US/Central'
 	},
 	{
 		name: 'Singapore Changi Airport (SIN)',
@@ -1497,7 +1525,7 @@ var DESTINATIONS = [
 		name: 'Tallahassee International Airport (TLH)',
 		city: 'Tallahassee, USA - Florida 🇺🇸',
 		pos: [30.393888865300536, -84.34502031697967],
-		hubs: ['ord'],
+		hubs: ['iah', 'ord'],
 		tz: 'US/Eastern'
 	},
 	{
@@ -1569,6 +1597,13 @@ var DESTINATIONS = [
 		pos: [45.50475205289375, 12.346683142255474],
 		hubs: ['ewr'],
 		tz: 'Europe/Rome'
+	},
+	{
+		name: 'Northwest Arkansas National Airport (XNA)',
+		city: 'Fayetteville, USA - Arkansas 🇺🇸',
+		pos: [36.27796879497966, -94.30445559926372],
+		hubs: ['iah'],
+		tz: 'US/Central'
 	},
 	{
 		name: 'Edmonton International Airport (YEG)',
