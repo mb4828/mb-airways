@@ -486,6 +486,13 @@ var DESTINATIONS = [
 		tz: 'US/Central'
 	},
 	{
+		name: 'Durango-La Plata County Airport',
+		city: 'Durango, USA - Colorado 🇺🇸',
+		pos: [37.15898803687512, -107.74940648521252],
+		hubs: ['iah'],
+		tz: 'US/Mountain'
+	},
+	{
 		name: 'Des Moines International Airport (DSM)',
 		city: 'Des Moines, USA - Iowa 🇺🇸',
 		pos: [41.53421361181389, -93.65911766543995],
@@ -1408,6 +1415,13 @@ var DESTINATIONS = [
 		pos: [37.24436166451638, -93.39127718580991],
 		hubs: ['iah', 'ord'],
 		tz: 'US/Central'
+	},
+	{
+		name: 'St. George Regional Airport (SGU)',
+		city: 'St. George, USA - Utah 🇺🇸',
+		pos: [37.03262261764, -113.51101298247991],
+		hubs: ['iah'],
+		tz: 'US/Mountain'
 	},
 	{
 		name: 'Shanghai Hongqiao International Airport (SHA)',
