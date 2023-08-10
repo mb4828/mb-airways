@@ -1375,6 +1375,13 @@ var DESTINATIONS = [
 		tz: 'US/Pacific'
 	},
 	{
+		name: 'University Park Airport (SCE)',
+		city: 'State College, USA - Pennsylvania 🇺🇸',
+		pos: [40.84995107118584, -77.84969731760829],
+		hubs: ['ord'],
+		tz: 'US/Eastern'
+	},
+	{
 		name: 'Arturo Merino Benitez Airport (SCL)',
 		city: 'Santiago, Chile 🇨🇱',
 		pos: [-33.38938543980737, -70.79442733965293],
