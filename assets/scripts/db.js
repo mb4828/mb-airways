@@ -1,1708 +1,1708 @@
 var DESTINATIONS = [
-	{
-		code: 'ewr',
-		name: 'Newark Liberty International Airport (EWR)',
-		city: 'Newark, USA - New Jersey 🇺🇸',
-		pos: [40.70340156126785, -74.17330276840164],
-		hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
-		isHub: true,
-		arrRwy: 22,
-		depRwy: 22,
-		tz: 'US/Eastern'
-	},
-	{
-		code: 'sfo',
-		name: 'San Francisco International Airport (SFO)',
-		city: 'San Francisco, USA - California 🇺🇸',
-		pos: [37.62141455145011, -122.37878377625846],
-		hubs: ['ewr', 'iah', 'mia', 'hnl', 'ord'],
-		isHub: true,
-		arrRwy: 28,
-		depRwy: 28,
-		tz: 'US/Pacific'
-	},
-	{
-		code: 'iah',
-		name: 'George Bush Intercontinental Airport (IAH)',
-		city: 'Houston, USA - Texas 🇺🇸',
-		pos: [29.99029394928301, -95.33691148715191],
-		hubs: ['ewr', 'sfo', 'mia', 'hnl', 'ord'],
-		isHub: true,
-		arrRwy: 8,
-		depRwy: 15,
-		tz: 'US/Central'
-	},
-	{
-		code: 'mia',
-		name: 'Miami International Airport (MIA)',
-		city: 'Miami, USA - Florida 🇺🇸',
-		pos: [25.796412980391715, -80.28700802739922],
-		hubs: ['ewr', 'sfo', 'iah', 'hnl', 'ord'],
-		isHub: true,
-		arrRwy: 8,
-		depRwy: 8,
-		tz: 'US/Eastern'
-	},
-	{
-		code: 'hnl',
-		name: 'Daniel K. Inouye International Airport (HNL)',
-		city: 'Honolulu, USA - Hawaii 🇺🇸',
-		pos: [21.319087239318254, -157.9254318902438],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		isHub: true,
-		arrRwy: 8,
-		depRwy: 8,
-		tz: 'US/Hawaii'
-	},
-	{
-		code: 'ord',
-		name: 'O\'Hare International Airport (ORD)',
-		city: 'Chicago, USA - Illinois 🇺🇸',
-		pos: [41.980694394637, -87.90899793532991],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
-		isHub: true,
-		arrRwy: 28,
-		depRwy: 27,
-		tz: 'US/Central'
-	},
-	{
-		name: 'Albuquerque International Airport (ABQ)',
-		city: 'Albuquerque, USA - New Mexico 🇺🇸',
-		pos: [35.04446359549329, -106.61291166771365],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Kotoka International Airport (ACC)',
-		city: 'Accra, Ghana 🇬🇭',
-		pos: [5.606084818402552, -0.1681342315152777],
-		hubs: ['mia'],
-		tz: 'Africa/Accra'
-	},
-	{
-		name: 'Auckland Airport (AKL)',
-		city: 'Auckland, New Zealand 🇳🇿',
-		pos: [-37.008565657401164, 174.7847156217281],
-		hubs: ['hnl'],
-		tz: 'Pacific/Auckland'
-	},
-	{
-		name: 'Albany International Airport (ALB)',
-		city: 'Albany, USA - New York 🇺🇸',
-		pos: [42.74795631522345, -73.80264653273483],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Houari Boumediene Airport (ALG)',
-		city: 'Algiers, Algeria 🇩🇿',
-		pos: [36.69712417026543, 3.20821173847129],
-		hubs: ['mia'],
-		tz: 'Africa/Algiers'
-	},
-	{
-		name: 'Rick Husband Amarillo International Airport (AMA)',
-		city: 'Amarillo, USA - Texas 🇺🇸',
-		pos: [35.219312328500564, -101.70862852371039],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Amsterdam Schiphol Airport (AMS)',
-		city: 'Amsterdam, The Netherlands 🇳🇱',
-		pos: [52.310623851948954, 4.768263669222851],
-		hubs: ['ewr'],
-		tz: 'Europe/Amsterdam'
-	},
-	{
-		name: 'Ted Stevens International Airport (ANC)',
-		city: 'Anchorage, USA - Alaska 🇺🇸',
-		pos: [61.171332648, -149.991162702],
-		hubs: ['ewr', 'sfo', 'iah', 'ord'],
-		tz: 'US/Alaska'
-	},
-	{
-		name: 'V.C. Bird International Airport (ANU)',
-		city: 'Saint John\'s, Antigua and Barbuda 🇦🇬',
-		pos: [17.141264458109006, -61.79075921641097],
-		hubs: ['mia'],
-		tz: 'America/Puerto_Rico'
-	},
-	{
-		name: 'Stockholm Arlanda Airport (ARN)',
-		city: 'Stockholm, Sweden 🇸🇪',
-		pos: [59.64946534644474, 17.93417522058218],
-		hubs: ['ewr'],
-		tz: 'Europe/Stockholm'
-	},
-	{
-		name: 'Aspen/Pitkin County Airport (ASE)',
-		city: 'Aspen, USA - Colorado 🇺🇸',
-		pos: [39.21926437960034, -106.86696149563349],
-		hubs: ['ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Athens International Airport (ATH)',
-		city: 'Athens, Greece 🇬🇷',
-		pos: [37.93572283626069, 23.948437055281335],
-		hubs: ['ewr'],
-		tz: 'Europe/Athens'
-	},
-	{
-		name: 'Hartsfield-Jackson Atlanta International Airport (ATL)',
-		city: 'Atlanta, USA - Georgia 🇺🇸',
-		pos: [33.64083507608079, -84.42787180090849],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Queen Beatrix International Airport (AUA)',
-		city: 'Oranjestad, Aruba 🇦🇼',
-		pos: [12.502909500135036, -70.00820204601975],
-		hubs: ['mia'],
-		tz: 'America/Puerto_Rico'
-	},
-	{
-		name: 'Austin-Bergstrom International Airport (AUS)',
-		city: 'Austin, USA - Texas 🇺🇸',
-		pos: [30.19868847903938, -97.66571921787173],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'El Dorado International Airport (BOG)',
-		city: 'Bogota, Colombia 🇨🇴',
-		pos: [4.701527767834316, -74.14601141660555],
-		hubs: ['iah'],
-		tz: 'America/Bogota'
-	},
-	{
-		name: 'Boise Airport (BOI)',
-		city: 'Boise, USA - Idaho 🇺🇸',
-		pos: [43.56613372250894, -116.22244467737012],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Chhatrapati Shivaji Maharaj International Airport (BOM)',
-		city: 'Mumbai, India 🇮🇳',
-		pos: [19.090096216386055, 72.86275505178068],
-		hubs: ['ord'],
-		tz: 'Asia/Kolkata'
-	},
-	{
-		name: 'Boston Logan International Airport (BOS)',
-		city: 'Boston, USA - Massachusetts 🇺🇸',
-		pos: [42.365961658704904, -71.00960315045923],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Barcelona-El Prat Airport (BCN)',
-		city: 'Barcelona, Spain 🇪🇸',
-		pos: [41.29799278042036, 2.0833798949812197],
-		hubs: ['ewr'],
-		tz: 'Europe/Madrid'
-	},
-	{
-		name: 'L.F. Wade International Airport (BDA)',
-		city: 'Hamilton, Bermuda 🇧🇲',
-		pos: [32.359855537423016, -64.70471205965694],
-		hubs: ['ewr', 'mia'],
-		tz: 'Atlantic/Bermuda'
-	},
-	{
-		name: 'Berlin Branderburg Airport (BER)',
-		city: 'Berlin, Germany 🇩🇪',
-		pos: [52.36421598862855, 13.509032947271669],
-		hubs: ['ewr'],
-		tz: 'Europe/Berlin'
-	},
-	{
-		name: 'Nashville International Airport (BNA)',
-		city: 'Nashville, USA - Tennessee 🇺🇸',
-		pos: [36.126169659792566, -86.67743567520559],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Bradley International Airport (BDL)',
-		city: 'Hartford, USA - Connecticut 🇺🇸',
-		pos: [41.938985209387795, -72.68590265544461],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Western Nebraska-Scottsbluff Regional Airport (BFF)',
-		city: 'Scottsbluff, USA - Nebraska 🇺🇸',
-		pos: [41.87180880453483, -103.5942995049976],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Mobile International Airport (BFM)',
-		city: 'Mobile, USA - Alabama 🇺🇸',
-		pos: [30.63023600345301, -88.07275618205335],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Grantley Adams International Airport (BGI)',
-		city: 'Christ Church, Barbados 🇧🇧',
-		pos: [13.080035627493604, -59.48774184440369],
-		hubs: ['mia'],
-		tz: 'America/Puerto_Rico'
-	},
-	{
-		name: 'Bangor International Airport (BGR)',
-		city: 'Bangor, USA - Maine 🇺🇸',
-		pos: [44.80693350003793, -68.81848626782975],
-		hubs: ['ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Birmingham-Shuttlesworth International Airport (BHM)',
-		city: 'Birmingham, USA - Alabama 🇺🇸',
-		pos: [33.5624358209084, -86.75405090040849],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Billings-Logan International Airport (BIL)',
-		city: 'Billings, USA - Montana 🇺🇸',
-		pos: [45.80363522704425, -108.53800003259418],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Bismarck Airport (BIS)',
-		city: 'Bismarck, USA - North Dakota 🇺🇸',
-		pos: [46.7756896176948, -100.75653659996863],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Brisbane Airport (BNE)',
-		city: 'Brisbane, Australia 🇦🇺',
-		pos: [-27.39418580574182, 153.1218517553009],
-		hubs: ['hnl'],
-		tz: 'Australia/Brisbane'
-	},
-	{
-		name: 'Brussels Airport (BRU)',
-		city: 'Brussels, Belgium 🇧🇪',
-		pos: [50.90105310968497, 4.485595855926779],
-		hubs: ['ewr'],
-		tz: 'Europe/Brussels'
-	},
-	{
-		name: 'Brasília International Airport (BSB)',
-		city: 'Brasília, Brazil 🇧🇷',
-		pos: [-15.869654340657481, -47.91706316214675],
-		hubs: ['iah'],
-		tz: 'Brazil/East'
-	},
-	{
-		name: 'Burlington International Airport (BTV)',
-		city: 'Burlington, USA - Vermont 🇺🇸',
-		pos: [44.470755128608445, -73.1516788038435],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Buffalo Niagara International Airport (BUF)',
-		city: 'Buffalo, USA - New York 🇺🇸',
-		pos: [42.93973729622188, -78.72948524437224],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Hollywood Burbank Airport (BUR)',
-		city: 'Burbank, USA - California 🇺🇸',
-		pos: [34.19832105435531, -118.35736068695542],
-		hubs: ['sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Baltimore/Washington International Airport (BWI)',
-		city: 'Baltimore, USA - Maryland 🇺🇸',
-		pos: [39.177536943139835, -76.66830640614698],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Bozeman Yellowstone International Airport (BZN)',
-		city: 'Bozeman, USA - Montana 🇺🇸',
-		pos: [45.77835940397085, -111.16142041964636],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Akron-Canton Airport (CAK)',
-		city: 'Akron, USA - Ohio 🇺🇸',
-		pos: [40.91539520193488, -81.4415358425859],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Paris Charles de Gaulle Airport (CDG)',
-		city: 'Paris, France 🇫🇷',
-		pos: [49.01088754570143, 2.5481856293293754],
-		hubs: ['ewr', 'sfo'],
-		tz: 'Europe/Paris'
-	},
-	{
-		name: 'Chattanooga Metropolitan Airport (CHA)',
-		city: 'Chattanooga, USA - Tennessee 🇺🇸',
-		pos: [35.03692109359861, -85.20001532837085],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Charleston International Airport (CHS)',
-		city: 'Charleston, USA - South Carolina 🇺🇸',
-		pos: [32.89249643, -80.037666516],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Eastern Iowa Airport (CID)',
-		city: 'Cedar Rapids, USA - Iowa 🇺🇸',
-		pos: [41.88633815541166, -91.70700758853724],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Cleveland Hopkins International Airport (CLE)',
-		city: 'Cleveland, USA - Ohio 🇺🇸',
-		pos: [41.405886997309366, -81.85371669778253],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Charlotte Douglas International Airport (CLT)',
-		city: 'Charlotte, USA - North Carolina 🇺🇸',
-		pos: [35.214358753004724, -80.94714294071665],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'John Glenn Columbus International Airport (CMH)',
-		city: 'Columbus, USA - Ohio 🇺🇸',
-		pos: [39.99990700422163, -82.88685483700165],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Mohammed V International Airport (CMN)',
-		city: 'Casablanca, Morocco 🇲🇦',
-		pos: [33.370015580895306, -7.5857562888435845],
-		hubs: ['mia'],
-		tz: 'Africa/Casablanca'
-	},
-	{
-		name: 'Colorado Springs Airport (COS)',
-		city: 'Colorado Springs, USA - Colorado 🇺🇸',
-		pos: [38.80179559142115, -104.70258244384314],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Cape Town International Airport (CPT)',
-		city: 'Cape Town, South Africa 🇿🇦',
-		pos: [-33.971498570998, 18.60206364117647],
-		hubs: ['mia'],
-		tz: 'Africa/Johannesburg'
-	},
-	{
-		name: 'West Virginia International Yeager Airport (CRW)',
-		city: 'Charleston, USA - West Virginia 🇺🇸',
-		pos: [38.37143955636435, -81.59352849463419],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Cancún International Airport (CUN)',
-		city: 'Cancún, Mexico 🇲🇽',
-		pos: [21.04198345163572, -86.87396332895656],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'America/Cancun'
-	},
-	{
-		name: 'Curaçao International Airport (CUR)',
-		city: 'Willemstad, Curaçao 🇨🇼',
-		pos: [12.189339619252113, -68.96166422979832],
-		hubs: ['mia'],
-		tz: 'America/Puerto_Rico'
-	},
-	{
-		name: 'Cincinnati/Northern Kentucky International Airport (CVG)',
-		city: 'Cincinnati, USA - Ohio 🇺🇸',
-		pos: [39.05091119818685, -84.66749507901761],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Cassidy International Airport (CXI)',
-		city: 'Kiritimati, Kiribati 🇰🇮',
-		pos: [1.9867631645901074, -157.35021966168168],
-		hubs: ['hnl'],
-		tz: 'Pacific/Kiritimati'
-	},
-	{
-		name: 'Daytona Beach International Airport (DAB)',
-		city: 'Daytona Beach, USA - Florida 🇺🇸',
-		pos: [29.18042531670668, -81.05629836579335],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Indira Gandhi International Airport (DEL)',
-		city: 'New Delhi, India 🇮🇳',
-		pos: [28.556463675916227, 77.10008650432476],
-		hubs: ['sfo', 'ord'],
-		tz: 'Asia/Kolkata'
-	},
-	{
-		name: 'Denver International Airport (DEN)',
-		city: 'Denver, USA - Colorado 🇺🇸',
-		pos: [39.856787796502296, -104.67360889044873],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Dallas/Fort Worth International Airport (DFW)',
-		city: 'Dallas, USA - Texas 🇺🇸',
-		pos: [32.90175623187377, -97.04011304308536],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Duluth International Airport (DLH)',
-		city: 'Duluth, USA - Minnesota 🇺🇸',
-		pos: [46.83915195495459, -92.18001201632043],
-		hubs: ['ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Durango-La Plata County Airport',
-		city: 'Durango, USA - Colorado 🇺🇸',
-		pos: [37.15898803687512, -107.74940648521252],
-		hubs: ['iah'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Des Moines International Airport (DSM)',
-		city: 'Des Moines, USA - Iowa 🇺🇸',
-		pos: [41.53421361181389, -93.65911766543995],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Blaise Diagne International Airport (DSS)',
-		city: 'Ndiass, Senegal 🇸🇳',
-		pos: [14.671072249456303, -17.06737968914397],
-		hubs: ['mia'],
-		tz: 'GMT'
-	},
-	{
-		name: 'Detroit Metropolitan Wayne County Airport (DTW)',
-		city: 'Detroit, USA - Michigan 🇺🇸',
-		pos: [42.21640799753565, -83.35532128673535],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Dublin Airport (DUB)',
-		city: 'Dublin, Ireland 🇮🇪',
-		pos: [53.42641611587296, -6.249684496130292],
-		hubs: ['ewr'],
-		tz: 'Europe/Dublin'
-	},
-	{
-		name: 'Dubai International Airport (DXB)',
-		city: 'Dubai, United Arab Emirates 🇦🇪',
-		pos: [25.25309661391826, 55.36567275706557],
-		hubs: ['sfo', 'ord'],
-		tz: 'Asia/Dubai'
-	},
-	{
-		name: 'Northwest Florida Beaches International Airport (ECP)',
-		city: 'Panama City, USA - Florida 🇺🇸',
-		pos: [30.355281862622725, -85.7980485671208],
-		hubs: ['ewr', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Edinburgh Airport (EDI)',
-		city: 'Edinburgh, United Kingdom 🇬🇧',
-		pos: [55.95077897347942, -3.3614102862399537],
-		hubs: ['ewr'],
-		tz: 'Europe/London'
-	},
-	{
-		name: 'Eagle County Regional Airport (EGE)',
-		city: 'Vail, USA - Colorado 🇺🇸',
-		pos: [39.64211199138697, -106.91683817073384],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'El Paso International Airport (ELP)',
-		city: 'El Paso, USA - Texas 🇺🇸',
-		pos: [31.80542655947106, -106.38241304461272],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Eugene Airport (EUG)',
-		city: 'Eugene, USA - Oregon 🇺🇸',
-		pos: [44.12185809726057, -123.21588957302129],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Evansville Regional Airport (EVV)',
-		city: 'Evansville, USA - Indiana 🇺🇸',
-		pos: [38.04311058839397, -87.52691791114265],
-		hubs: ['ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Ezeiza International Airport (EZE)',
-		city: 'Buenos Aires, Argentina 🇦🇷',
-		pos: [-34.81472221811849, -58.5349142696793],
-		hubs: ['iah'],
-		tz: 'America/Argentina/Buenos_Aires'
-	},
-	{
-		name: 'Fairbanks International Airport (FAI)',
-		city: 'Fairbanks, USA - Alaska 🇺🇸',
-		pos: [64.8164391043826, -147.8635168019232],
-		hubs: ['ord'],
-		tz: 'US/Alaska'
-	},
-	{
-		name: 'Hector International Airport (FAR)',
-		city: 'Fargo, USA - North Dakota 🇺🇸',
-		pos: [46.92181462122193, -96.81670671316597],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Fresno Yosemite International Airport (FAT)',
-		city: 'Fresno, USA - California 🇺🇸',
-		pos: [36.77582349137883, -119.7182263207816],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Glacier Park International Airport (FCA)',
-		city: 'Kalispell, USA - Montana 🇺🇸',
-		pos: [48.30775754813589, -114.25254443066616],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Leonardo da Vinci International Airport (FCO)',
-		city: 'Rome, Italy 🇮🇹',
-		pos: [41.80413085802929, 12.251849849230378],
-		hubs: ['ewr'],
-		tz: 'Europe/Rome'
-	},
-	{
-		name: 'Fort Lauderdale-Hollywood International Airport (FLL)',
-		city: 'Fort Lauderdale, USA - Florida 🇺🇸',
-		pos: [26.074330752581144, -80.1506451175699],
-		hubs: ['ewr', 'sfo', 'iah', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Grand Bahama Airport (FPO)',
-		city: 'Freeport, Bahamas 🇧🇸',
-		pos: [26.54776858081397, -78.70253123123514],
-		hubs: ['mia'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Frankfurt Airport (FRA)',
-		city: 'Frankfurt, Germany 🇩🇪',
-		pos: [50.038235470253035, 8.562452176837837],
-		hubs: ['ewr'],
-		tz: 'Europe/Berlin'
-	},
-	{
-		name: 'Sioux Falls Regional Airport (FSD)',
-		city: 'Sioux Falls, USA - South Dakota 🇺🇸',
-		pos: [43.58285310955137, -96.74018491546143],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Fort Wayne International Airport (FWA)',
-		city: 'Fort Wayne, USA - Indiana 🇺🇸',
-		pos: [40.97737427230013, -85.19561777847646],
-		hubs: ['ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Miguel Hidalgo y Costilla International Airport (GDL)',
-		city: 'Guadalajara, Mexico 🇲🇽',
-		pos: [20.52589580006699, -103.30765718888681],
-		hubs: ['iah', 'ord'],
-		tz: 'America/Mexico_City'
-	},
-	{
-		name: 'Spokane International Airport (GEG)',
-		city: 'Spokane, USA - Washington 🇺🇸',
-		pos: [47.62118457654647, -117.53338283178057],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Rio de Janeiro/Galeao International Airport (GIG)',
-		city: 'Rio di Janeiro, Brazil 🇧🇷',
-		pos: [-22.804592230082836, -43.25675808978346],
-		hubs: ['iah'],
-		tz: 'Brazil/East'
-	},
-	{
-		name: 'Gerald R. Ford International Airport (GRR)',
-		city: 'Grand Rapids, USA - Michigan 🇺🇸',
-		pos: [42.8824264791552, -85.52425954433107],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'São Paulo/Guarulhos International Airport (GRU)',
-		city: 'São Paulo, Brazil 🇧🇷',
-		pos: [-23.4301397120531, -46.47291429752642],
-		hubs: ['iah'],
-		tz: 'Brazil/East'
-	},
-	{
-		name: 'Piedmont Triad International Airport (GSO)',
-		city: 'Greensboro, USA - North Carolina 🇺🇸',
-		pos: [36.10435840414433, -79.935191232335],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Antonio B. Won Pat International Airport (GUM)',
-		city: 'Guam 🇬🇺, US Territories',
-		pos: [13.4863791493778, 144.80040397596647],
-		hubs: ['hnl'],
-		tz: 'Pacific/Guam'
-	},
-	{
-		name: 'Jose Marti International Airport (HAV)',
-		city: 'Havana, Cuba 🇨🇺',
-		pos: [22.98666272, -82.405331712],
-		hubs: ['mia'],
-		tz: 'Cuba'
-	},
-	{
-		name: 'Helsinki Airport (HEL)',
-		city: 'Helsinki, Finland 🇫🇮',
-		pos: [60.31828039473722, 24.94972532743364],
-		hubs: ['ewr'],
-		tz: 'Europe/Helsinki'
-	},
-	{
-		name: 'Hong Kong International Airport (HKG)',
-		city: 'Hong Kong, China 🇨🇳',
-		pos: [22.308602611679753, 113.91835201005935],
-		hubs: ['sfo', 'ord'],
-		tz: 'Asia/Hong_Kong'
-	},
-	{
-		name: 'Tokyo Haneda International Airport (HND)',
-		city: 'Tokyo, Japan 🇯🇵',
-		pos: [35.54933206852969, 139.77980640999556],
-		hubs: ['ord'],
-		tz: 'Asia/Tokyo'
-	},
-	{
-		name: 'Huntsville International Airport (HSV)',
-		city: 'Huntsville, USA - Alabama 🇺🇸',
-		pos: [34.63686815027565, -86.77747147166176],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Dulles International Airport (IAD)',
-		city: 'Washington, USA - D.C. 🇺🇸',
-		pos: [38.95327013665701, -77.4565514890331],
-		hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Incheon International Airport (ICN)',
-		city: 'Seoul, South Korea 🇰🇷',
-		pos: [37.460632804087396, 126.44057390291141],
-		hubs: ['sfo'],
-		tz: 'Asia/Seoul'
-	},
-	{
-		name: 'Dwight D. Eisenhower Airport (ICT)',
-		city: 'Wichita, USA - Kansas 🇺🇸',
-		pos: [37.65083588295067, -97.42868807453723],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Wilmington International Airport (ILM)',
-		city: 'Wilmington, USA - North Carolina 🇺🇸',
-		pos: [34.26623590568664, -77.90979573247422],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Indianapolis International Airport (IND)',
-		city: 'Indianapolis, USA - Indiana 🇺🇸',
-		pos: [39.716991323244, -86.29558447337403],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Hilo International Airport (ITO)',
-		city: 'Hilo, USA - Hawaii 🇺🇸',
-		pos: [19.71828308321948, -155.04165378827003],
-		hubs: ['hnl'],
-		tz: 'US/Hawaii'
-	},
-	{
-		name: 'Jackson Hole Airport (JAC)',
-		city: 'Jackson Hole, USA - Wyoming 🇺🇸',
-		pos: [43.60337470927696, -110.73625468784289],
-		hubs: ['sfo', 'iah', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Jackson-Medgar Wiley Evers International Airport (JAN)',
-		city: 'Jackson, USA - Mississippi 🇺🇸',
-		pos: [32.31234643525699, -90.07632339635566],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Jacksonville International Airport (JAX)',
-		city: 'Jacksonville, USA - Florida 🇺🇸',
-		pos: [30.4940250575088, -81.68793680243796],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'John F. Kennedy International Airport (JFK)',
-		city: 'New York, USA - New York 🇺🇸',
-		pos: [40.64189712324801, -73.7779237593459],
-		hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'O.R. Tambo International Airport (JNB)',
-		city: 'Johannesburg, South Africa 🇿🇦',
-		pos: [-26.136691994110528, 28.241156617041295],
-		hubs: ['mia'],
-		tz: 'Africa/Johannesburg'
-	},
-	{
-		name: 'Juneau International Airport (JNU)',
-		city: 'Juneau, USA - Alaska 🇺🇸',
-		pos: [58.358352647857295, -134.58387162073254],
-		hubs: ['ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Keflavík International Airport (KEF)',
-		city: 'Reykjavík, Iceland 🇮🇸',
-		pos: [63.98070701155434, -22.627620001362224],
-		hubs: ['ewr'],
-		tz: 'Iceland'
-	},
-	{
-		name: 'Kansai International Airport (KIX)',
-		city: 'Osaka, Japan 🇯🇵',
-		pos: [34.43207316594882, 135.23039389643088],
-		hubs: ['sfo'],
-		tz: 'Asia/Tokyo'
-	},
-	{
-		name: 'Kona International Airport (KOA)',
-		city: 'Kailua-Kona, USA - Hawaii 🇺🇸',
-		pos: [19.737769862987626, -156.0428956900814],
-		hubs: ['sfo', 'hnl'],
-		tz: 'US/Hawaii'
-	},
-	{
-		name: 'Harry Reid International Airport (LAS)',
-		city: 'Las Vegas, USA - Nevada 🇺🇸',
-		pos: [36.08590149456017, -115.15072229119573],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Los Angeles International Airport (LAX)',
-		city: 'Los Angeles, USA - California 🇺🇸',
-		pos: [33.9412952817257, -118.40872312135349],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Blue Grass Airport (LEX)',
-		city: 'Lexington, USA - Kentucky 🇺🇸',
-		pos: [38.03779528003609, -84.60259757335659],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Long Beach Airport (LGB)',
-		city: 'Long Beach, USA - California 🇺🇸',
-		pos: [33.81616877737306, -118.1511592426201],
-		hubs: ['sfo', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Heathrow Airport (LHR)',
-		city: 'London, United Kingdom 🇬🇧',
-		pos: [51.47058336357465, -0.4544242756733526],
-		hubs: ['ewr', 'sfo'],
-		tz: 'Europe/London'
-	},
-	{
-		name: 'Lihue Airport (LIH)',
-		city: 'Lihue, USA - Hawaii 🇺🇸',
-		pos: [21.978913933768247, -159.34382035743394],
-		hubs: ['hnl'],
-		tz: 'US/Hawaii'
-	},
-	{
-		name: 'Jorge Chavez International Airport (LIM)',
-		city: 'Lima, Peru 🇵🇪',
-		pos: [-12.023590851622739, -77.11199313107029],
-		hubs: ['iah'],
-		tz: 'America/Lima'
-	},
-	{
-		name: 'Humberto Delgado Airport (LIS)',
-		city: 'Lisbon, Portugal 🇵🇹',
-		pos: [38.77616204030518, -9.135280903021002],
-		hubs: ['ewr'],
-		tz: 'Europe/Lisbon'
-	},
-	{
-		name: 'Clinton National Airport (LIT)',
-		city: 'Little Rock, USA - Arkansas 🇺🇸',
-		pos: [34.73014934857, -92.219905134052],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Lanai Airport (LNY)',
-		city: 'Lanai City, USA - Hawaii 🇺🇸',
-		pos: [20.79129049571412, -156.95037799977516],
-		hubs: ['hnl'],
-		tz: 'US/Hawaii'
-	},
-	{
-		name: 'Murtala Muhammed International Airport (LOS)',
-		city: 'Lagos, Nigeria 🇳🇬',
-		pos: [6.582042315799838, 3.3210704254376475],
-		hubs: ['mia'],
-		tz: 'Africa/Lagos'
-	},
-	{
-		name: 'Adolfo Suarez Madrid-Barajas Airport (MAD)',
-		city: 'Madrid, Spain 🇪🇸',
-		pos: [40.49847903162269, -3.5676089311550063],
-		hubs: ['ewr'],
-		tz: 'Europe/Madrid'
-	},
-	{
-		name: 'Midland International Air & Space Port (MAF)',
-		city: 'Midland, USA - Texas 🇺🇸',
-		pos: [31.942135201414416, -102.20496125514411],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Sangster International Airport (MBJ)',
-		city: 'Montego Bay, Jamaica 🇯🇲',
-		pos: [18.502391775768107, -77.91451690151644],
-		hubs: ['ewr', 'mia'],
-		tz: 'America/Jamaica'
-	},
-	{
-		name: 'Kansas City International Airport (MCI)',
-		city: 'Kansas City, USA - Missouri 🇺🇸',
-		pos: [39.30346588697873, -94.70907396438118],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Orlando International Airport (MCO)',
-		city: 'Orlando, USA - Florida 🇺🇸',
-		pos: [28.418822273035058, -81.30431680312665],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Harrisburg International Airport (MDT)',
-		city: 'Harrisburg, USA - Pennsylvania 🇺🇸',
-		pos: [40.19381950779775, -76.75773157625802],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Melbourne Airport (MEL)',
-		city: 'Melbourne, Australia 🇦🇺',
-		pos: [-37.670866092849224, 144.84387908076323],
-		hubs: ['hnl'],
-		tz: 'Australia/Melbourne'
-	},
-	{
-		name: 'Memphis International Airport (MEM)',
-		city: 'Memphis, USA - Tennessee 🇺🇸',
-		pos: [35.041980059680945, -89.97921581534257],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Mexico City International Airport (MEX)',
-		city: 'Mexico City, Mexico 🇲🇽',
-		pos: [19.43624818319543, -99.07194048906919],
-		hubs: ['ewr', 'sfo', 'iah', 'ord'],
-		tz: 'America/Mexico_City'
-	},
-	{
-		name: 'McAllen International Airport (MFE)',
-		city: 'McAllen, USA - Texas 🇺🇸',
-		pos: [26.176721835265095, -98.2393465159593],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Rogue Valley International Medford Airport (MFR)',
-		city: 'Medford, USA - Oregon 🇺🇸',
-		pos: [42.369094888174644, -122.87312247409928],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Manchester-Boston Regional Airport (MHT)',
-		city: 'Manchester, USA - New Hampshire 🇺🇸',
-		pos: [42.9297832621787, -71.43505763213719],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'General Mitchell International Airport (MKE)',
-		city: 'Milwaukee, USA - Wisconsin 🇺🇸',
-		pos: [42.94783578343849, -87.89664603166004],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Ninoy Aquino International Airport (MNL)',
-		city: 'Manila, Philippines 🇵🇭',
-		pos: [14.505164646, 121.01833326],
-		hubs: ['hnl'],
-		tz: 'Asia/Manila'
-	},
-	{
-		name: 'Dane County Regional Airport (MSN)',
-		city: 'Madison, USA - Wisconsin 🇺🇸',
-		pos: [43.139089365511055, -89.33638061548804],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Missoula Montana Airport (MSO)',
-		city: 'Missoula, USA - Montana 🇺🇸',
-		pos: [46.91876701016805, -114.08363087487372],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Minneapolis-Saint Paul International Airport (MSP)',
-		city: 'Minneapolis, USA - Minnesota 🇺🇸',
-		pos: [44.88624650092833, -93.22250729555996],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Louis Armstrong New Orleans International Airport (MSY)',
-		city: 'New Orleans, USA - Louisiana 🇺🇸',
-		pos: [29.991146272960744, -90.25862783681688],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Montrose Regional Airport (MTJ)',
-		city: 'Montrose, USA - Colorado 🇺🇸',
-		pos: [38.50095072330021, -107.89509828021419],
-		hubs: ['ewr', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Monterrey International (MTY)',
-		city: 'Monterrey, Mexico 🇲🇽',
-		pos: [25.777322304453758, -100.11456996208241],
-		hubs: ['iah', 'ord'],
-		tz: 'America/Mexico_City'
-	},
-	{
-		name: 'Munich International Airport (MUC)',
-		city: 'Munich, Germany 🇩🇪',
-		pos: [48.35101828934641, 11.776488342315458],
-		hubs: ['ewr'],
-		tz: 'Europe/Berlin'
-	},
-	{
-		name: 'Malpensa Airport (MXP)',
-		city: 'Milan, Italy 🇮🇹',
-		pos: [45.63003246889486, 8.725487782741581],
-		hubs: ['ewr'],
-		tz: 'Europe/Rome'
-	},
-	{
-		name: 'Myrtle Beach International Airport (MYR)',
-		city: 'Myrtle Beach, USA - South Carolina 🇺🇸',
-		pos: [33.68213937915149, -78.92800159200796],
-		hubs: ['ewr', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Nadi Airport (NAN)',
-		city: 'Nadi, Fiji 🇫🇯',
-		pos: [-17.75183452525651, 177.45078438213463],
-		hubs: ['hnl'],
-		tz: 'Pacific/Fiji'
-	},
-	{
-		name: 'Lynden Pindling International Airport (NAS)',
-		city: 'Nassau, Bahamas 🇧🇸',
-		pos: [25.04400654513227, -77.46580015121297],
-		hubs: ['ewr', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Chubu Centrair International Airport (NGO)',
-		city: 'Nagoya, Japan 🇯🇵',
-		pos: [34.8574416073902, 136.81089517130727],
-		hubs: ['sfo'],
-		tz: 'Asia/Tokyo'
-	},
-	{
-		name: 'Narita International Airport (NRT)',
-		city: 'Tokyo, Japan 🇯🇵',
-		pos: [35.77226493717075, 140.39293589386335],
-		hubs: ['ewr', 'sfo'],
-		tz: 'Asia/Tokyo'
-	},
-	{
-		name: 'Oakland International Airport (OAK)',
-		city: 'Oakland, USA - California 🇺🇸',
-		pos: [37.71148324911222, -122.2193824513291],
-		hubs: ['ewr', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Kahului Airport (OGG)',
-		city: 'Kahului, USA - Hawaii 🇺🇸',
-		pos: [20.894645227300344, -156.43600538629138],
-		hubs: ['sfo', 'hnl'],
-		tz: 'US/Hawaii'
-	},
-	{
-		name: 'Will Rogers Airport (OKC)',
-		city: 'Oklahoma City, USA - Oklahoma 🇺🇸',
-		pos: [35.39319572984369, -97.60050445075717],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Eppley Airfield (OMA)',
-		city: 'Omaha, USA - Nebraska 🇺🇸',
-		pos: [41.30224308640403, -95.89469287800654],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Ontario International Airport (ONT)',
-		city: 'Ontario, USA - California 🇺🇸',
-		pos: [34.05596214250547, -117.59904106790037],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Norfolk International Airport (ORF)',
-		city: 'Norfolk, USA - Virginia 🇺🇸',
-		pos: [36.89570942043663, -76.20000537338909],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Oslo Airport (OSL)',
-		city: 'Oslo, Norway 🇳🇴',
-		pos: [60.197550081971016, 11.100372283252447],
-		hubs: ['ewr'],
-		tz: 'Europe/Oslo'
-	},
-	{
-		name: 'Palm Beach International Airport (PBI)',
-		city: 'West Palm Beach, USA - Florida 🇺🇸',
-		pos: [26.685785827360075, -80.09283796017972],
-		hubs: ['ewr', 'sfo', 'iah', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Portland International Airport (PDX)',
-		city: 'Portland, USA - Oregon 🇺🇸',
-		pos: [45.59024957185743, -122.59483674121826],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Beijing Capital International Airport (PEK)',
-		city: 'Beijing, China 🇨🇳',
-		pos: [40.0801853355692, 116.60315498033326],
-		hubs: ['sfo'],
-		tz: 'Asia/Shanghai'
-	},
-	{
-		name: 'Philadelphia International Airport (PHL)',
-		city: 'Philadelphia, USA - Pennsylvania 🇺🇸',
-		pos: [39.87312718764114, -75.24362441975858],
-		hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Phoenix Sky Harbor International Airport (PHX)',
-		city: 'Phoenix, USA - Arizona 🇺🇸',
-		pos: [33.43582170243552, -112.0101240396323],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Pittsburgh International Airport (PIT)',
-		city: 'Pittsburgh, USA - Pennsylvania 🇺🇸',
-		pos: [40.49183102751426, -80.23501945402671],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Providenciales International Airport (PLS)',
-		city: 'Providenciales, Turks and Caicos Islands 🇹🇨',
-		pos: [21.776326359168177, -72.27128035731569],
-		hubs: ['mia'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Pensacola International Airport (PNS)',
-		city: 'Pensacola, USA - Florida 🇺🇸',
-		pos: [30.473625313477296, -87.18674410562464],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Piarco International Airport (POS)',
-		city: 'Piarco, Trinidad and Tobago 🇹🇹',
-		pos: [10.597664754910571, -61.33951627377069],
-		hubs: ['mia'],
-		tz: 'America/Puerto_Rico'
-	},
-	{
-		name: 'Pago Pago International Airport (PPG)',
-		city: 'Pago Pago, American Samoa 🇦🇸, US Territories',
-		pos: [-14.328529463205866, -170.71318872964144],
-		hubs: ['hnl'],
-		tz: 'Pacific/Pago_Pago'
-	},
-	{
-		name: 'Fa\'a\'a International Airport (PPT)',
-		city: 'Tahiti, French Polynesia 🇵🇫',
-		pos: [-17.55960524555043, -149.61021228790472],
-		hubs: ['hnl'],
-		tz: 'Pacific/Tahiti'
-	},
-	{
-		name: 'Prescott Regional Airport (PRC)',
-		city: 'Prescott, USA - Arizona 🇺🇸',
-		pos: [34.64961150959865, -112.4266704878452],
-		hubs: ['iah'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Vaclav Havel Airport (PRG)',
-		city: 'Prague, Czech Republic 🇨🇿',
-		pos: [50.101859796884526, 14.263234742416973],
-		hubs: ['ewr'],
-		tz: 'Europe/Prague'
-	},
-	{
-		name: 'Palm Springs International Airport (PSP)',
-		city: 'Palm Springs, USA - California 🇺🇸',
-		pos: [33.830568637238926, -116.50696100322521],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Punta Cana International Airport (PUJ)',
-		city: 'Punta Cana, Dominican Republic 🇩🇴',
-		pos: [18.563260946101263, -68.36852528802461],
-		hubs: ['mia'],
-		tz: 'America/Puerto_Rico'
-	},
-	{
-		name: 'T.F. Green International Airport (PVD)',
-		city: 'Providence, USA - Rhode Island 🇺🇸',
-		pos: [41.723507528600045, -71.42691301444177],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Licenciado Gustavo Diaz Ordaz International (PVR)',
-		city: 'Puerto Vallarta, Mexico 🇲🇽',
-		pos: [20.68049831115806, -105.2524298465564],
-		hubs: ['iah', 'ord'],
-		tz: 'America/Mexico_City'
-	},
-	{
-		name: 'Portland International Jetport (PWM)',
-		city: 'Portland, USA - Maine 🇺🇸',
-		pos: [43.64570214332969, -70.31004072274055],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Rapid City Regional Airport (RAP)',
-		city: 'Rapid City, USA - South Dakota 🇺🇸',
-		pos: [44.038372066425026, -103.06043047128412],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Redmond Municipal Airport (RDM)',
-		city: 'Redmond, USA - Oregon 🇺🇸',
-		pos: [44.253250764843884, -121.15877034247316],
-		hubs: ['ewr', 'sfo', 'mia', 'iah', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Raleigh-Durham International Airport (RDU)',
-		city: 'Raleigh, USA - North Carolina 🇺🇸',
-		pos: [35.88007898015302, -78.78797484463837],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Richmond International Airport (RIC)',
-		city: 'Richmond, USA - Virginia 🇺🇸',
-		pos: [37.50677505510212, -77.32084242371478],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Reno-Tahoe International Airport (RNO)',
-		city: 'Reno, USA - Nevada 🇺🇸',
-		pos: [39.49964863013703, -119.76805218683198],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Greater Rochester International Airport (ROC)',
-		city: 'Rochester, USA - New York 🇺🇸',
-		pos: [43.12253070204068, -77.6666258473552],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Rochester International Airport (RST)',
-		city: 'Rochester, USA - Minnesota 🇺🇸',
-		pos: [43.90993994364452, -92.49152310388355],
-		hubs: ['ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Southwest Florida International Airport (RSW)',
-		city: 'Fort Myers, USA - Florida 🇺🇸',
-		pos: [26.533753077135888, -81.75534048896644],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Santa Fe Regional Airport (SAF)',
-		city: 'Santa Fe, USA - New Mexico 🇺🇸',
-		pos: [35.61686038998974, -106.08680606787352],
-		hubs: ['iah'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'San Diego International Airport (SAN)',
-		city: 'San Diego, USA - California 🇺🇸',
-		pos: [32.733728095648374, -117.19304634789322],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'San Antonio International Airport (SAT)',
-		city: 'San Antonio, USA - Texas 🇺🇸',
-		pos: [29.531290632199877, -98.46845569088684],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Savannah/Hilton Head International Airport (SAV)',
-		city: 'Savannah, USA - Georgia 🇺🇸',
-		pos: [32.12939158823519, -81.20176254594122],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Santa Barbara Airport (SBA)',
-		city: 'Santa Barbara, USA - California 🇺🇸',
-		pos: [34.42729081888512, -119.83988350359796],
-		hubs: ['iah'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'South Bend International Airport (SBN)',
-		city: 'South Bend, USA - Indiana 🇺🇸',
-		pos: [41.70188363585592, -86.31243469699172],
-		hubs: ['ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Seattle-Tacoma International Airport (SEA)',
-		city: 'Seattle, USA - Washington 🇺🇸',
-		pos: [47.45358306768111, -122.30824812930476],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'University Park Airport (SCE)',
-		city: 'State College, USA - Pennsylvania 🇺🇸',
-		pos: [40.84995107118584, -77.84969731760829],
-		hubs: ['ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Arturo Merino Benitez Airport (SCL)',
-		city: 'Santiago, Chile 🇨🇱',
-		pos: [-33.38938543980737, -70.79442733965293],
-		hubs: ['iah'],
-		tz: 'America/Santiago'
-	},
-	{
-		name: 'Louisville Muhammad Ali International Airport (SDF)',
-		city: 'Louisville, USA - Kentucky 🇺🇸',
-		pos: [38.183129274399, -85.741038508206],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Kangerlussuaq Airport (SFJ)',
-		city: 'Kangerlussuaq, Greenland 🇬🇱',
-		pos: [67.1775669383681, -50.651060561338205],
-		hubs: ['ord'],
-		tz: 'America/Nuuk'
-	},
-	{
-		name: 'Springfield-Branson National Airport (SGF)',
-		city: 'Springfield, USA - Missouri 🇺🇸',
-		pos: [37.24436166451638, -93.39127718580991],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'St. George Regional Airport (SGU)',
-		city: 'St. George, USA - Utah 🇺🇸',
-		pos: [37.03262261764, -113.51101298247991],
-		hubs: ['iah'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Shanghai Hongqiao International Airport (SHA)',
-		city: 'Shanghai, China 🇨🇳',
-		pos: [31.193096387538194, 121.33369906532243],
-		hubs: ['sfo'],
-		tz: 'Asia/Shanghai'
-	},
-	{
-		name: 'Shreveport Regional Airport (SHV)',
-		city: 'Shreveport, USA - Louisiana 🇺🇸',
-		pos: [32.448798352262486, -93.82920911742895],
-		hubs: ['iah'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Singapore Changi Airport (SIN)',
-		city: 'Singapore 🇸🇬',
-		pos: [1.3655760814659688, 103.99134627431354],
-		hubs: ['hnl'],
-		tz: 'Asia/Singapore'
-	},
-	{
-		name: 'Norman Y. Mineta San Jose International Airport (SJC)',
-		city: 'San Jose, USA - California 🇺🇸',
-		pos: [37.363665715803144, -121.92895897613796],
-		hubs: ['ewr', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Los Cabos International Airport (SJD)',
-		city: 'San José del Cabo, Mexico 🇲🇽',
-		pos: [23.1456048417308, -109.71832014651572],
-		hubs: ['iah', 'ord'],
-		tz: 'Mexico/BajaSur'
-	},
-	{
-		name: 'Luis Munoz Marin International Airport (SJU)',
-		city: 'San Juan, Puerto Rico 🇵🇷, US Territories',
-		pos: [18.439669035343876, -65.99915740046777],
-		hubs: ['ewr', 'mia', 'ord'],
-		tz: 'America/Puerto_Rico'
-	},
-	{
-		name: 'Robert L. Bradshaw International Airport (SKB)',
-		city: 'Basseterre, Saint Kitts & Nevis 🇰🇳',
-		pos: [17.3108341120326, -62.71916974592183],
-		hubs: ['mia'],
-		tz: 'America/Puerto_Rico'
-	},
-	{
-		name: 'Salt Lake City International Airport (SLC)',
-		city: 'Salt Lake City, USA - Utah 🇺🇸',
-		pos: [40.79051939628816, -111.97902094610347],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Sacramento International Airport (SMF)',
-		city: 'Sacramento, USA - California 🇺🇸',
-		pos: [38.69506863213448, -121.59003261580382],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'John Wayne Airport (SNA)',
-		city: 'Santa Ana, USA - California 🇺🇸',
-		pos: [33.67632399877975, -117.86749736129858],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Pacific'
-	},
-	{
-		name: 'Shannon Airport (SNN)',
-		city: 'Shannon, Ireland 🇮🇪',
-		pos: [52.69897449709459, -8.914894175822724],
-		hubs: ['ewr'],
-		tz: 'Europe/Dublin'
-	},
-	{
-		name: 'Sarasota Bradenton International Airport (SRQ)',
-		city: 'Sarasota, USA - Florida 🇺🇸',
-		pos: [27.395100025167416, -82.5539055345659],
-		hubs: ['ewr', 'iah', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'St. Louis Lambert International Airport (STL)',
-		city: 'St. Louis, USA - Missouri 🇺🇸',
-		pos: [38.74996298137237, -90.37484608851419],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Princess Juliana International Airport (SXM)',
-		city: 'Sint Maarten 🇸🇽',
-		pos: [18.04192078940854, -63.113028459403225],
-		hubs: ['mia'],
-		tz: 'America/Puerto_Rico'
-	},
-	{
-		name: 'Sydney Airport (SYD)',
-		city: 'Sydney, Australia 🇦🇺',
-		pos: [-33.94985609315001, 151.1818694507839],
-		hubs: ['hnl'],
-		tz: 'Australia/Sydney'
-	},
-	{
-		name: 'Syracuse Hancock International Airport (SYR)',
-		city: 'Syracuse, USA - New York 🇺🇸',
-		pos: [43.113949680808936, -76.11362234818714],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Chengdu Shuangliu International Airport (TFU)',
-		city: 'Chengdu, China 🇨🇳',
-		pos: [30.271849965598296, 104.44447857901999],
-		hubs: ['sfo'],
-		tz: 'Asia/Shanghai'
-	},
-	{
-		name: 'Tallahassee International Airport (TLH)',
-		city: 'Tallahassee, USA - Florida 🇺🇸',
-		pos: [30.393888865300536, -84.34502031697967],
-		hubs: ['iah', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Ben Gurion Airport (TLV)',
-		city: 'Tel Aviv, Israel 🇮🇱',
-		pos: [32.0060775789537, 34.885625736443],
-		hubs: ['ewr', 'ord'],
-		tz: 'Asia/Tel_Aviv'
-	},
-	{
-		name: 'Tampa International Airport (TPA)',
-		city: 'Tampa, USA - Florida 🇺🇸',
-		pos: [27.977171332699836, -82.53112747358927],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'Taiwan Taoyuan International Airport (TPE)',
-		city: 'Taipei, Taiwan 🇹🇼',
-		pos: [25.078385372504524, 121.23404549362135],
-		hubs: ['sfo'],
-		tz: 'Asia/Taipei'
-	},
-	{
-		name: 'Bonriki International Airport (TRW)',
-		city: 'Tarawa, Kiribati 🇰🇮',
-		pos: [1.3816943367896826, 173.14677443116932],
-		hubs: ['hnl'],
-		tz: 'Pacific/Tarawa'
-	},
-	{
-		name: 'Tulsa International Airport (TUL)',
-		city: 'Tulsa, USA - Oklahoma 🇺🇸',
-		pos: [36.198655852278264, -95.8837988854985],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-    {
-		name: 'Tucson International Airport (TUS)',
-		city: 'Tucson, USA - Arizona 🇺🇸',
-		pos: [32.109666228, -110.937996248],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Mountain'
-	},
-	{
-		name: 'Cherry Capital Airport (TVC)',
-		city: 'Traverse City, USA - Michigan 🇺🇸',
-		pos: [44.74086300317933, -85.57965821227184],
-		hubs: ['ord'],
-		tz: 'US/Eastern'
-	},
-	{
-		name: 'McGhee Tyson Airport (TYS)',
-		city: 'Knoxville, USA - Tennessee 🇺🇸',
-		pos: [35.81082427967718, -83.99379244250953],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Mariscal Sucre Quito International Airport (UIO)',
-		city: 'Quito, Ecuador 🇪🇨',
-		pos: [-0.1234546241729393, -78.3604826167644],
-		hubs: ['iah'],
-		tz: 'America/Lima'
-	},
-	{
-		name: 'Venice Marco Polo Airport (VCE)',
-		city: 'Venice, Italy 🇮🇹',
-		pos: [45.50475205289375, 12.346683142255474],
-		hubs: ['ewr'],
-		tz: 'Europe/Rome'
-	},
-	{
-		name: 'Northwest Arkansas National Airport (XNA)',
-		city: 'Fayetteville, USA - Arkansas 🇺🇸',
-		pos: [36.27796879497966, -94.30445559926372],
-		hubs: ['iah'],
-		tz: 'US/Central'
-	},
-	{
-		name: 'Edmonton International Airport (YEG)',
-		city: 'Edmonton, Canada 🇨🇦',
-		pos: [53.30623686908562, -113.58276804327605],
-		hubs: ['ewr', 'sfo', 'iah', 'ord'],
-		tz: 'Canada/Mountain'
-	},
-	{
-		name: 'Ottawa International Airport (YOW)',
-		city: 'Ottawa, Canada 🇨🇦',
-		pos: [45.31923461124119, -75.66914374429483],
-		hubs: ['ewr', 'sfo', 'iah', 'ord'],
-		tz: 'Canada/Eastern'
-	},
-	{
-		name: 'Québec City Jean Lesage International Airport (YQB)',
-		city: 'Québec City, Canada 🇨🇦',
-		pos: [46.79067748415006, -71.38816534934894],
-		hubs: ['ord'],
-		tz: 'Canada/Eastern'
-	},
-	{
-		name: 'Montreal-Pierre Elliott Trudeau International Airport (YUL)',
-		city: 'Montreal, Canada 🇨🇦',
-		pos: [45.461698664876224, -73.7478869554127],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'Canada/Eastern'
-	},
-	{
-		name: 'Winnipeg James Armstrong Richardson International Airport (YWG)',
-		city: 'Winnipeg, Canada 🇨🇦',
-		pos: [49.90989045505348, -97.23656756049226],
-		hubs: ['ord'],
-		tz: 'Canada/Mountain'
-	},
-	{
-		name: 'Calgary International Airport (YYC)',
-		city: 'Calgary, Canada 🇨🇦',
-		pos: [51.12150310000004, -114.00819495762246],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'Canada/Mountain'
-	},
-	{
-		name: 'Vancouver International Airport (YVR)',
-		city: 'Vancouver, Canada 🇨🇦',
-		pos: [49.19675521104217, -123.18147272578588],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
-		tz: 'Canada/Pacific'
-	},
-	{
-		name: 'Erik Nielsen Whitehorse International Airport (YXY)',
-		city: 'Whitehorse, Canada 🇨🇦',
-		pos: [60.7139263748326, -135.07421919200056],
-		hubs: ['ord'],
-		tz: 'Canada/Yukon'
-	},
-	{
-		name: 'Toronto Pearson International Airport (YYZ)',
-		city: 'Toronto, Canada 🇨🇦',
-		pos: [43.67779523959123, -79.6247972173393],
-		hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
-		tz: 'Canada/Eastern'
-	},
-	{
-		name: 'Yellowknife Airport (YZF)',
-		city: 'Yellowknife, Canada 🇨🇦',
-		pos: [62.46527349066923, -114.44129734775916],
-		hubs: ['ord'],
-		tz: 'Canada/Mountain'
-	},
-	{
-		name: 'Zurich Airport (ZRH)',
-		city: 'Zurich, Switzerland 🇨🇭',
-		pos: [47.461358490923374, 8.553454682550841],
-		hubs: ['ewr'],
-		tz: 'Europe/Zurich'
-	},
+  {
+    code: 'ewr',
+    name: 'Newark Liberty International Airport (EWR)',
+    city: 'Newark, USA - New Jersey 🇺🇸',
+    pos: [40.70340156126785, -74.17330276840164],
+    hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
+    isHub: true,
+    arrRwy: 22,
+    depRwy: 22,
+    tz: 'US/Eastern',
+  },
+  {
+    code: 'sfo',
+    name: 'San Francisco International Airport (SFO)',
+    city: 'San Francisco, USA - California 🇺🇸',
+    pos: [37.62141455145011, -122.37878377625846],
+    hubs: ['ewr', 'iah', 'mia', 'hnl', 'ord'],
+    isHub: true,
+    arrRwy: 28,
+    depRwy: 28,
+    tz: 'US/Pacific',
+  },
+  {
+    code: 'iah',
+    name: 'George Bush Intercontinental Airport (IAH)',
+    city: 'Houston, USA - Texas 🇺🇸',
+    pos: [29.99029394928301, -95.33691148715191],
+    hubs: ['ewr', 'sfo', 'mia', 'hnl', 'ord'],
+    isHub: true,
+    arrRwy: 8,
+    depRwy: 15,
+    tz: 'US/Central',
+  },
+  {
+    code: 'mia',
+    name: 'Miami International Airport (MIA)',
+    city: 'Miami, USA - Florida 🇺🇸',
+    pos: [25.796412980391715, -80.28700802739922],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'ord'],
+    isHub: true,
+    arrRwy: 8,
+    depRwy: 8,
+    tz: 'US/Eastern',
+  },
+  {
+    code: 'hnl',
+    name: 'Daniel K. Inouye International Airport (HNL)',
+    city: 'Honolulu, USA - Hawaii 🇺🇸',
+    pos: [21.319087239318254, -157.9254318902438],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    isHub: true,
+    arrRwy: 8,
+    depRwy: 8,
+    tz: 'US/Hawaii',
+  },
+  {
+    code: 'ord',
+    name: "O'Hare International Airport (ORD)",
+    city: 'Chicago, USA - Illinois 🇺🇸',
+    pos: [41.980694394637, -87.90899793532991],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl'],
+    isHub: true,
+    arrRwy: 28,
+    depRwy: 27,
+    tz: 'US/Central',
+  },
+  {
+    name: 'Albuquerque International Airport (ABQ)',
+    city: 'Albuquerque, USA - New Mexico 🇺🇸',
+    pos: [35.04446359549329, -106.61291166771365],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Kotoka International Airport (ACC)',
+    city: 'Accra, Ghana 🇬🇭',
+    pos: [5.606084818402552, -0.1681342315152777],
+    hubs: ['mia'],
+    tz: 'Africa/Accra',
+  },
+  {
+    name: 'Auckland Airport (AKL)',
+    city: 'Auckland, New Zealand 🇳🇿',
+    pos: [-37.008565657401164, 174.7847156217281],
+    hubs: ['hnl'],
+    tz: 'Pacific/Auckland',
+  },
+  {
+    name: 'Albany International Airport (ALB)',
+    city: 'Albany, USA - New York 🇺🇸',
+    pos: [42.74795631522345, -73.80264653273483],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Houari Boumediene Airport (ALG)',
+    city: 'Algiers, Algeria 🇩🇿',
+    pos: [36.69712417026543, 3.20821173847129],
+    hubs: ['mia'],
+    tz: 'Africa/Algiers',
+  },
+  {
+    name: 'Rick Husband Amarillo International Airport (AMA)',
+    city: 'Amarillo, USA - Texas 🇺🇸',
+    pos: [35.219312328500564, -101.70862852371039],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Amsterdam Schiphol Airport (AMS)',
+    city: 'Amsterdam, The Netherlands 🇳🇱',
+    pos: [52.310623851948954, 4.768263669222851],
+    hubs: ['ewr'],
+    tz: 'Europe/Amsterdam',
+  },
+  {
+    name: 'Ted Stevens International Airport (ANC)',
+    city: 'Anchorage, USA - Alaska 🇺🇸',
+    pos: [61.171332648, -149.991162702],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    tz: 'US/Alaska',
+  },
+  {
+    name: 'V.C. Bird International Airport (ANU)',
+    city: "Saint John's, Antigua and Barbuda 🇦🇬",
+    pos: [17.141264458109006, -61.79075921641097],
+    hubs: ['mia'],
+    tz: 'America/Puerto_Rico',
+  },
+  {
+    name: 'Stockholm Arlanda Airport (ARN)',
+    city: 'Stockholm, Sweden 🇸🇪',
+    pos: [59.64946534644474, 17.93417522058218],
+    hubs: ['ewr'],
+    tz: 'Europe/Stockholm',
+  },
+  {
+    name: 'Aspen/Pitkin County Airport (ASE)',
+    city: 'Aspen, USA - Colorado 🇺🇸',
+    pos: [39.21926437960034, -106.86696149563349],
+    hubs: ['ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Athens International Airport (ATH)',
+    city: 'Athens, Greece 🇬🇷',
+    pos: [37.93572283626069, 23.948437055281335],
+    hubs: ['ewr'],
+    tz: 'Europe/Athens',
+  },
+  {
+    name: 'Hartsfield-Jackson Atlanta International Airport (ATL)',
+    city: 'Atlanta, USA - Georgia 🇺🇸',
+    pos: [33.64083507608079, -84.42787180090849],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Queen Beatrix International Airport (AUA)',
+    city: 'Oranjestad, Aruba 🇦🇼',
+    pos: [12.502909500135036, -70.00820204601975],
+    hubs: ['mia'],
+    tz: 'America/Puerto_Rico',
+  },
+  {
+    name: 'Austin-Bergstrom International Airport (AUS)',
+    city: 'Austin, USA - Texas 🇺🇸',
+    pos: [30.19868847903938, -97.66571921787173],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'El Dorado International Airport (BOG)',
+    city: 'Bogota, Colombia 🇨🇴',
+    pos: [4.701527767834316, -74.14601141660555],
+    hubs: ['iah'],
+    tz: 'America/Bogota',
+  },
+  {
+    name: 'Boise Airport (BOI)',
+    city: 'Boise, USA - Idaho 🇺🇸',
+    pos: [43.56613372250894, -116.22244467737012],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Chhatrapati Shivaji Maharaj International Airport (BOM)',
+    city: 'Mumbai, India 🇮🇳',
+    pos: [19.090096216386055, 72.86275505178068],
+    hubs: ['ord'],
+    tz: 'Asia/Kolkata',
+  },
+  {
+    name: 'Boston Logan International Airport (BOS)',
+    city: 'Boston, USA - Massachusetts 🇺🇸',
+    pos: [42.365961658704904, -71.00960315045923],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Barcelona-El Prat Airport (BCN)',
+    city: 'Barcelona, Spain 🇪🇸',
+    pos: [41.29799278042036, 2.0833798949812197],
+    hubs: ['ewr'],
+    tz: 'Europe/Madrid',
+  },
+  {
+    name: 'L.F. Wade International Airport (BDA)',
+    city: 'Hamilton, Bermuda 🇧🇲',
+    pos: [32.359855537423016, -64.70471205965694],
+    hubs: ['ewr', 'mia'],
+    tz: 'Atlantic/Bermuda',
+  },
+  {
+    name: 'Berlin Branderburg Airport (BER)',
+    city: 'Berlin, Germany 🇩🇪',
+    pos: [52.36421598862855, 13.509032947271669],
+    hubs: ['ewr'],
+    tz: 'Europe/Berlin',
+  },
+  {
+    name: 'Nashville International Airport (BNA)',
+    city: 'Nashville, USA - Tennessee 🇺🇸',
+    pos: [36.126169659792566, -86.67743567520559],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Bradley International Airport (BDL)',
+    city: 'Hartford, USA - Connecticut 🇺🇸',
+    pos: [41.938985209387795, -72.68590265544461],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Western Nebraska-Scottsbluff Regional Airport (BFF)',
+    city: 'Scottsbluff, USA - Nebraska 🇺🇸',
+    pos: [41.87180880453483, -103.5942995049976],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Mobile International Airport (BFM)',
+    city: 'Mobile, USA - Alabama 🇺🇸',
+    pos: [30.63023600345301, -88.07275618205335],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Grantley Adams International Airport (BGI)',
+    city: 'Christ Church, Barbados 🇧🇧',
+    pos: [13.080035627493604, -59.48774184440369],
+    hubs: ['mia'],
+    tz: 'America/Puerto_Rico',
+  },
+  {
+    name: 'Bangor International Airport (BGR)',
+    city: 'Bangor, USA - Maine 🇺🇸',
+    pos: [44.80693350003793, -68.81848626782975],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Birmingham-Shuttlesworth International Airport (BHM)',
+    city: 'Birmingham, USA - Alabama 🇺🇸',
+    pos: [33.5624358209084, -86.75405090040849],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Billings-Logan International Airport (BIL)',
+    city: 'Billings, USA - Montana 🇺🇸',
+    pos: [45.80363522704425, -108.53800003259418],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Bismarck Airport (BIS)',
+    city: 'Bismarck, USA - North Dakota 🇺🇸',
+    pos: [46.7756896176948, -100.75653659996863],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Brisbane Airport (BNE)',
+    city: 'Brisbane, Australia 🇦🇺',
+    pos: [-27.39418580574182, 153.1218517553009],
+    hubs: ['hnl'],
+    tz: 'Australia/Brisbane',
+  },
+  {
+    name: 'Brussels Airport (BRU)',
+    city: 'Brussels, Belgium 🇧🇪',
+    pos: [50.90105310968497, 4.485595855926779],
+    hubs: ['ewr'],
+    tz: 'Europe/Brussels',
+  },
+  {
+    name: 'Brasília International Airport (BSB)',
+    city: 'Brasília, Brazil 🇧🇷',
+    pos: [-15.869654340657481, -47.91706316214675],
+    hubs: ['iah'],
+    tz: 'Brazil/East',
+  },
+  {
+    name: 'Burlington International Airport (BTV)',
+    city: 'Burlington, USA - Vermont 🇺🇸',
+    pos: [44.470755128608445, -73.1516788038435],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Buffalo Niagara International Airport (BUF)',
+    city: 'Buffalo, USA - New York 🇺🇸',
+    pos: [42.93973729622188, -78.72948524437224],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Hollywood Burbank Airport (BUR)',
+    city: 'Burbank, USA - California 🇺🇸',
+    pos: [34.19832105435531, -118.35736068695542],
+    hubs: ['sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Baltimore/Washington International Airport (BWI)',
+    city: 'Baltimore, USA - Maryland 🇺🇸',
+    pos: [39.177536943139835, -76.66830640614698],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Bozeman Yellowstone International Airport (BZN)',
+    city: 'Bozeman, USA - Montana 🇺🇸',
+    pos: [45.77835940397085, -111.16142041964636],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Akron-Canton Airport (CAK)',
+    city: 'Akron, USA - Ohio 🇺🇸',
+    pos: [40.91539520193488, -81.4415358425859],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Paris Charles de Gaulle Airport (CDG)',
+    city: 'Paris, France 🇫🇷',
+    pos: [49.01088754570143, 2.5481856293293754],
+    hubs: ['ewr', 'sfo'],
+    tz: 'Europe/Paris',
+  },
+  {
+    name: 'Chattanooga Metropolitan Airport (CHA)',
+    city: 'Chattanooga, USA - Tennessee 🇺🇸',
+    pos: [35.03692109359861, -85.20001532837085],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Charleston International Airport (CHS)',
+    city: 'Charleston, USA - South Carolina 🇺🇸',
+    pos: [32.89249643, -80.037666516],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Eastern Iowa Airport (CID)',
+    city: 'Cedar Rapids, USA - Iowa 🇺🇸',
+    pos: [41.88633815541166, -91.70700758853724],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Cleveland Hopkins International Airport (CLE)',
+    city: 'Cleveland, USA - Ohio 🇺🇸',
+    pos: [41.405886997309366, -81.85371669778253],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Charlotte Douglas International Airport (CLT)',
+    city: 'Charlotte, USA - North Carolina 🇺🇸',
+    pos: [35.214358753004724, -80.94714294071665],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'John Glenn Columbus International Airport (CMH)',
+    city: 'Columbus, USA - Ohio 🇺🇸',
+    pos: [39.99990700422163, -82.88685483700165],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Mohammed V International Airport (CMN)',
+    city: 'Casablanca, Morocco 🇲🇦',
+    pos: [33.370015580895306, -7.5857562888435845],
+    hubs: ['mia'],
+    tz: 'Africa/Casablanca',
+  },
+  {
+    name: 'Colorado Springs Airport (COS)',
+    city: 'Colorado Springs, USA - Colorado 🇺🇸',
+    pos: [38.80179559142115, -104.70258244384314],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Cape Town International Airport (CPT)',
+    city: 'Cape Town, South Africa 🇿🇦',
+    pos: [-33.971498570998, 18.60206364117647],
+    hubs: ['mia'],
+    tz: 'Africa/Johannesburg',
+  },
+  {
+    name: 'West Virginia International Yeager Airport (CRW)',
+    city: 'Charleston, USA - West Virginia 🇺🇸',
+    pos: [38.37143955636435, -81.59352849463419],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Cancún International Airport (CUN)',
+    city: 'Cancún, Mexico 🇲🇽',
+    pos: [21.04198345163572, -86.87396332895656],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'America/Cancun',
+  },
+  {
+    name: 'Curaçao International Airport (CUR)',
+    city: 'Willemstad, Curaçao 🇨🇼',
+    pos: [12.189339619252113, -68.96166422979832],
+    hubs: ['mia'],
+    tz: 'America/Puerto_Rico',
+  },
+  {
+    name: 'Cincinnati/Northern Kentucky International Airport (CVG)',
+    city: 'Cincinnati, USA - Ohio 🇺🇸',
+    pos: [39.05091119818685, -84.66749507901761],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Cassidy International Airport (CXI)',
+    city: 'Kiritimati, Kiribati 🇰🇮',
+    pos: [1.9867631645901074, -157.35021966168168],
+    hubs: ['hnl'],
+    tz: 'Pacific/Kiritimati',
+  },
+  {
+    name: 'Daytona Beach International Airport (DAB)',
+    city: 'Daytona Beach, USA - Florida 🇺🇸',
+    pos: [29.18042531670668, -81.05629836579335],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Indira Gandhi International Airport (DEL)',
+    city: 'New Delhi, India 🇮🇳',
+    pos: [28.556463675916227, 77.10008650432476],
+    hubs: ['sfo', 'ord'],
+    tz: 'Asia/Kolkata',
+  },
+  {
+    name: 'Denver International Airport (DEN)',
+    city: 'Denver, USA - Colorado 🇺🇸',
+    pos: [39.856787796502296, -104.67360889044873],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Dallas/Fort Worth International Airport (DFW)',
+    city: 'Dallas, USA - Texas 🇺🇸',
+    pos: [32.90175623187377, -97.04011304308536],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Duluth International Airport (DLH)',
+    city: 'Duluth, USA - Minnesota 🇺🇸',
+    pos: [46.83915195495459, -92.18001201632043],
+    hubs: ['ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Durango-La Plata County Airport (DRO)',
+    city: 'Durango, USA - Colorado 🇺🇸',
+    pos: [37.15898803687512, -107.74940648521252],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Des Moines International Airport (DSM)',
+    city: 'Des Moines, USA - Iowa 🇺🇸',
+    pos: [41.53421361181389, -93.65911766543995],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Blaise Diagne International Airport (DSS)',
+    city: 'Ndiass, Senegal 🇸🇳',
+    pos: [14.671072249456303, -17.06737968914397],
+    hubs: ['mia'],
+    tz: 'GMT',
+  },
+  {
+    name: 'Detroit Metropolitan Wayne County Airport (DTW)',
+    city: 'Detroit, USA - Michigan 🇺🇸',
+    pos: [42.21640799753565, -83.35532128673535],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Dublin Airport (DUB)',
+    city: 'Dublin, Ireland 🇮🇪',
+    pos: [53.42641611587296, -6.249684496130292],
+    hubs: ['ewr'],
+    tz: 'Europe/Dublin',
+  },
+  {
+    name: 'Dubai International Airport (DXB)',
+    city: 'Dubai, United Arab Emirates 🇦🇪',
+    pos: [25.25309661391826, 55.36567275706557],
+    hubs: ['sfo', 'ord'],
+    tz: 'Asia/Dubai',
+  },
+  {
+    name: 'Northwest Florida Beaches International Airport (ECP)',
+    city: 'Panama City, USA - Florida 🇺🇸',
+    pos: [30.355281862622725, -85.7980485671208],
+    hubs: ['ewr', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Edinburgh Airport (EDI)',
+    city: 'Edinburgh, United Kingdom 🇬🇧',
+    pos: [55.95077897347942, -3.3614102862399537],
+    hubs: ['ewr'],
+    tz: 'Europe/London',
+  },
+  {
+    name: 'Eagle County Regional Airport (EGE)',
+    city: 'Vail, USA - Colorado 🇺🇸',
+    pos: [39.64211199138697, -106.91683817073384],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'El Paso International Airport (ELP)',
+    city: 'El Paso, USA - Texas 🇺🇸',
+    pos: [31.80542655947106, -106.38241304461272],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Eugene Airport (EUG)',
+    city: 'Eugene, USA - Oregon 🇺🇸',
+    pos: [44.12185809726057, -123.21588957302129],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Evansville Regional Airport (EVV)',
+    city: 'Evansville, USA - Indiana 🇺🇸',
+    pos: [38.04311058839397, -87.52691791114265],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Ezeiza International Airport (EZE)',
+    city: 'Buenos Aires, Argentina 🇦🇷',
+    pos: [-34.81472221811849, -58.5349142696793],
+    hubs: ['iah'],
+    tz: 'America/Argentina/Buenos_Aires',
+  },
+  {
+    name: 'Fairbanks International Airport (FAI)',
+    city: 'Fairbanks, USA - Alaska 🇺🇸',
+    pos: [64.8164391043826, -147.8635168019232],
+    hubs: ['ord'],
+    tz: 'US/Alaska',
+  },
+  {
+    name: 'Hector International Airport (FAR)',
+    city: 'Fargo, USA - North Dakota 🇺🇸',
+    pos: [46.92181462122193, -96.81670671316597],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Fresno Yosemite International Airport (FAT)',
+    city: 'Fresno, USA - California 🇺🇸',
+    pos: [36.77582349137883, -119.7182263207816],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Glacier Park International Airport (FCA)',
+    city: 'Kalispell, USA - Montana 🇺🇸',
+    pos: [48.30775754813589, -114.25254443066616],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Leonardo da Vinci International Airport (FCO)',
+    city: 'Rome, Italy 🇮🇹',
+    pos: [41.80413085802929, 12.251849849230378],
+    hubs: ['ewr'],
+    tz: 'Europe/Rome',
+  },
+  {
+    name: 'Fort Lauderdale-Hollywood International Airport (FLL)',
+    city: 'Fort Lauderdale, USA - Florida 🇺🇸',
+    pos: [26.074330752581144, -80.1506451175699],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Grand Bahama Airport (FPO)',
+    city: 'Freeport, Bahamas 🇧🇸',
+    pos: [26.54776858081397, -78.70253123123514],
+    hubs: ['mia'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Frankfurt Airport (FRA)',
+    city: 'Frankfurt, Germany 🇩🇪',
+    pos: [50.038235470253035, 8.562452176837837],
+    hubs: ['ewr'],
+    tz: 'Europe/Berlin',
+  },
+  {
+    name: 'Sioux Falls Regional Airport (FSD)',
+    city: 'Sioux Falls, USA - South Dakota 🇺🇸',
+    pos: [43.58285310955137, -96.74018491546143],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Fort Wayne International Airport (FWA)',
+    city: 'Fort Wayne, USA - Indiana 🇺🇸',
+    pos: [40.97737427230013, -85.19561777847646],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Miguel Hidalgo y Costilla International Airport (GDL)',
+    city: 'Guadalajara, Mexico 🇲🇽',
+    pos: [20.52589580006699, -103.30765718888681],
+    hubs: ['iah', 'ord'],
+    tz: 'America/Mexico_City',
+  },
+  {
+    name: 'Spokane International Airport (GEG)',
+    city: 'Spokane, USA - Washington 🇺🇸',
+    pos: [47.62118457654647, -117.53338283178057],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Rio de Janeiro/Galeao International Airport (GIG)',
+    city: 'Rio di Janeiro, Brazil 🇧🇷',
+    pos: [-22.804592230082836, -43.25675808978346],
+    hubs: ['iah'],
+    tz: 'Brazil/East',
+  },
+  {
+    name: 'Gerald R. Ford International Airport (GRR)',
+    city: 'Grand Rapids, USA - Michigan 🇺🇸',
+    pos: [42.8824264791552, -85.52425954433107],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'São Paulo/Guarulhos International Airport (GRU)',
+    city: 'São Paulo, Brazil 🇧🇷',
+    pos: [-23.4301397120531, -46.47291429752642],
+    hubs: ['iah'],
+    tz: 'Brazil/East',
+  },
+  {
+    name: 'Piedmont Triad International Airport (GSO)',
+    city: 'Greensboro, USA - North Carolina 🇺🇸',
+    pos: [36.10435840414433, -79.935191232335],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Antonio B. Won Pat International Airport (GUM)',
+    city: 'Guam 🇬🇺, US Territories',
+    pos: [13.4863791493778, 144.80040397596647],
+    hubs: ['hnl'],
+    tz: 'Pacific/Guam',
+  },
+  {
+    name: 'Jose Marti International Airport (HAV)',
+    city: 'Havana, Cuba 🇨🇺',
+    pos: [22.98666272, -82.405331712],
+    hubs: ['mia'],
+    tz: 'Cuba',
+  },
+  {
+    name: 'Helsinki Airport (HEL)',
+    city: 'Helsinki, Finland 🇫🇮',
+    pos: [60.31828039473722, 24.94972532743364],
+    hubs: ['ewr'],
+    tz: 'Europe/Helsinki',
+  },
+  {
+    name: 'Hong Kong International Airport (HKG)',
+    city: 'Hong Kong, China 🇨🇳',
+    pos: [22.308602611679753, 113.91835201005935],
+    hubs: ['sfo', 'ord'],
+    tz: 'Asia/Hong_Kong',
+  },
+  {
+    name: 'Tokyo Haneda International Airport (HND)',
+    city: 'Tokyo, Japan 🇯🇵',
+    pos: [35.54933206852969, 139.77980640999556],
+    hubs: ['ord'],
+    tz: 'Asia/Tokyo',
+  },
+  {
+    name: 'Huntsville International Airport (HSV)',
+    city: 'Huntsville, USA - Alabama 🇺🇸',
+    pos: [34.63686815027565, -86.77747147166176],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Dulles International Airport (IAD)',
+    city: 'Washington, USA - D.C. 🇺🇸',
+    pos: [38.95327013665701, -77.4565514890331],
+    hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Incheon International Airport (ICN)',
+    city: 'Seoul, South Korea 🇰🇷',
+    pos: [37.460632804087396, 126.44057390291141],
+    hubs: ['sfo'],
+    tz: 'Asia/Seoul',
+  },
+  {
+    name: 'Dwight D. Eisenhower Airport (ICT)',
+    city: 'Wichita, USA - Kansas 🇺🇸',
+    pos: [37.65083588295067, -97.42868807453723],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Wilmington International Airport (ILM)',
+    city: 'Wilmington, USA - North Carolina 🇺🇸',
+    pos: [34.26623590568664, -77.90979573247422],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Indianapolis International Airport (IND)',
+    city: 'Indianapolis, USA - Indiana 🇺🇸',
+    pos: [39.716991323244, -86.29558447337403],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Hilo International Airport (ITO)',
+    city: 'Hilo, USA - Hawaii 🇺🇸',
+    pos: [19.71828308321948, -155.04165378827003],
+    hubs: ['hnl'],
+    tz: 'US/Hawaii',
+  },
+  {
+    name: 'Jackson Hole Airport (JAC)',
+    city: 'Jackson Hole, USA - Wyoming 🇺🇸',
+    pos: [43.60337470927696, -110.73625468784289],
+    hubs: ['sfo', 'iah', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Jackson-Medgar Wiley Evers International Airport (JAN)',
+    city: 'Jackson, USA - Mississippi 🇺🇸',
+    pos: [32.31234643525699, -90.07632339635566],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Jacksonville International Airport (JAX)',
+    city: 'Jacksonville, USA - Florida 🇺🇸',
+    pos: [30.4940250575088, -81.68793680243796],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'John F. Kennedy International Airport (JFK)',
+    city: 'New York, USA - New York 🇺🇸',
+    pos: [40.64189712324801, -73.7779237593459],
+    hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'O.R. Tambo International Airport (JNB)',
+    city: 'Johannesburg, South Africa 🇿🇦',
+    pos: [-26.136691994110528, 28.241156617041295],
+    hubs: ['mia'],
+    tz: 'Africa/Johannesburg',
+  },
+  {
+    name: 'Juneau International Airport (JNU)',
+    city: 'Juneau, USA - Alaska 🇺🇸',
+    pos: [58.358352647857295, -134.58387162073254],
+    hubs: ['ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Keflavík International Airport (KEF)',
+    city: 'Reykjavík, Iceland 🇮🇸',
+    pos: [63.98070701155434, -22.627620001362224],
+    hubs: ['ewr'],
+    tz: 'Iceland',
+  },
+  {
+    name: 'Kansai International Airport (KIX)',
+    city: 'Osaka, Japan 🇯🇵',
+    pos: [34.43207316594882, 135.23039389643088],
+    hubs: ['sfo'],
+    tz: 'Asia/Tokyo',
+  },
+  {
+    name: 'Kona International Airport (KOA)',
+    city: 'Kailua-Kona, USA - Hawaii 🇺🇸',
+    pos: [19.737769862987626, -156.0428956900814],
+    hubs: ['sfo', 'hnl'],
+    tz: 'US/Hawaii',
+  },
+  {
+    name: 'Harry Reid International Airport (LAS)',
+    city: 'Las Vegas, USA - Nevada 🇺🇸',
+    pos: [36.08590149456017, -115.15072229119573],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Los Angeles International Airport (LAX)',
+    city: 'Los Angeles, USA - California 🇺🇸',
+    pos: [33.9412952817257, -118.40872312135349],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Blue Grass Airport (LEX)',
+    city: 'Lexington, USA - Kentucky 🇺🇸',
+    pos: [38.03779528003609, -84.60259757335659],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Long Beach Airport (LGB)',
+    city: 'Long Beach, USA - California 🇺🇸',
+    pos: [33.81616877737306, -118.1511592426201],
+    hubs: ['sfo', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Heathrow Airport (LHR)',
+    city: 'London, United Kingdom 🇬🇧',
+    pos: [51.47058336357465, -0.4544242756733526],
+    hubs: ['ewr', 'sfo'],
+    tz: 'Europe/London',
+  },
+  {
+    name: 'Lihue Airport (LIH)',
+    city: 'Lihue, USA - Hawaii 🇺🇸',
+    pos: [21.978913933768247, -159.34382035743394],
+    hubs: ['hnl'],
+    tz: 'US/Hawaii',
+  },
+  {
+    name: 'Jorge Chavez International Airport (LIM)',
+    city: 'Lima, Peru 🇵🇪',
+    pos: [-12.023590851622739, -77.11199313107029],
+    hubs: ['iah'],
+    tz: 'America/Lima',
+  },
+  {
+    name: 'Humberto Delgado Airport (LIS)',
+    city: 'Lisbon, Portugal 🇵🇹',
+    pos: [38.77616204030518, -9.135280903021002],
+    hubs: ['ewr'],
+    tz: 'Europe/Lisbon',
+  },
+  {
+    name: 'Clinton National Airport (LIT)',
+    city: 'Little Rock, USA - Arkansas 🇺🇸',
+    pos: [34.73014934857, -92.219905134052],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Lanai Airport (LNY)',
+    city: 'Lanai City, USA - Hawaii 🇺🇸',
+    pos: [20.79129049571412, -156.95037799977516],
+    hubs: ['hnl'],
+    tz: 'US/Hawaii',
+  },
+  {
+    name: 'Murtala Muhammed International Airport (LOS)',
+    city: 'Lagos, Nigeria 🇳🇬',
+    pos: [6.582042315799838, 3.3210704254376475],
+    hubs: ['mia'],
+    tz: 'Africa/Lagos',
+  },
+  {
+    name: 'Adolfo Suarez Madrid-Barajas Airport (MAD)',
+    city: 'Madrid, Spain 🇪🇸',
+    pos: [40.49847903162269, -3.5676089311550063],
+    hubs: ['ewr'],
+    tz: 'Europe/Madrid',
+  },
+  {
+    name: 'Midland International Air & Space Port (MAF)',
+    city: 'Midland, USA - Texas 🇺🇸',
+    pos: [31.942135201414416, -102.20496125514411],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Sangster International Airport (MBJ)',
+    city: 'Montego Bay, Jamaica 🇯🇲',
+    pos: [18.502391775768107, -77.91451690151644],
+    hubs: ['ewr', 'mia'],
+    tz: 'America/Jamaica',
+  },
+  {
+    name: 'Kansas City International Airport (MCI)',
+    city: 'Kansas City, USA - Missouri 🇺🇸',
+    pos: [39.30346588697873, -94.70907396438118],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Orlando International Airport (MCO)',
+    city: 'Orlando, USA - Florida 🇺🇸',
+    pos: [28.418822273035058, -81.30431680312665],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Harrisburg International Airport (MDT)',
+    city: 'Harrisburg, USA - Pennsylvania 🇺🇸',
+    pos: [40.19381950779775, -76.75773157625802],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Melbourne Airport (MEL)',
+    city: 'Melbourne, Australia 🇦🇺',
+    pos: [-37.670866092849224, 144.84387908076323],
+    hubs: ['hnl'],
+    tz: 'Australia/Melbourne',
+  },
+  {
+    name: 'Memphis International Airport (MEM)',
+    city: 'Memphis, USA - Tennessee 🇺🇸',
+    pos: [35.041980059680945, -89.97921581534257],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Mexico City International Airport (MEX)',
+    city: 'Mexico City, Mexico 🇲🇽',
+    pos: [19.43624818319543, -99.07194048906919],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    tz: 'America/Mexico_City',
+  },
+  {
+    name: 'McAllen International Airport (MFE)',
+    city: 'McAllen, USA - Texas 🇺🇸',
+    pos: [26.176721835265095, -98.2393465159593],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Rogue Valley International Medford Airport (MFR)',
+    city: 'Medford, USA - Oregon 🇺🇸',
+    pos: [42.369094888174644, -122.87312247409928],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Manchester-Boston Regional Airport (MHT)',
+    city: 'Manchester, USA - New Hampshire 🇺🇸',
+    pos: [42.9297832621787, -71.43505763213719],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'General Mitchell International Airport (MKE)',
+    city: 'Milwaukee, USA - Wisconsin 🇺🇸',
+    pos: [42.94783578343849, -87.89664603166004],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Ninoy Aquino International Airport (MNL)',
+    city: 'Manila, Philippines 🇵🇭',
+    pos: [14.505164646, 121.01833326],
+    hubs: ['hnl'],
+    tz: 'Asia/Manila',
+  },
+  {
+    name: 'Dane County Regional Airport (MSN)',
+    city: 'Madison, USA - Wisconsin 🇺🇸',
+    pos: [43.139089365511055, -89.33638061548804],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Missoula Montana Airport (MSO)',
+    city: 'Missoula, USA - Montana 🇺🇸',
+    pos: [46.91876701016805, -114.08363087487372],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Minneapolis-Saint Paul International Airport (MSP)',
+    city: 'Minneapolis, USA - Minnesota 🇺🇸',
+    pos: [44.88624650092833, -93.22250729555996],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Louis Armstrong New Orleans International Airport (MSY)',
+    city: 'New Orleans, USA - Louisiana 🇺🇸',
+    pos: [29.991146272960744, -90.25862783681688],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Montrose Regional Airport (MTJ)',
+    city: 'Montrose, USA - Colorado 🇺🇸',
+    pos: [38.50095072330021, -107.89509828021419],
+    hubs: ['ewr', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Monterrey International (MTY)',
+    city: 'Monterrey, Mexico 🇲🇽',
+    pos: [25.777322304453758, -100.11456996208241],
+    hubs: ['iah', 'ord'],
+    tz: 'America/Mexico_City',
+  },
+  {
+    name: 'Munich International Airport (MUC)',
+    city: 'Munich, Germany 🇩🇪',
+    pos: [48.35101828934641, 11.776488342315458],
+    hubs: ['ewr'],
+    tz: 'Europe/Berlin',
+  },
+  {
+    name: 'Malpensa Airport (MXP)',
+    city: 'Milan, Italy 🇮🇹',
+    pos: [45.63003246889486, 8.725487782741581],
+    hubs: ['ewr'],
+    tz: 'Europe/Rome',
+  },
+  {
+    name: 'Myrtle Beach International Airport (MYR)',
+    city: 'Myrtle Beach, USA - South Carolina 🇺🇸',
+    pos: [33.68213937915149, -78.92800159200796],
+    hubs: ['ewr', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Nadi Airport (NAN)',
+    city: 'Nadi, Fiji 🇫🇯',
+    pos: [-17.75183452525651, 177.45078438213463],
+    hubs: ['hnl'],
+    tz: 'Pacific/Fiji',
+  },
+  {
+    name: 'Lynden Pindling International Airport (NAS)',
+    city: 'Nassau, Bahamas 🇧🇸',
+    pos: [25.04400654513227, -77.46580015121297],
+    hubs: ['ewr', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Chubu Centrair International Airport (NGO)',
+    city: 'Nagoya, Japan 🇯🇵',
+    pos: [34.8574416073902, 136.81089517130727],
+    hubs: ['sfo'],
+    tz: 'Asia/Tokyo',
+  },
+  {
+    name: 'Narita International Airport (NRT)',
+    city: 'Tokyo, Japan 🇯🇵',
+    pos: [35.77226493717075, 140.39293589386335],
+    hubs: ['ewr', 'sfo'],
+    tz: 'Asia/Tokyo',
+  },
+  {
+    name: 'Oakland International Airport (OAK)',
+    city: 'Oakland, USA - California 🇺🇸',
+    pos: [37.71148324911222, -122.2193824513291],
+    hubs: ['ewr', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Kahului Airport (OGG)',
+    city: 'Kahului, USA - Hawaii 🇺🇸',
+    pos: [20.894645227300344, -156.43600538629138],
+    hubs: ['sfo', 'hnl'],
+    tz: 'US/Hawaii',
+  },
+  {
+    name: 'Will Rogers Airport (OKC)',
+    city: 'Oklahoma City, USA - Oklahoma 🇺🇸',
+    pos: [35.39319572984369, -97.60050445075717],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Eppley Airfield (OMA)',
+    city: 'Omaha, USA - Nebraska 🇺🇸',
+    pos: [41.30224308640403, -95.89469287800654],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Ontario International Airport (ONT)',
+    city: 'Ontario, USA - California 🇺🇸',
+    pos: [34.05596214250547, -117.59904106790037],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Norfolk International Airport (ORF)',
+    city: 'Norfolk, USA - Virginia 🇺🇸',
+    pos: [36.89570942043663, -76.20000537338909],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Oslo Airport (OSL)',
+    city: 'Oslo, Norway 🇳🇴',
+    pos: [60.197550081971016, 11.100372283252447],
+    hubs: ['ewr'],
+    tz: 'Europe/Oslo',
+  },
+  {
+    name: 'Palm Beach International Airport (PBI)',
+    city: 'West Palm Beach, USA - Florida 🇺🇸',
+    pos: [26.685785827360075, -80.09283796017972],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Portland International Airport (PDX)',
+    city: 'Portland, USA - Oregon 🇺🇸',
+    pos: [45.59024957185743, -122.59483674121826],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Beijing Capital International Airport (PEK)',
+    city: 'Beijing, China 🇨🇳',
+    pos: [40.0801853355692, 116.60315498033326],
+    hubs: ['sfo'],
+    tz: 'Asia/Shanghai',
+  },
+  {
+    name: 'Philadelphia International Airport (PHL)',
+    city: 'Philadelphia, USA - Pennsylvania 🇺🇸',
+    pos: [39.87312718764114, -75.24362441975858],
+    hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Phoenix Sky Harbor International Airport (PHX)',
+    city: 'Phoenix, USA - Arizona 🇺🇸',
+    pos: [33.43582170243552, -112.0101240396323],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Pittsburgh International Airport (PIT)',
+    city: 'Pittsburgh, USA - Pennsylvania 🇺🇸',
+    pos: [40.49183102751426, -80.23501945402671],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Providenciales International Airport (PLS)',
+    city: 'Providenciales, Turks and Caicos Islands 🇹🇨',
+    pos: [21.776326359168177, -72.27128035731569],
+    hubs: ['mia'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Pensacola International Airport (PNS)',
+    city: 'Pensacola, USA - Florida 🇺🇸',
+    pos: [30.473625313477296, -87.18674410562464],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Piarco International Airport (POS)',
+    city: 'Piarco, Trinidad and Tobago 🇹🇹',
+    pos: [10.597664754910571, -61.33951627377069],
+    hubs: ['mia'],
+    tz: 'America/Puerto_Rico',
+  },
+  {
+    name: 'Pago Pago International Airport (PPG)',
+    city: 'Pago Pago, American Samoa 🇦🇸, US Territories',
+    pos: [-14.328529463205866, -170.71318872964144],
+    hubs: ['hnl'],
+    tz: 'Pacific/Pago_Pago',
+  },
+  {
+    name: "Fa'a'a International Airport (PPT)",
+    city: 'Tahiti, French Polynesia 🇵🇫',
+    pos: [-17.55960524555043, -149.61021228790472],
+    hubs: ['hnl'],
+    tz: 'Pacific/Tahiti',
+  },
+  {
+    name: 'Prescott Regional Airport (PRC)',
+    city: 'Prescott, USA - Arizona 🇺🇸',
+    pos: [34.64961150959865, -112.4266704878452],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Vaclav Havel Airport (PRG)',
+    city: 'Prague, Czech Republic 🇨🇿',
+    pos: [50.101859796884526, 14.263234742416973],
+    hubs: ['ewr'],
+    tz: 'Europe/Prague',
+  },
+  {
+    name: 'Palm Springs International Airport (PSP)',
+    city: 'Palm Springs, USA - California 🇺🇸',
+    pos: [33.830568637238926, -116.50696100322521],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Punta Cana International Airport (PUJ)',
+    city: 'Punta Cana, Dominican Republic 🇩🇴',
+    pos: [18.563260946101263, -68.36852528802461],
+    hubs: ['mia'],
+    tz: 'America/Puerto_Rico',
+  },
+  {
+    name: 'T.F. Green International Airport (PVD)',
+    city: 'Providence, USA - Rhode Island 🇺🇸',
+    pos: [41.723507528600045, -71.42691301444177],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Licenciado Gustavo Diaz Ordaz International (PVR)',
+    city: 'Puerto Vallarta, Mexico 🇲🇽',
+    pos: [20.68049831115806, -105.2524298465564],
+    hubs: ['iah', 'ord'],
+    tz: 'America/Mexico_City',
+  },
+  {
+    name: 'Portland International Jetport (PWM)',
+    city: 'Portland, USA - Maine 🇺🇸',
+    pos: [43.64570214332969, -70.31004072274055],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Rapid City Regional Airport (RAP)',
+    city: 'Rapid City, USA - South Dakota 🇺🇸',
+    pos: [44.038372066425026, -103.06043047128412],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Redmond Municipal Airport (RDM)',
+    city: 'Redmond, USA - Oregon 🇺🇸',
+    pos: [44.253250764843884, -121.15877034247316],
+    hubs: ['ewr', 'sfo', 'mia', 'iah', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Raleigh-Durham International Airport (RDU)',
+    city: 'Raleigh, USA - North Carolina 🇺🇸',
+    pos: [35.88007898015302, -78.78797484463837],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Richmond International Airport (RIC)',
+    city: 'Richmond, USA - Virginia 🇺🇸',
+    pos: [37.50677505510212, -77.32084242371478],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Reno-Tahoe International Airport (RNO)',
+    city: 'Reno, USA - Nevada 🇺🇸',
+    pos: [39.49964863013703, -119.76805218683198],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Greater Rochester International Airport (ROC)',
+    city: 'Rochester, USA - New York 🇺🇸',
+    pos: [43.12253070204068, -77.6666258473552],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Rochester International Airport (RST)',
+    city: 'Rochester, USA - Minnesota 🇺🇸',
+    pos: [43.90993994364452, -92.49152310388355],
+    hubs: ['ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Southwest Florida International Airport (RSW)',
+    city: 'Fort Myers, USA - Florida 🇺🇸',
+    pos: [26.533753077135888, -81.75534048896644],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Santa Fe Regional Airport (SAF)',
+    city: 'Santa Fe, USA - New Mexico 🇺🇸',
+    pos: [35.61686038998974, -106.08680606787352],
+    hubs: ['iah'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'San Diego International Airport (SAN)',
+    city: 'San Diego, USA - California 🇺🇸',
+    pos: [32.733728095648374, -117.19304634789322],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'San Antonio International Airport (SAT)',
+    city: 'San Antonio, USA - Texas 🇺🇸',
+    pos: [29.531290632199877, -98.46845569088684],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Savannah/Hilton Head International Airport (SAV)',
+    city: 'Savannah, USA - Georgia 🇺🇸',
+    pos: [32.12939158823519, -81.20176254594122],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Santa Barbara Airport (SBA)',
+    city: 'Santa Barbara, USA - California 🇺🇸',
+    pos: [34.42729081888512, -119.83988350359796],
+    hubs: ['iah'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'South Bend International Airport (SBN)',
+    city: 'South Bend, USA - Indiana 🇺🇸',
+    pos: [41.70188363585592, -86.31243469699172],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Seattle-Tacoma International Airport (SEA)',
+    city: 'Seattle, USA - Washington 🇺🇸',
+    pos: [47.45358306768111, -122.30824812930476],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'University Park Airport (SCE)',
+    city: 'State College, USA - Pennsylvania 🇺🇸',
+    pos: [40.84995107118584, -77.84969731760829],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Arturo Merino Benitez Airport (SCL)',
+    city: 'Santiago, Chile 🇨🇱',
+    pos: [-33.38938543980737, -70.79442733965293],
+    hubs: ['iah'],
+    tz: 'America/Santiago',
+  },
+  {
+    name: 'Louisville Muhammad Ali International Airport (SDF)',
+    city: 'Louisville, USA - Kentucky 🇺🇸',
+    pos: [38.183129274399, -85.741038508206],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Kangerlussuaq Airport (SFJ)',
+    city: 'Kangerlussuaq, Greenland 🇬🇱',
+    pos: [67.1775669383681, -50.651060561338205],
+    hubs: ['ord'],
+    tz: 'America/Nuuk',
+  },
+  {
+    name: 'Springfield-Branson National Airport (SGF)',
+    city: 'Springfield, USA - Missouri 🇺🇸',
+    pos: [37.24436166451638, -93.39127718580991],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'St. George Regional Airport (SGU)',
+    city: 'St. George, USA - Utah 🇺🇸',
+    pos: [37.03262261764, -113.51101298247991],
+    hubs: ['iah'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Shanghai Hongqiao International Airport (SHA)',
+    city: 'Shanghai, China 🇨🇳',
+    pos: [31.193096387538194, 121.33369906532243],
+    hubs: ['sfo'],
+    tz: 'Asia/Shanghai',
+  },
+  {
+    name: 'Shreveport Regional Airport (SHV)',
+    city: 'Shreveport, USA - Louisiana 🇺🇸',
+    pos: [32.448798352262486, -93.82920911742895],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Singapore Changi Airport (SIN)',
+    city: 'Singapore 🇸🇬',
+    pos: [1.3655760814659688, 103.99134627431354],
+    hubs: ['hnl'],
+    tz: 'Asia/Singapore',
+  },
+  {
+    name: 'Norman Y. Mineta San Jose International Airport (SJC)',
+    city: 'San Jose, USA - California 🇺🇸',
+    pos: [37.363665715803144, -121.92895897613796],
+    hubs: ['ewr', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Los Cabos International Airport (SJD)',
+    city: 'San José del Cabo, Mexico 🇲🇽',
+    pos: [23.1456048417308, -109.71832014651572],
+    hubs: ['iah', 'ord'],
+    tz: 'Mexico/BajaSur',
+  },
+  {
+    name: 'Luis Munoz Marin International Airport (SJU)',
+    city: 'San Juan, Puerto Rico 🇵🇷, US Territories',
+    pos: [18.439669035343876, -65.99915740046777],
+    hubs: ['ewr', 'mia', 'ord'],
+    tz: 'America/Puerto_Rico',
+  },
+  {
+    name: 'Robert L. Bradshaw International Airport (SKB)',
+    city: 'Basseterre, Saint Kitts & Nevis 🇰🇳',
+    pos: [17.3108341120326, -62.71916974592183],
+    hubs: ['mia'],
+    tz: 'America/Puerto_Rico',
+  },
+  {
+    name: 'Salt Lake City International Airport (SLC)',
+    city: 'Salt Lake City, USA - Utah 🇺🇸',
+    pos: [40.79051939628816, -111.97902094610347],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Sacramento International Airport (SMF)',
+    city: 'Sacramento, USA - California 🇺🇸',
+    pos: [38.69506863213448, -121.59003261580382],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'John Wayne Airport (SNA)',
+    city: 'Santa Ana, USA - California 🇺🇸',
+    pos: [33.67632399877975, -117.86749736129858],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Pacific',
+  },
+  {
+    name: 'Shannon Airport (SNN)',
+    city: 'Shannon, Ireland 🇮🇪',
+    pos: [52.69897449709459, -8.914894175822724],
+    hubs: ['ewr'],
+    tz: 'Europe/Dublin',
+  },
+  {
+    name: 'Sarasota Bradenton International Airport (SRQ)',
+    city: 'Sarasota, USA - Florida 🇺🇸',
+    pos: [27.395100025167416, -82.5539055345659],
+    hubs: ['ewr', 'iah', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'St. Louis Lambert International Airport (STL)',
+    city: 'St. Louis, USA - Missouri 🇺🇸',
+    pos: [38.74996298137237, -90.37484608851419],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Princess Juliana International Airport (SXM)',
+    city: 'Sint Maarten 🇸🇽',
+    pos: [18.04192078940854, -63.113028459403225],
+    hubs: ['mia'],
+    tz: 'America/Puerto_Rico',
+  },
+  {
+    name: 'Sydney Airport (SYD)',
+    city: 'Sydney, Australia 🇦🇺',
+    pos: [-33.94985609315001, 151.1818694507839],
+    hubs: ['hnl'],
+    tz: 'Australia/Sydney',
+  },
+  {
+    name: 'Syracuse Hancock International Airport (SYR)',
+    city: 'Syracuse, USA - New York 🇺🇸',
+    pos: [43.113949680808936, -76.11362234818714],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Chengdu Shuangliu International Airport (TFU)',
+    city: 'Chengdu, China 🇨🇳',
+    pos: [30.271849965598296, 104.44447857901999],
+    hubs: ['sfo'],
+    tz: 'Asia/Shanghai',
+  },
+  {
+    name: 'Tallahassee International Airport (TLH)',
+    city: 'Tallahassee, USA - Florida 🇺🇸',
+    pos: [30.393888865300536, -84.34502031697967],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Ben Gurion Airport (TLV)',
+    city: 'Tel Aviv, Israel 🇮🇱',
+    pos: [32.0060775789537, 34.885625736443],
+    hubs: ['ewr', 'ord'],
+    tz: 'Asia/Tel_Aviv',
+  },
+  {
+    name: 'Tampa International Airport (TPA)',
+    city: 'Tampa, USA - Florida 🇺🇸',
+    pos: [27.977171332699836, -82.53112747358927],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Taiwan Taoyuan International Airport (TPE)',
+    city: 'Taipei, Taiwan 🇹🇼',
+    pos: [25.078385372504524, 121.23404549362135],
+    hubs: ['sfo'],
+    tz: 'Asia/Taipei',
+  },
+  {
+    name: 'Bonriki International Airport (TRW)',
+    city: 'Tarawa, Kiribati 🇰🇮',
+    pos: [1.3816943367896826, 173.14677443116932],
+    hubs: ['hnl'],
+    tz: 'Pacific/Tarawa',
+  },
+  {
+    name: 'Tulsa International Airport (TUL)',
+    city: 'Tulsa, USA - Oklahoma 🇺🇸',
+    pos: [36.198655852278264, -95.8837988854985],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Tucson International Airport (TUS)',
+    city: 'Tucson, USA - Arizona 🇺🇸',
+    pos: [32.109666228, -110.937996248],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Cherry Capital Airport (TVC)',
+    city: 'Traverse City, USA - Michigan 🇺🇸',
+    pos: [44.74086300317933, -85.57965821227184],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'McGhee Tyson Airport (TYS)',
+    city: 'Knoxville, USA - Tennessee 🇺🇸',
+    pos: [35.81082427967718, -83.99379244250953],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Mariscal Sucre Quito International Airport (UIO)',
+    city: 'Quito, Ecuador 🇪🇨',
+    pos: [-0.1234546241729393, -78.3604826167644],
+    hubs: ['iah'],
+    tz: 'America/Lima',
+  },
+  {
+    name: 'Venice Marco Polo Airport (VCE)',
+    city: 'Venice, Italy 🇮🇹',
+    pos: [45.50475205289375, 12.346683142255474],
+    hubs: ['ewr'],
+    tz: 'Europe/Rome',
+  },
+  {
+    name: 'Northwest Arkansas National Airport (XNA)',
+    city: 'Fayetteville, USA - Arkansas 🇺🇸',
+    pos: [36.27796879497966, -94.30445559926372],
+    hubs: ['iah', 'ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Edmonton International Airport (YEG)',
+    city: 'Edmonton, Canada 🇨🇦',
+    pos: [53.30623686908562, -113.58276804327605],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    tz: 'Canada/Mountain',
+  },
+  {
+    name: 'Ottawa International Airport (YOW)',
+    city: 'Ottawa, Canada 🇨🇦',
+    pos: [45.31923461124119, -75.66914374429483],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    tz: 'Canada/Eastern',
+  },
+  {
+    name: 'Québec City Jean Lesage International Airport (YQB)',
+    city: 'Québec City, Canada 🇨🇦',
+    pos: [46.79067748415006, -71.38816534934894],
+    hubs: ['ord'],
+    tz: 'Canada/Eastern',
+  },
+  {
+    name: 'Montreal-Pierre Elliott Trudeau International Airport (YUL)',
+    city: 'Montreal, Canada 🇨🇦',
+    pos: [45.461698664876224, -73.7478869554127],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'Canada/Eastern',
+  },
+  {
+    name: 'Winnipeg James Armstrong Richardson International Airport (YWG)',
+    city: 'Winnipeg, Canada 🇨🇦',
+    pos: [49.90989045505348, -97.23656756049226],
+    hubs: ['ord'],
+    tz: 'Canada/Mountain',
+  },
+  {
+    name: 'Calgary International Airport (YYC)',
+    city: 'Calgary, Canada 🇨🇦',
+    pos: [51.12150310000004, -114.00819495762246],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'Canada/Mountain',
+  },
+  {
+    name: 'Vancouver International Airport (YVR)',
+    city: 'Vancouver, Canada 🇨🇦',
+    pos: [49.19675521104217, -123.18147272578588],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    tz: 'Canada/Pacific',
+  },
+  {
+    name: 'Erik Nielsen Whitehorse International Airport (YXY)',
+    city: 'Whitehorse, Canada 🇨🇦',
+    pos: [60.7139263748326, -135.07421919200056],
+    hubs: ['ord'],
+    tz: 'Canada/Yukon',
+  },
+  {
+    name: 'Toronto Pearson International Airport (YYZ)',
+    city: 'Toronto, Canada 🇨🇦',
+    pos: [43.67779523959123, -79.6247972173393],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'Canada/Eastern',
+  },
+  {
+    name: 'Yellowknife Airport (YZF)',
+    city: 'Yellowknife, Canada 🇨🇦',
+    pos: [62.46527349066923, -114.44129734775916],
+    hubs: ['ord'],
+    tz: 'Canada/Mountain',
+  },
+  {
+    name: 'Zurich Airport (ZRH)',
+    city: 'Zurich, Switzerland 🇨🇭',
+    pos: [47.461358490923374, 8.553454682550841],
+    hubs: ['ewr'],
+    tz: 'Europe/Zurich',
+  },
 ];
 
 var FLIGHT_SCHEDULE = `Route,Flight,Aircraft,Type,Route Link,Flight Link,Aircraft Link,Departure,Arrival,Pax,Turnover,Result,$/pax,$/hr
