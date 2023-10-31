@@ -83,7 +83,7 @@ var DESTINATIONS = [
     name: 'Auckland Airport (AKL)',
     city: 'Auckland, New Zealand 🇳🇿',
     pos: [-37.008565657401164, 174.7847156217281],
-    hubs: ['hnl'],
+    hubs: ['hnl', 'ord'],
     tz: 'Pacific/Auckland',
   },
   {
@@ -629,7 +629,7 @@ var DESTINATIONS = [
     name: 'Frankfurt Airport (FRA)',
     city: 'Frankfurt, Germany 🇩🇪',
     pos: [50.038235470253035, 8.562452176837837],
-    hubs: ['ewr'],
+    hubs: ['ewr', 'sfo', 'ord'],
     tz: 'Europe/Berlin',
   },
   {
@@ -715,13 +715,6 @@ var DESTINATIONS = [
     pos: [22.308602611679753, 113.91835201005935],
     hubs: ['sfo', 'ord'],
     tz: 'Asia/Hong_Kong',
-  },
-  {
-    name: 'Tokyo Haneda International Airport (HND)',
-    city: 'Tokyo, Japan 🇯🇵',
-    pos: [35.54933206852969, 139.77980640999556],
-    hubs: ['ord'],
-    tz: 'Asia/Tokyo',
   },
   {
     name: 'Huntsville International Airport (HSV)',
@@ -825,7 +818,7 @@ var DESTINATIONS = [
     name: 'Kansai International Airport (KIX)',
     city: 'Osaka, Japan 🇯🇵',
     pos: [34.43207316594882, 135.23039389643088],
-    hubs: ['sfo'],
+    hubs: ['sfo', 'ord'],
     tz: 'Asia/Tokyo',
   },
   {
@@ -1007,7 +1000,7 @@ var DESTINATIONS = [
     name: 'Ninoy Aquino International Airport (MNL)',
     city: 'Manila, Philippines 🇵🇭',
     pos: [14.505164646, 121.01833326],
-    hubs: ['hnl'],
+    hubs: ['sfo', 'hnl'],
     tz: 'Asia/Manila',
   },
   {
@@ -1098,7 +1091,7 @@ var DESTINATIONS = [
     name: 'Narita International Airport (NRT)',
     city: 'Tokyo, Japan 🇯🇵',
     pos: [35.77226493717075, 140.39293589386335],
-    hubs: ['ewr', 'sfo'],
+    hubs: ['ewr', 'sfo', 'ord'],
     tz: 'Asia/Tokyo',
   },
   {
@@ -1441,7 +1434,7 @@ var DESTINATIONS = [
     name: 'Singapore Changi Airport (SIN)',
     city: 'Singapore 🇸🇬',
     pos: [1.3655760814659688, 103.99134627431354],
-    hubs: ['hnl'],
+    hubs: ['sfo', 'hnl'],
     tz: 'Asia/Singapore',
   },
   {
@@ -1525,7 +1518,7 @@ var DESTINATIONS = [
     name: 'Sydney Airport (SYD)',
     city: 'Sydney, Australia 🇦🇺',
     pos: [-33.94985609315001, 151.1818694507839],
-    hubs: ['hnl'],
+    hubs: ['sfo', 'hnl', 'ord'],
     tz: 'Australia/Sydney',
   },
   {
