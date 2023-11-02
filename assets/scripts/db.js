@@ -528,6 +528,13 @@ var DESTINATIONS = [
     tz: 'Asia/Dubai',
   },
   {
+    name: 'Chippewa Valley Regional Airport (EAU)',
+    city: 'Eau Claire, USA - Wisconsin 🇺🇸',
+    pos: [44.86078193536782, -91.48428397257308],
+    hubs: ['ord'],
+    tz: 'US/Central',
+  },
+  {
     name: 'Northwest Florida Beaches International Airport (ECP)',
     city: 'Panama City, USA - Florida 🇺🇸',
     pos: [30.355281862622725, -85.7980485671208],
@@ -666,6 +673,13 @@ var DESTINATIONS = [
     pos: [-22.804592230082836, -43.25675808978346],
     hubs: ['iah'],
     tz: 'Brazil/East',
+  },
+  {
+    name: 'Green Bay Austin Straubel International Airport (GRB)',
+    city: 'Green Bay, USA - Wisconsin 🇺🇸',
+    pos: [44.489620567063184, -88.12922825069992],
+    hubs: ['ord'],
+    tz: 'US/Central',
   },
   {
     name: 'Gerald R. Ford International Airport (GRR)',
