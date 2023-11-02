@@ -811,7 +811,7 @@ var DESTINATIONS = [
     name: 'Keflavík International Airport (KEF)',
     city: 'Reykjavík, Iceland 🇮🇸',
     pos: [63.98070701155434, -22.627620001362224],
-    hubs: ['ewr'],
+    hubs: ['ewr', 'ord'],
     tz: 'Iceland',
   },
   {
@@ -860,7 +860,7 @@ var DESTINATIONS = [
     name: 'Heathrow Airport (LHR)',
     city: 'London, United Kingdom 🇬🇧',
     pos: [51.47058336357465, -0.4544242756733526],
-    hubs: ['ewr', 'sfo'],
+    hubs: ['ewr', 'sfo', 'ord'],
     tz: 'Europe/London',
   },
   {
