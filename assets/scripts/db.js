@@ -1641,6 +1641,27 @@ var DESTINATIONS = [
     tz: 'Canada/Eastern',
   },
   {
+    name: 'Regina International Airport (YQR)',
+    city: 'Regina, Canada 🇨🇦',
+    pos: [50.43150993926343, -104.65965838945694],
+    hubs: ['ord'],
+    tz: 'Canada/Central',
+  },
+  {
+    name: 'Thunder Bay International Airport (YQT)',
+    city: 'Thunder Bay, Canada 🇨🇦',
+    pos: [48.3728738487768, -89.31282010323325],
+    hubs: ['ord'],
+    tz: 'Canada/Eastern',
+  },
+  {
+    name: 'Greater Sudbury Airport (YSB)',
+    city: 'Sudbury, Canada 🇨🇦',
+    pos: [46.62498657916392, -80.79784952347586],
+    hubs: ['ord'],
+    tz: 'Canada/Eastern',
+  },
+  {
     name: 'Montreal-Pierre Elliott Trudeau International Airport (YUL)',
     city: 'Montreal, Canada 🇨🇦',
     pos: [45.461698664876224, -73.7478869554127],
