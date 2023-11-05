@@ -244,7 +244,7 @@ var DESTINATIONS = [
     name: 'Mobile International Airport (BFM)',
     city: 'Mobile, USA - Alabama 🇺🇸',
     pos: [30.63023600345301, -88.07275618205335],
-    hubs: ['iah', 'ord'],
+    hubs: ['sfo', 'iah', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -356,7 +356,7 @@ var DESTINATIONS = [
     name: 'Chattanooga Metropolitan Airport (CHA)',
     city: 'Chattanooga, USA - Tennessee 🇺🇸',
     pos: [35.03692109359861, -85.20001532837085],
-    hubs: ['iah', 'ord'],
+    hubs: ['sfo', 'iah', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -538,7 +538,7 @@ var DESTINATIONS = [
     name: 'Northwest Florida Beaches International Airport (ECP)',
     city: 'Panama City, USA - Florida 🇺🇸',
     pos: [30.355281862622725, -85.7980485671208],
-    hubs: ['ewr', 'iah', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -650,7 +650,7 @@ var DESTINATIONS = [
     name: 'Fort Wayne International Airport (FWA)',
     city: 'Fort Wayne, USA - Indiana 🇺🇸',
     pos: [40.97737427230013, -85.19561777847646],
-    hubs: ['ord'],
+    hubs: ['sfo', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -664,7 +664,7 @@ var DESTINATIONS = [
     name: 'Spokane International Airport (GEG)',
     city: 'Spokane, USA - Washington 🇺🇸',
     pos: [47.62118457654647, -117.53338283178057],
-    hubs: ['iah', 'ord'],
+    hubs: ['sfo', 'iah', 'ord'],
     tz: 'US/Pacific',
   },
   {
@@ -678,7 +678,7 @@ var DESTINATIONS = [
     name: 'Green Bay Austin Straubel International Airport (GRB)',
     city: 'Green Bay, USA - Wisconsin 🇺🇸',
     pos: [44.489620567063184, -88.12922825069992],
-    hubs: ['ord'],
+    hubs: ['sfo', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -734,7 +734,7 @@ var DESTINATIONS = [
     name: 'Huntsville International Airport (HSV)',
     city: 'Huntsville, USA - Alabama 🇺🇸',
     pos: [34.63686815027565, -86.77747147166176],
-    hubs: ['iah', 'ord'],
+    hubs: ['sfo', 'iah', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -1210,7 +1210,7 @@ var DESTINATIONS = [
     name: 'Pensacola International Airport (PNS)',
     city: 'Pensacola, USA - Florida 🇺🇸',
     pos: [30.473625313477296, -87.18674410562464],
-    hubs: ['iah', 'ord'],
+    hubs: ['sfo', 'iah', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1238,7 +1238,7 @@ var DESTINATIONS = [
     name: 'Prescott Regional Airport (PRC)',
     city: 'Prescott, USA - Arizona 🇺🇸',
     pos: [34.64961150959865, -112.4266704878452],
-    hubs: ['iah', 'ord'],
+    hubs: ['sfo', 'iah', 'ord'],
     tz: 'US/Mountain',
   },
   {
@@ -1427,7 +1427,7 @@ var DESTINATIONS = [
     name: 'St. George Regional Airport (SGU)',
     city: 'St. George, USA - Utah 🇺🇸',
     pos: [37.03262261764, -113.51101298247991],
-    hubs: ['iah'],
+    hubs: ['sfo', 'iah'],
     tz: 'US/Mountain',
   },
   {
@@ -1511,7 +1511,7 @@ var DESTINATIONS = [
     name: 'Sarasota Bradenton International Airport (SRQ)',
     city: 'Sarasota, USA - Florida 🇺🇸',
     pos: [27.395100025167416, -82.5539055345659],
-    hubs: ['ewr', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1553,7 +1553,7 @@ var DESTINATIONS = [
     name: 'Tallahassee International Airport (TLH)',
     city: 'Tallahassee, USA - Florida 🇺🇸',
     pos: [30.393888865300536, -84.34502031697967],
-    hubs: ['iah', 'ord'],
+    hubs: ['sfo', 'iah', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1686,7 +1686,7 @@ var DESTINATIONS = [
     name: 'Winnipeg James Armstrong Richardson International Airport (YWG)',
     city: 'Winnipeg, Canada 🇨🇦',
     pos: [49.90989045505348, -97.23656756049226],
-    hubs: ['ord'],
+    hubs: ['sfo', 'ord'],
     tz: 'Canada/Mountain',
   },
   {
