@@ -111,7 +111,7 @@ var DESTINATIONS = [
     name: 'Amsterdam Schiphol Airport (AMS)',
     city: 'Amsterdam, The Netherlands 🇳🇱',
     pos: [52.310623851948954, 4.768263669222851],
-    hubs: ['ewr'],
+    hubs: ['ewr', 'mia'],
     tz: 'Europe/Amsterdam',
   },
   {
@@ -146,7 +146,7 @@ var DESTINATIONS = [
     name: 'Athens International Airport (ATH)',
     city: 'Athens, Greece 🇬🇷',
     pos: [37.93572283626069, 23.948437055281335],
-    hubs: ['ewr'],
+    hubs: ['ewr', 'mia'],
     tz: 'Europe/Athens',
   },
   {
@@ -288,6 +288,13 @@ var DESTINATIONS = [
     pos: [-27.39418580574182, 153.1218517553009],
     hubs: ['hnl'],
     tz: 'Australia/Brisbane',
+  },
+  {
+    name: 'Rafael Hernández International Airport (BQN)',
+    city: 'Aguadilla, Puerto Rico 🇵🇷, US Territories',
+    pos: [18.49500883380857, -67.1282373677944],
+    hubs: ['mia'],
+    tz: 'America/Puerto_Rico',
   },
   {
     name: 'Brussels Airport (BRU)',
@@ -580,7 +587,7 @@ var DESTINATIONS = [
     name: 'Ezeiza International Airport (EZE)',
     city: 'Buenos Aires, Argentina 🇦🇷',
     pos: [-34.81472221811849, -58.5349142696793],
-    hubs: ['iah'],
+    hubs: ['iah', 'mia'],
     tz: 'America/Argentina/Buenos_Aires',
   },
   {
@@ -615,7 +622,7 @@ var DESTINATIONS = [
     name: 'Leonardo da Vinci International Airport (FCO)',
     city: 'Rome, Italy 🇮🇹',
     pos: [41.80413085802929, 12.251849849230378],
-    hubs: ['ewr'],
+    hubs: ['ewr', 'mia'],
     tz: 'Europe/Rome',
   },
   {
@@ -636,7 +643,7 @@ var DESTINATIONS = [
     name: 'Frankfurt Airport (FRA)',
     city: 'Frankfurt, Germany 🇩🇪',
     pos: [50.038235470253035, 8.562452176837837],
-    hubs: ['ewr', 'sfo', 'ord'],
+    hubs: ['ewr', 'sfo', 'mia', 'ord'],
     tz: 'Europe/Berlin',
   },
   {
@@ -671,7 +678,7 @@ var DESTINATIONS = [
     name: 'Rio de Janeiro/Galeao International Airport (GIG)',
     city: 'Rio di Janeiro, Brazil 🇧🇷',
     pos: [-22.804592230082836, -43.25675808978346],
-    hubs: ['iah'],
+    hubs: ['iah', 'mia'],
     tz: 'Brazil/East',
   },
   {
@@ -692,7 +699,7 @@ var DESTINATIONS = [
     name: 'São Paulo/Guarulhos International Airport (GRU)',
     city: 'São Paulo, Brazil 🇧🇷',
     pos: [-23.4301397120531, -46.47291429752642],
-    hubs: ['iah'],
+    hubs: ['iah', 'mia'],
     tz: 'Brazil/East',
   },
   {
@@ -874,7 +881,7 @@ var DESTINATIONS = [
     name: 'Heathrow Airport (LHR)',
     city: 'London, United Kingdom 🇬🇧',
     pos: [51.47058336357465, -0.4544242756733526],
-    hubs: ['ewr', 'sfo', 'ord'],
+    hubs: ['ewr', 'sfo', 'mia', 'ord'],
     tz: 'Europe/London',
   },
   {
@@ -888,7 +895,7 @@ var DESTINATIONS = [
     name: 'Jorge Chavez International Airport (LIM)',
     city: 'Lima, Peru 🇵🇪',
     pos: [-12.023590851622739, -77.11199313107029],
-    hubs: ['iah'],
+    hubs: ['iah', 'mia'],
     tz: 'America/Lima',
   },
   {
@@ -1410,6 +1417,13 @@ var DESTINATIONS = [
     tz: 'US/Eastern',
   },
   {
+    name: 'Santo Domingo/Las Américas International Airport (SDQ)',
+    city: 'Santo Domingo, Dominican Republic 🇩🇴',
+    pos: [18.431523068951375, -69.67224256502207],
+    hubs: ['mia'],
+    tz: 'America/Puerto_Rico',
+  },
+  {
     name: 'Kangerlussuaq Airport (SFJ)',
     city: 'Kangerlussuaq, Greenland 🇬🇱',
     pos: [67.1775669383681, -50.651060561338205],
@@ -1728,7 +1742,7 @@ var DESTINATIONS = [
     name: 'Zurich Airport (ZRH)',
     city: 'Zurich, Switzerland 🇨🇭',
     pos: [47.461358490923374, 8.553454682550841],
-    hubs: ['ewr'],
+    hubs: ['ewr', 'mia'],
     tz: 'Europe/Zurich',
   },
 ];
