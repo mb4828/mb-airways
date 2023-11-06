@@ -1371,7 +1371,7 @@ var DESTINATIONS = [
     name: 'Santa Barbara Airport (SBA)',
     city: 'Santa Barbara, USA - California 🇺🇸',
     pos: [34.42729081888512, -119.83988350359796],
-    hubs: ['iah'],
+    hubs: ['sfo', 'iah'],
     tz: 'US/Pacific',
   },
   {
@@ -1497,7 +1497,7 @@ var DESTINATIONS = [
     name: 'John Wayne Airport (SNA)',
     city: 'Santa Ana, USA - California 🇺🇸',
     pos: [33.67632399877975, -117.86749736129858],
-    hubs: ['iah', 'ord'],
+    hubs: ['sfo', 'iah', 'ord'],
     tz: 'US/Pacific',
   },
   {
