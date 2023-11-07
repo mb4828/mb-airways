@@ -734,7 +734,7 @@ var DESTINATIONS = [
     name: 'Hong Kong International Airport (HKG)',
     city: 'Hong Kong, China 🇨🇳',
     pos: [22.308602611679753, 113.91835201005935],
-    hubs: ['sfo', 'ord'],
+    hubs: ['sfo', 'hnl', 'ord'],
     tz: 'Asia/Hong_Kong',
   },
   {
@@ -1112,7 +1112,7 @@ var DESTINATIONS = [
     name: 'Narita International Airport (NRT)',
     city: 'Tokyo, Japan 🇯🇵',
     pos: [35.77226493717075, 140.39293589386335],
-    hubs: ['ewr', 'sfo', 'ord'],
+    hubs: ['ewr', 'sfo', 'hnl', 'ord'],
     tz: 'Asia/Tokyo',
   },
   {
@@ -1182,7 +1182,7 @@ var DESTINATIONS = [
     name: 'Beijing Capital International Airport (PEK)',
     city: 'Beijing, China 🇨🇳',
     pos: [40.0801853355692, 116.60315498033326],
-    hubs: ['sfo'],
+    hubs: ['sfo', 'hnl'],
     tz: 'Asia/Shanghai',
   },
   {
@@ -1560,7 +1560,7 @@ var DESTINATIONS = [
     name: 'Chengdu Shuangliu International Airport (TFU)',
     city: 'Chengdu, China 🇨🇳',
     pos: [30.271849965598296, 104.44447857901999],
-    hubs: ['sfo'],
+    hubs: ['sfo', 'hnl'],
     tz: 'Asia/Shanghai',
   },
   {
