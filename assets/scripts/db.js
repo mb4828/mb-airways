@@ -118,7 +118,7 @@ var DESTINATIONS = [
     name: 'Ted Stevens International Airport (ANC)',
     city: 'Anchorage, USA - Alaska 🇺🇸',
     pos: [61.171332648, -149.991162702],
-    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'ord'],
     tz: 'US/Alaska',
   },
   {
@@ -409,10 +409,24 @@ var DESTINATIONS = [
     tz: 'Africa/Casablanca',
   },
   {
+    name: 'Yellowstone Regional Airport (COD)',
+    city: 'Cody, USA - Wyoming 🇺🇸',
+    pos: [44.519728774751975, -109.02265056273423],
+    hubs: ['ord'],
+    tz: 'US/Mountain',
+  },
+  {
     name: 'Colorado Springs Airport (COS)',
     city: 'Colorado Springs, USA - Colorado 🇺🇸',
     pos: [38.80179559142115, -104.70258244384314],
     hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    tz: 'US/Mountain',
+  },
+  {
+    name: 'Casper-Natrona County International Airport (CPR)',
+    city: 'Casper, USA - Wyoming 🇺🇸',
+    pos: [42.89894918911031, -106.46682051916366],
+    hubs: ['ord'],
     tz: 'US/Mountain',
   },
   {
@@ -710,6 +724,13 @@ var DESTINATIONS = [
     tz: 'US/Eastern',
   },
   {
+    name: 'Greenville-Spartanburg International Airport (GSP)',
+    city: 'Greenville, USA - South Carolina 🇺🇸',
+    pos: [34.89544321359752, -82.21736254603768],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
+  },
+  {
     name: 'Antonio B. Won Pat International Airport (GUM)',
     city: 'Guam 🇬🇺, US Territories',
     pos: [13.4863791493778, 144.80040397596647],
@@ -986,7 +1007,7 @@ var DESTINATIONS = [
     name: 'Mexico City International Airport (MEX)',
     city: 'Mexico City, Mexico 🇲🇽',
     pos: [19.43624818319543, -99.07194048906919],
-    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'ord'],
     tz: 'America/Mexico_City',
   },
   {
@@ -1175,7 +1196,7 @@ var DESTINATIONS = [
     name: 'Portland International Airport (PDX)',
     city: 'Portland, USA - Oregon 🇺🇸',
     pos: [45.59024957185743, -122.59483674121826],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord'],
     tz: 'US/Pacific',
   },
   {
@@ -1319,6 +1340,13 @@ var DESTINATIONS = [
     tz: 'US/Eastern',
   },
   {
+    name: 'Southwest Wyoming Regional Airport (RKS)',
+    city: 'Rock Springs, USA - Wyoming 🇺🇸',
+    pos: [41.59693592071582, -109.07249974356728],
+    hubs: ['ord'],
+    tz: 'US/Mountain',
+  },
+  {
     name: 'Reno-Tahoe International Airport (RNO)',
     city: 'Reno, USA - Nevada 🇺🇸',
     pos: [39.49964863013703, -119.76805218683198],
@@ -1357,7 +1385,7 @@ var DESTINATIONS = [
     name: 'San Diego International Airport (SAN)',
     city: 'San Diego, USA - California 🇺🇸',
     pos: [32.733728095648374, -117.19304634789322],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord'],
     tz: 'US/Pacific',
   },
   {
@@ -1728,7 +1756,7 @@ var DESTINATIONS = [
     name: 'Toronto Pearson International Airport (YYZ)',
     city: 'Toronto, Canada 🇨🇦',
     pos: [43.67779523959123, -79.6247972173393],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord'],
     tz: 'Canada/Eastern',
   },
   {
