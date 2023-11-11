@@ -66,6 +66,13 @@ var DESTINATIONS = [
     tz: 'US/Central',
   },
   {
+    name: 'Lehigh Valley International Airport (ABE)',
+    city: 'Allentown, USA - Pennsylvania 🇺🇸',
+    pos: [40.65096745770116, -75.44277789746873],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
+  },
+  {
     name: 'Albuquerque International Airport (ABQ)',
     city: 'Albuquerque, USA - New Mexico 🇺🇸',
     pos: [35.04446359549329, -106.61291166771365],
@@ -169,6 +176,13 @@ var DESTINATIONS = [
     pos: [30.19868847903938, -97.66571921787173],
     hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Central',
+  },
+  {
+    name: 'Wilkes-Barre Scranton International Airport (AVP)',
+    city: 'Scranton, USA - Pennsylvania 🇺🇸',
+    pos: [41.33788540028108, -75.72308253727716],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
   },
   {
     name: 'El Dorado International Airport (BOG)',
@@ -472,10 +486,24 @@ var DESTINATIONS = [
     tz: 'Pacific/Kiritimati',
   },
   {
+    name: 'Cheyenne Regional Airport (CYS)',
+    city: 'Cheyenne, USA - Wyoming 🇺🇸',
+    pos: [41.15445287920214, -104.80860860757983],
+    hubs: ['ord'],
+    tz: 'US/Mountain',
+  },
+  {
     name: 'Daytona Beach International Airport (DAB)',
     city: 'Daytona Beach, USA - Florida 🇺🇸',
     pos: [29.18042531670668, -81.05629836579335],
     hubs: ['iah', 'ord'],
+    tz: 'US/Eastern',
+  },
+  {
+    name: 'Dayton International Airport (DAY)',
+    city: 'Dayton, USA - Ohio 🇺🇸',
+    pos: [39.902278443358725, -84.22005768170953],
+    hubs: ['ord'],
     tz: 'US/Eastern',
   },
   {
@@ -675,6 +703,13 @@ var DESTINATIONS = [
     tz: 'US/Eastern',
   },
   {
+    name: 'Northeast Wyoming Regional Airport (GCC)',
+    city: 'Gillette, USA - Wyoming 🇺🇸',
+    pos: [44.34800116924676, -105.53990679538717],
+    hubs: ['ord'],
+    tz: 'US/Mountain',
+  },
+  {
     name: 'Miguel Hidalgo y Costilla International Airport (GDL)',
     city: 'Guadalajara, Mexico 🇲🇽',
     pos: [20.52589580006699, -103.30765718888681],
@@ -801,6 +836,20 @@ var DESTINATIONS = [
     tz: 'US/Eastern',
   },
   {
+    name: 'Williston Basin International Airport (ISN)',
+    city: 'Williston, USA - North Dakota 🇺🇸',
+    pos: [48.25768705579519, -103.74182090846163],
+    hubs: ['ord'],
+    tz: 'US/Central',
+  },
+  {
+    name: 'Ithaca Tompkins International Airport (ITH)',
+    city: 'Ithaca, USA - New York 🇺🇸',
+    pos: [42.49030014787322, -76.4588196643788],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
+  },
+  {
     name: 'Hilo International Airport (ITO)',
     city: 'Hilo, USA - Hawaii 🇺🇸',
     pos: [19.71828308321948, -155.04165378827003],
@@ -871,6 +920,13 @@ var DESTINATIONS = [
     tz: 'US/Hawaii',
   },
   {
+    name: 'Laramie Regional Airport (LAR)',
+    city: 'Laramie, USA - Wyoming 🇺🇸',
+    pos: [41.31528677335957, -105.67266255928924],
+    hubs: ['ord'],
+    tz: 'US/Mountain',
+  },
+  {
     name: 'Harry Reid International Airport (LAS)',
     city: 'Las Vegas, USA - Nevada 🇺🇸',
     pos: [36.08590149456017, -115.15072229119573],
@@ -883,6 +939,13 @@ var DESTINATIONS = [
     pos: [33.9412952817257, -118.40872312135349],
     hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
     tz: 'US/Pacific',
+  },
+  {
+    name: 'North Platte-Lee Bird Regional Airport (LBF)',
+    city: 'North Platte, USA - Nebraska 🇺🇸',
+    pos: [41.13108391040011, -100.69447650884773],
+    hubs: ['ord'],
+    tz: 'US/Mountain',
   },
   {
     name: 'Blue Grass Airport (LEX)',
@@ -934,6 +997,13 @@ var DESTINATIONS = [
     tz: 'US/Central',
   },
   {
+    name: 'Lincoln Airport (LNK)',
+    city: 'Lincoln, USA - Nebraska 🇺🇸',
+    pos: [40.84780344917619, -96.76074340980857],
+    hubs: ['ord'],
+    tz: 'US/Mountain',
+  },
+  {
     name: 'Lanai Airport (LNY)',
     city: 'Lanai City, USA - Hawaii 🇺🇸',
     pos: [20.79129049571412, -156.95037799977516],
@@ -946,6 +1016,13 @@ var DESTINATIONS = [
     pos: [6.582042315799838, 3.3210704254376475],
     hubs: ['mia'],
     tz: 'Africa/Lagos',
+  },
+  {
+    name: 'Lynchburg Regional Airport (LYH)',
+    city: 'Lynchburg, USA - Virginia 🇺🇸',
+    pos: [37.32827386357068, -79.19906370393748],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
   },
   {
     name: 'Adolfo Suarez Madrid-Barajas Airport (MAD)',
@@ -1340,6 +1417,13 @@ var DESTINATIONS = [
     tz: 'US/Eastern',
   },
   {
+    name: 'Central Wyoming Regional Airport (RIW)',
+    city: 'Riverton, USA - Wyoming 🇺🇸',
+    pos: [43.063641964713064, -108.45738326243112],
+    hubs: ['ord'],
+    tz: 'US/Mountain',
+  },
+  {
     name: 'Southwest Wyoming Regional Airport (RKS)',
     city: 'Rock Springs, USA - Wyoming 🇺🇸',
     pos: [41.59693592071582, -109.07249974356728],
@@ -1352,6 +1436,13 @@ var DESTINATIONS = [
     pos: [39.49964863013703, -119.76805218683198],
     hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Pacific',
+  },
+  {
+    name: 'Roanoke-Blacksburg Regional Airport (ROA)',
+    city: 'Roanoke, USA - Virginia 🇺🇸',
+    pos: [37.32048891217508, -79.97392795702376],
+    hubs: ['ord'],
+    tz: 'US/Eastern',
   },
   {
     name: 'Greater Rochester International Airport (ROC)',
@@ -1478,6 +1569,13 @@ var DESTINATIONS = [
     pos: [31.193096387538194, 121.33369906532243],
     hubs: ['sfo'],
     tz: 'Asia/Shanghai',
+  },
+  {
+    name: 'Sheridan County Airport (SHR)',
+    city: 'Sheridan, USA - Wyoming 🇺🇸',
+    pos: [44.774600966792725, -106.9708817163848],
+    hubs: ['ord'],
+    tz: 'US/Mountain',
   },
   {
     name: 'Shreveport Regional Airport (SHV)',
