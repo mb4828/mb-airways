@@ -1476,7 +1476,7 @@ var DESTINATIONS = [
     name: 'San Diego International Airport (SAN)',
     city: 'San Diego, USA - California 🇺🇸',
     pos: [32.733728095648374, -117.19304634789322],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord'],
     tz: 'US/Pacific',
   },
   {
