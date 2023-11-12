@@ -1476,7 +1476,7 @@ var DESTINATIONS = [
     name: 'San Diego International Airport (SAN)',
     city: 'San Diego, USA - California 🇺🇸',
     pos: [32.733728095648374, -117.19304634789322],
-    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Pacific',
   },
   {
@@ -1595,7 +1595,7 @@ var DESTINATIONS = [
     name: 'Norman Y. Mineta San Jose International Airport (SJC)',
     city: 'San Jose, USA - California 🇺🇸',
     pos: [37.363665715803144, -121.92895897613796],
-    hubs: ['ewr', 'iah', 'mia', 'ord'],
+    hubs: ['ewr', 'iah', 'mia', 'hnl', 'ord'],
     tz: 'US/Pacific',
   },
   {
