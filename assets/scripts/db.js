@@ -258,7 +258,7 @@ var DESTINATIONS = [
     name: 'Mobile International Airport (BFM)',
     city: 'Mobile, USA - Alabama 🇺🇸',
     pos: [30.63023600345301, -88.07275618205335],
-    hubs: ['sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -377,7 +377,7 @@ var DESTINATIONS = [
     name: 'Chattanooga Metropolitan Airport (CHA)',
     city: 'Chattanooga, USA - Tennessee 🇺🇸',
     pos: [35.03692109359861, -85.20001532837085],
-    hubs: ['sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -503,7 +503,7 @@ var DESTINATIONS = [
     name: 'Dayton International Airport (DAY)',
     city: 'Dayton, USA - Ohio 🇺🇸',
     pos: [39.902278443358725, -84.22005768170953],
-    hubs: ['ord'],
+    hubs: ['ewr', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -699,7 +699,7 @@ var DESTINATIONS = [
     name: 'Fort Wayne International Airport (FWA)',
     city: 'Fort Wayne, USA - Indiana 🇺🇸',
     pos: [40.97737427230013, -85.19561777847646],
-    hubs: ['sfo', 'ord'],
+    hubs: ['ewr', 'sfo', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -762,7 +762,7 @@ var DESTINATIONS = [
     name: 'Greenville-Spartanburg International Airport (GSP)',
     city: 'Greenville, USA - South Carolina 🇺🇸',
     pos: [34.89544321359752, -82.21736254603768],
-    hubs: ['ord'],
+    hubs: ['ewr', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -797,14 +797,14 @@ var DESTINATIONS = [
     name: 'Huntsville International Airport (HSV)',
     city: 'Huntsville, USA - Alabama 🇺🇸',
     pos: [34.63686815027565, -86.77747147166176],
-    hubs: ['sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
     tz: 'US/Central',
   },
   {
     name: 'Dulles International Airport (IAD)',
     city: 'Washington, USA - D.C. 🇺🇸',
     pos: [38.95327013665701, -77.4565514890331],
-    hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -846,7 +846,7 @@ var DESTINATIONS = [
     name: 'Ithaca Tompkins International Airport (ITH)',
     city: 'Ithaca, USA - New York 🇺🇸',
     pos: [42.49030014787322, -76.4588196643788],
-    hubs: ['ord'],
+    hubs: ['ewr', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1315,7 +1315,7 @@ var DESTINATIONS = [
     name: 'Pensacola International Airport (PNS)',
     city: 'Pensacola, USA - Florida 🇺🇸',
     pos: [30.473625313477296, -87.18674410562464],
-    hubs: ['sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1693,7 +1693,7 @@ var DESTINATIONS = [
     name: 'Tallahassee International Airport (TLH)',
     city: 'Tallahassee, USA - Florida 🇺🇸',
     pos: [30.393888865300536, -84.34502031697967],
-    hubs: ['sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'ord'],
     tz: 'US/Eastern',
   },
   {
