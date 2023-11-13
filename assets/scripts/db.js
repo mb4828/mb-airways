@@ -111,7 +111,7 @@ var DESTINATIONS = [
     name: 'Rick Husband Amarillo International Airport (AMA)',
     city: 'Amarillo, USA - Texas 🇺🇸',
     pos: [35.219312328500564, -101.70862852371039],
-    hubs: ['iah', 'ord'],
+    hubs: ['iah', 'mia', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -176,6 +176,13 @@ var DESTINATIONS = [
     pos: [30.19868847903938, -97.66571921787173],
     hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Central',
+  },
+  {
+    name: 'Asheville Regional Airport (AVL)',
+    city: 'Asheville, USA - North Carolina 🇺🇸',
+    pos: [35.434428010203796, -82.54031776871176],
+    hubs: ['mia'],
+    tz: 'US/Eastern',
   },
   {
     name: 'Wilkes-Barre Scranton International Airport (AVP)',
@@ -258,7 +265,7 @@ var DESTINATIONS = [
     name: 'Mobile International Airport (BFM)',
     city: 'Mobile, USA - Alabama 🇺🇸',
     pos: [30.63023600345301, -88.07275618205335],
-    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -377,7 +384,7 @@ var DESTINATIONS = [
     name: 'Chattanooga Metropolitan Airport (CHA)',
     city: 'Chattanooga, USA - Tennessee 🇺🇸',
     pos: [35.03692109359861, -85.20001532837085],
-    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -496,14 +503,14 @@ var DESTINATIONS = [
     name: 'Daytona Beach International Airport (DAB)',
     city: 'Daytona Beach, USA - Florida 🇺🇸',
     pos: [29.18042531670668, -81.05629836579335],
-    hubs: ['iah', 'ord'],
+    hubs: ['iah', 'mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
     name: 'Dayton International Airport (DAY)',
     city: 'Dayton, USA - Ohio 🇺🇸',
     pos: [39.902278443358725, -84.22005768170953],
-    hubs: ['ewr', 'ord'],
+    hubs: ['ewr', 'mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -622,7 +629,7 @@ var DESTINATIONS = [
     name: 'Evansville Regional Airport (EVV)',
     city: 'Evansville, USA - Indiana 🇺🇸',
     pos: [38.04311058839397, -87.52691791114265],
-    hubs: ['ord'],
+    hubs: ['mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -652,6 +659,13 @@ var DESTINATIONS = [
     pos: [36.77582349137883, -119.7182263207816],
     hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Pacific',
+  },
+  {
+    name: 'Fayetteville Regional Airport (FAY)',
+    city: 'Fayetteville, USA - North Carolina 🇺🇸',
+    pos: [34.990380915566824, -78.88433705355224],
+    hubs: ['mia'],
+    tz: 'US/Eastern',
   },
   {
     name: 'Glacier Park International Airport (FCA)',
@@ -699,7 +713,7 @@ var DESTINATIONS = [
     name: 'Fort Wayne International Airport (FWA)',
     city: 'Fort Wayne, USA - Indiana 🇺🇸',
     pos: [40.97737427230013, -85.19561777847646],
-    hubs: ['ewr', 'sfo', 'ord'],
+    hubs: ['ewr', 'sfo', 'mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -762,7 +776,7 @@ var DESTINATIONS = [
     name: 'Greenville-Spartanburg International Airport (GSP)',
     city: 'Greenville, USA - South Carolina 🇺🇸',
     pos: [34.89544321359752, -82.21736254603768],
-    hubs: ['ewr', 'ord'],
+    hubs: ['ewr', 'mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -797,7 +811,7 @@ var DESTINATIONS = [
     name: 'Huntsville International Airport (HSV)',
     city: 'Huntsville, USA - Alabama 🇺🇸',
     pos: [34.63686815027565, -86.77747147166176],
-    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -825,7 +839,7 @@ var DESTINATIONS = [
     name: 'Wilmington International Airport (ILM)',
     city: 'Wilmington, USA - North Carolina 🇺🇸',
     pos: [34.26623590568664, -77.90979573247422],
-    hubs: ['iah', 'ord'],
+    hubs: ['iah', 'mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -944,7 +958,7 @@ var DESTINATIONS = [
     name: 'North Platte-Lee Bird Regional Airport (LBF)',
     city: 'North Platte, USA - Nebraska 🇺🇸',
     pos: [41.13108391040011, -100.69447650884773],
-    hubs: ['ord'],
+    hubs: ['mia', 'ord'],
     tz: 'US/Mountain',
   },
   {
@@ -1000,7 +1014,7 @@ var DESTINATIONS = [
     name: 'Lincoln Airport (LNK)',
     city: 'Lincoln, USA - Nebraska 🇺🇸',
     pos: [40.84780344917619, -96.76074340980857],
-    hubs: ['ord'],
+    hubs: ['mia', 'ord'],
     tz: 'US/Mountain',
   },
   {
@@ -1021,7 +1035,7 @@ var DESTINATIONS = [
     name: 'Lynchburg Regional Airport (LYH)',
     city: 'Lynchburg, USA - Virginia 🇺🇸',
     pos: [37.32827386357068, -79.19906370393748],
-    hubs: ['ord'],
+    hubs: ['mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1063,7 +1077,7 @@ var DESTINATIONS = [
     name: 'Harrisburg International Airport (MDT)',
     city: 'Harrisburg, USA - Pennsylvania 🇺🇸',
     pos: [40.19381950779775, -76.75773157625802],
-    hubs: ['iah', 'ord'],
+    hubs: ['iah', 'mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1315,7 +1329,7 @@ var DESTINATIONS = [
     name: 'Pensacola International Airport (PNS)',
     city: 'Pensacola, USA - Florida 🇺🇸',
     pos: [30.473625313477296, -87.18674410562464],
-    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1441,7 +1455,7 @@ var DESTINATIONS = [
     name: 'Roanoke-Blacksburg Regional Airport (ROA)',
     city: 'Roanoke, USA - Virginia 🇺🇸',
     pos: [37.32048891217508, -79.97392795702376],
-    hubs: ['ord'],
+    hubs: ['mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1581,7 +1595,7 @@ var DESTINATIONS = [
     name: 'Shreveport Regional Airport (SHV)',
     city: 'Shreveport, USA - Louisiana 🇺🇸',
     pos: [32.448798352262486, -93.82920911742895],
-    hubs: ['iah', 'ord'],
+    hubs: ['iah', 'mia', 'ord'],
     tz: 'US/Central',
   },
   {
@@ -1651,7 +1665,7 @@ var DESTINATIONS = [
     name: 'Sarasota Bradenton International Airport (SRQ)',
     city: 'Sarasota, USA - Florida 🇺🇸',
     pos: [27.395100025167416, -82.5539055345659],
-    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1693,7 +1707,7 @@ var DESTINATIONS = [
     name: 'Tallahassee International Airport (TLH)',
     city: 'Tallahassee, USA - Florida 🇺🇸',
     pos: [30.393888865300536, -84.34502031697967],
-    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
     tz: 'US/Eastern',
   },
   {
@@ -1770,7 +1784,7 @@ var DESTINATIONS = [
     name: 'Northwest Arkansas National Airport (XNA)',
     city: 'Fayetteville, USA - Arkansas 🇺🇸',
     pos: [36.27796879497966, -94.30445559926372],
-    hubs: ['iah', 'ord'],
+    hubs: ['iah', 'mia', 'ord'],
     tz: 'US/Central',
   },
   {
