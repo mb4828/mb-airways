@@ -35,7 +35,16 @@ const MARKER_ICON_SECONDARY = {
 
 const FLOWER_ICON = {
   icon: L.icon({
-    iconUrl: 'assets/images/livery/mb_aloha_flower.png',
+    iconUrl: 'assets/images/livery/mb-aloha/mb_aloha_flower.png',
+    iconSize: [18, 18], // size of the icon
+    iconAnchor: [9, 18], // point of the icon which will correspond to marker's location
+    popupAnchor: [0, -18], // point from which the popup should open relative to the iconAnchor
+  }),
+};
+
+const DOG_ICON = {
+  icon: L.icon({
+    iconUrl: 'assets/images/livery/mb-alaska/mb_alaska_dog.png',
     iconSize: [18, 18], // size of the icon
     iconAnchor: [9, 18], // point of the icon which will correspond to marker's location
     popupAnchor: [0, -18], // point from which the popup should open relative to the iconAnchor
@@ -53,6 +62,8 @@ function drawMarker(map, dest, options = {}) {
     markerOpts = HUB_ICON;
   } else if (dest.city.includes('Hawaii')) {
     markerOpts = FLOWER_ICON;
+  } else if (dest.city.includes('Alaska')) {
+    markerOpts = DOG_ICON;
   } else if (options.hub && !dest.hubs.includes(options.hub)) {
     markerOpts = MARKER_ICON_SECONDARY;
   }
