@@ -99,8 +99,8 @@ img.plane-icon {
 }
 
 .flight-table img {
-    height: 18px;
-    margin-right: 5px;
+    height: 20px;
+    margin: 0px 5px -3px 0;
     transform: scaleX(-1);
 }
 

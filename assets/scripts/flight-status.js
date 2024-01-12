@@ -192,10 +192,9 @@ function updateUITable(id, data) {
         const tm = isArr ? d.at : d.dt;
         const nextTm = data.length > idx + 1 ? (isArr ? data[idx + 1].at : data[idx + 1].dt) : null;
         const code = isArr ? d.d : d.o;
-        const isAloha = ['717-200', 'Q-400'].includes(d.type);
         return `
             <tr>
-                <td><img src="assets/images/logos/${isAloha ? 'aloha-tail' : 'mb-tail'}.png">${d.flight}</td>
+                <td><img src="${getTailLogo(d)}">${d.flight}</td>
                 <td>${d.type}</td>
                 <td title="${getAirportName(isArr ? d.o : d.d)}">${isArr ? d.o : d.d}</td>
                 <td>${d.status}</td>

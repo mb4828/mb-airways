@@ -163,7 +163,7 @@ label {
 
 img.tail-logo {
 	position: relative;
-	top: 2px;
-    height: 15px;
+	top: 3px;
+    height: 16px;
     transform: scaleX(-1);
 }
