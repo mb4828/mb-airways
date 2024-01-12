@@ -37,7 +37,7 @@ var DESTINATIONS = [
     name: 'Miami International Airport (MIA)',
     city: 'Miami, USA - Florida 🇺🇸',
     pos: [25.796412980391715, -80.28700802739922],
-    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'ord', 'anc'],
     isHub: true,
     arrRwy: 8,
     depRwy: 8,
@@ -1228,7 +1228,7 @@ var DESTINATIONS = [
     name: 'Narita International Airport (NRT)',
     city: 'Tokyo, Japan 🇯🇵',
     pos: [35.77226493717075, 140.39293589386335],
-    hubs: ['ewr', 'sfo', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'hnl', 'ord', 'anc'],
     tz: 'Asia/Tokyo',
   },
   {
@@ -1312,7 +1312,7 @@ var DESTINATIONS = [
     name: 'Phoenix Sky Harbor International Airport (PHX)',
     city: 'Phoenix, USA - Arizona 🇺🇸',
     pos: [33.43582170243552, -112.0101240396323],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Mountain',
   },
   {
@@ -1872,7 +1872,7 @@ var DESTINATIONS = [
     name: 'Toronto Pearson International Airport (YYZ)',
     city: 'Toronto, Canada 🇨🇦',
     pos: [43.67779523959123, -79.6247972173393],
-    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord', 'anc'],
     tz: 'Canada/Eastern',
   },
   {
