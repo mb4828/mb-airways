@@ -13,11 +13,11 @@ function getTodayTime(tm, code) {
   return luxon.DateTime.fromJSDate(tm).setZone(airport.tz).set({ year: now.year, month: now.month, day: now.day });
 }
 
-function getDuration(dep, arr, raw = false) {
+function getDuration(dep, arr, raw = false, addDays = 0) {
   const d = luxon.DateTime.fromJSDate(dep);
-  const a = luxon.DateTime.fromJSDate(arr);
+  const a = luxon.DateTime.fromJSDate(arr).plus({ days: addDays });
   if (raw) {
-    return a.diff(d);
+    return a.diff(d).toMillis();
   }
   return a.diff(d).shiftTo('hours', 'minutes').normalize().toHuman({ unitDisplay: 'short' });
 }
@@ -64,11 +64,6 @@ function getAirportName(code) {
 function isHub(code) {
   const airport = AIRPORTS.get(code);
   return airport ? !!airport['isHub'] : false;
-}
-
-function isUSA(code) {
-  const airport = AIRPORTS.get(code);
-  return airport ? airport['city'].includes('USA') : false;
 }
 
 function canConnect(f1, f2) {
@@ -181,10 +176,13 @@ function displayFlights(flights) {
     const numDays = getNumDays(f[0]['dt'], f[last]['at'], f[0]['o'], f[last]['d']);
     const wrapper = $('<div class="trip-wrapper">');
     wrapper.append(`<div class="trip-header" id="trip-header-${id}" onclick="toggleTrip('${id}')">
-							<strong style="flex-grow:1">${getTime(f[0]['dt'], f[0]['o'])} &ndash; ${getTime(f[last]['at'], f[last]['d'])}${
-      numDays > 0 ? `<sup>+${numDays}</sup>` : ''
-    }</strong>
-							<span style="flex-basis:250px"><i class="fas fa-fw fa-stopwatch"></i> ${getDuration(f[0]['dt'], f[last]['at'])}</span>
+							<strong style="flex-grow:1">
+                ${getTime(f[0]['dt'], f[0]['o'])} &ndash; 
+                ${getTime(f[last]['at'], f[last]['d'])}${numDays > 0 ? `<sup>+${numDays}</sup>` : ''}
+              </strong>
+							<span style="flex-basis:250px">
+                <i class="fas fa-fw fa-stopwatch"></i> ${getDuration(f[0]['dt'], f[last]['at'])}
+              </span>
 							<span style="flex-basis:200px">
 								${
                   f.length === 1
@@ -207,10 +205,9 @@ function displayFlights(flights) {
 								    	<i class="fas fa-circle fa-stack-2x"></i>
 								    	<i class="fas fa-plane-departure fa-stack-1x fa-inverse"></i>
 								  	</span>
-									<span>${getTime(s.dt, s.o)} &bull; ${getAirportName(s.o)}<br><small>Flight time: ${getDuration(
-        s['dt'],
-        s['at']
-      )}</small></span>
+									<span>${getTime(s.dt, s.o)} &bull; 
+                    ${getAirportName(s.o)}<br><small>Flight time: ${getDuration(s['dt'], s['at'])}</small>
+                  </span>
 								</li>
 								<li>
 									<span class="fa-stack fa-1x">
@@ -241,54 +238,72 @@ function searchFlights() {
     const dest = $('#booking-to :selected').val();
     const foundFlights = new Set();
     let flights = [];
+
+    // non-stop
     for (const f1 of FLIGHTS) {
-      if (foundFlights.has(f1.flight)) {
-        continue; // skip duplicate itineraries
+      if (!foundFlights.has(f1.flight) && f1['o'] == origin && f1['d'] === dest) {
+        flights.push([f1]);
+        foundFlights.add(f1.flight);
       }
-      if (f1['o'] === origin) {
-        // non-stop
-        if (f1['d'] === dest) {
-          flights.push([f1]);
-          foundFlights.add(f1.flight);
-        }
+    }
 
+    // 1 stop
+    for (const f1 of FLIGHTS) {
+      if (!foundFlights.has(f1.flight) && isHub(f1['o']) && f1['o'] === origin) {
         for (const f2 of FLIGHTS) {
-          if (f1['d'] === f2['o'] && canConnect(f1, f2)) {
-            // 1 stop
-            if (isHub(f1['d']) && f2['d'] === dest) {
-              flights.push([f1, f2]);
-              foundFlights.add(f1.flight);
-              break; // skip duplicate itineraries
-            }
+          if (
+            !foundFlights.has(f1.flight + f2.flight) &&
+            f1['d'] === f2['o'] &&
+            f2['d'] === dest &&
+            canConnect(f1, f2)
+          ) {
+            flights.push([f1, f2]);
+            foundFlights.add(f1.flight + f2.flight);
+          }
+        }
+      }
+    }
 
-            // 2 stops
-            for (const f3 of FLIGHTS) {
-              if (
-                f2['d'] === f3['o'] &&
-                (!isUSA(f1['o']) || !isUSA(f3['d'])) && // 2 stops only allowed for intl destinations
-                isHub(f1['d']) &&
-                isHub(f2['d']) && // connections only allowed through hubs
-                new Set([f1.o, f2.o, f3.o, f1.d, f2.d, f3.d]).size === 4 && // no repeat cities (sanity check)
-                canConnect(f2, f3) &&
-                f3['d'] === dest
-              ) {
-                flights.push([f1, f2, f3]);
-                foundFlights.add(f1.flight);
-                break; // skip duplicate itineraries
+    // 2 stops
+    if (flights.length < 8) {
+      for (const f1 of FLIGHTS) {
+        if (!foundFlights.has(f1.flight) && isHub(f1['o']) && f1['o'] === origin) {
+          for (const f2 of FLIGHTS) {
+            if (
+              !foundFlights.has(f1.flight + f2.flight) &&
+              isHub(f2['o']) &&
+              f1['d'] === f2['o'] &&
+              canConnect(f1, f2)
+            ) {
+              for (const f3 of FLIGHTS) {
+                if (
+                  !foundFlights.has(f1.flight + f2.flight + f3.flight) &&
+                  f2['d'] === f3['o'] &&
+                  f3['d'] === dest &&
+                  new Set([f1.o, f2.o, f3.o, f1.d, f2.d, f3.d]).size === 4 && // no repeat cities (sanity check)
+                  canConnect(f2, f3)
+                ) {
+                  flights.push([f1, f2, f3]);
+                  foundFlights.add(f1.flight + f2.flight + f3.flight);
+                }
               }
             }
           }
         }
       }
     }
-    // keep the top 10 fastest trips and get rid of the rest
-    flights.sort((a, b) =>
-      getDuration(a[0]['dt'], a[a.length - 1]['at'], true).toMillis() <
-      getDuration(b[0]['dt'], b[b.length - 1]['at'], true).toMillis()
-        ? -1
-        : 1
-    );
-    flights = flights.slice(0, 10);
+
+    // keep the top 8 fastest trips and get rid of the rest
+    flights.sort((a, b) => {
+      const aF = a[0];
+      const aL = a[a.length - 1];
+      const bF = b[0];
+      const bL = b[b.length - 1];
+      const numDaysA = getNumDays(aF['dt'], aL['at'], aF['o'], aL['d']);
+      const numDaysB = getNumDays(bF['dt'], bL['at'], bF['o'], bL['d']);
+      return getDuration(aF['dt'], aL['at'], true, numDaysA) < getDuration(bF['dt'], bL['at'], true, numDaysB) ? -1 : 1;
+    });
+    flights = flights.slice(0, 8);
 
     // sort by departure time
     flights.sort((a, b) => (getTodayTime(a[0].dt, a[0].o) < getTodayTime(b[0].dt, b[0].o) ? -1 : 1));
