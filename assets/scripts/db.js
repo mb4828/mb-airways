@@ -164,7 +164,7 @@ var DESTINATIONS = [
     name: 'Hartsfield-Jackson Atlanta International Airport (ATL)',
     city: 'Atlanta, USA - Georgia 🇺🇸',
     pos: [33.64083507608079, -84.42787180090849],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Eastern',
   },
   {
@@ -220,7 +220,7 @@ var DESTINATIONS = [
     name: 'Boston Logan International Airport (BOS)',
     city: 'Boston, USA - Massachusetts 🇺🇸',
     pos: [42.365961658704904, -71.00960315045923],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Eastern',
   },
   {
@@ -528,14 +528,14 @@ var DESTINATIONS = [
     name: 'Denver International Airport (DEN)',
     city: 'Denver, USA - Colorado 🇺🇸',
     pos: [39.856787796502296, -104.67360889044873],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Mountain',
   },
   {
     name: 'Dallas/Fort Worth International Airport (DFW)',
     city: 'Dallas, USA - Texas 🇺🇸',
     pos: [32.90175623187377, -97.04011304308536],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Central',
   },
   {
@@ -899,7 +899,7 @@ var DESTINATIONS = [
     name: 'John F. Kennedy International Airport (JFK)',
     city: 'New York, USA - New York 🇺🇸',
     pos: [40.64189712324801, -73.7779237593459],
-    hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Eastern',
   },
   {
@@ -955,7 +955,7 @@ var DESTINATIONS = [
     name: 'Los Angeles International Airport (LAX)',
     city: 'Los Angeles, USA - California 🇺🇸',
     pos: [33.9412952817257, -118.40872312135349],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Pacific',
   },
   {
@@ -1158,7 +1158,7 @@ var DESTINATIONS = [
     name: 'Minneapolis-Saint Paul International Airport (MSP)',
     city: 'Minneapolis, USA - Minnesota 🇺🇸',
     pos: [44.88624650092833, -93.22250729555996],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Central',
   },
   {
@@ -1291,7 +1291,7 @@ var DESTINATIONS = [
     name: 'Portland International Airport (PDX)',
     city: 'Portland, USA - Oregon 🇺🇸',
     pos: [45.59024957185743, -122.59483674121826],
-    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord', 'anc'],
     tz: 'US/Pacific',
   },
   {
@@ -1305,7 +1305,7 @@ var DESTINATIONS = [
     name: 'Philadelphia International Airport (PHL)',
     city: 'Philadelphia, USA - Pennsylvania 🇺🇸',
     pos: [39.87312718764114, -75.24362441975858],
-    hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Eastern',
   },
   {
@@ -1494,7 +1494,7 @@ var DESTINATIONS = [
     name: 'San Diego International Airport (SAN)',
     city: 'San Diego, USA - California 🇺🇸',
     pos: [32.733728095648374, -117.19304634789322],
-    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'mia', 'ord', 'anc'],
     tz: 'US/Pacific',
   },
   {
@@ -1529,7 +1529,7 @@ var DESTINATIONS = [
     name: 'Seattle-Tacoma International Airport (SEA)',
     city: 'Seattle, USA - Washington 🇺🇸',
     pos: [47.45358306768111, -122.30824812930476],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Pacific',
   },
   {
@@ -1613,7 +1613,7 @@ var DESTINATIONS = [
     name: 'Norman Y. Mineta San Jose International Airport (SJC)',
     city: 'San Jose, USA - California 🇺🇸',
     pos: [37.363665715803144, -121.92895897613796],
-    hubs: ['ewr', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Pacific',
   },
   {
@@ -1795,7 +1795,7 @@ var DESTINATIONS = [
     name: 'Edmonton International Airport (YEG)',
     city: 'Edmonton, Canada 🇨🇦',
     pos: [53.30623686908562, -113.58276804327605],
-    hubs: ['ewr', 'sfo', 'iah', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'ord', 'anc'],
     tz: 'Canada/Mountain',
   },
   {
@@ -1851,14 +1851,14 @@ var DESTINATIONS = [
     name: 'Calgary International Airport (YYC)',
     city: 'Calgary, Canada 🇨🇦',
     pos: [51.12150310000004, -114.00819495762246],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord', 'anc'],
     tz: 'Canada/Mountain',
   },
   {
     name: 'Vancouver International Airport (YVR)',
     city: 'Vancouver, Canada 🇨🇦',
     pos: [49.19675521104217, -123.18147272578588],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'Canada/Pacific',
   },
   {
