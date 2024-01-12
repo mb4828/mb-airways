@@ -33,24 +33,6 @@ const MARKER_ICON_SECONDARY = {
   opacity: 0.4,
 };
 
-const FLOWER_ICON = {
-  icon: L.icon({
-    iconUrl: 'assets/images/livery/mb-aloha/mb_aloha_flower.png',
-    iconSize: [15, 15], // size of the icon
-    iconAnchor: [7, 15], // point of the icon which will correspond to marker's location
-    popupAnchor: [0, -15], // point from which the popup should open relative to the iconAnchor
-  }),
-};
-
-const DOG_ICON = {
-  icon: L.icon({
-    iconUrl: 'assets/images/livery/mb-alaska/mb_alaska_dog.png',
-    iconSize: [15, 15], // size of the icon
-    iconAnchor: [7, 15], // point of the icon which will correspond to marker's location
-    popupAnchor: [0, -15], // point from which the popup should open relative to the iconAnchor
-  }),
-};
-
 function drawGeodesic(map, pos1, pos2) {
   const line = L.geodesic([pos1, pos2], { weight: 2, opacity: 0.4, color: 'var(--primary-color)' }).addTo(map);
   LINES.push(line);
@@ -60,10 +42,6 @@ function drawMarker(map, dest, options = {}) {
   let markerOpts = MARKER_ICON;
   if (dest.isHub) {
     markerOpts = HUB_ICON;
-  } else if (dest.city.includes('Hawaii')) {
-    markerOpts = FLOWER_ICON;
-  } else if (dest.city.includes('Alaska')) {
-    markerOpts = DOG_ICON;
   } else if (options.hub && !dest.hubs.includes(options.hub)) {
     markerOpts = MARKER_ICON_SECONDARY;
   }
