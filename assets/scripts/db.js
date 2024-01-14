@@ -948,7 +948,7 @@ var DESTINATIONS = [
     name: 'Harry Reid International Airport (LAS)',
     city: 'Las Vegas, USA - Nevada 🇺🇸',
     pos: [36.08590149456017, -115.15072229119573],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Pacific',
   },
   {
@@ -1641,7 +1641,7 @@ var DESTINATIONS = [
     name: 'Salt Lake City International Airport (SLC)',
     city: 'Salt Lake City, USA - Utah 🇺🇸',
     pos: [40.79051939628816, -111.97902094610347],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord', 'anc'],
     tz: 'US/Mountain',
   },
   {
@@ -1844,7 +1844,7 @@ var DESTINATIONS = [
     name: 'Winnipeg James Armstrong Richardson International Airport (YWG)',
     city: 'Winnipeg, Canada 🇨🇦',
     pos: [49.90989045505348, -97.23656756049226],
-    hubs: ['sfo', 'ord'],
+    hubs: ['sfo', 'ord', 'anc'],
     tz: 'Canada/Mountain',
   },
   {
