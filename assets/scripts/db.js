@@ -360,7 +360,7 @@ var DESTINATIONS = [
     name: 'Baltimore/Washington International Airport (BWI)',
     city: 'Baltimore, USA - Maryland 🇺🇸',
     pos: [39.177536943139835, -76.66830640614698],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Eastern',
   },
   {
@@ -416,7 +416,7 @@ var DESTINATIONS = [
     name: 'Charlotte Douglas International Airport (CLT)',
     city: 'Charlotte, USA - North Carolina 🇺🇸',
     pos: [35.214358753004724, -80.94714294071665],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Eastern',
   },
   {
@@ -822,7 +822,7 @@ var DESTINATIONS = [
     name: 'Dulles International Airport (IAD)',
     city: 'Washington, USA - D.C. 🇺🇸',
     pos: [38.95327013665701, -77.4565514890331],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'hnl', 'ord', 'anc'],
     tz: 'US/Eastern',
   },
   {
@@ -934,7 +934,7 @@ var DESTINATIONS = [
     name: 'Kona International Airport (KOA)',
     city: 'Kailua-Kona, USA - Hawaii 🇺🇸',
     pos: [19.737769862987626, -156.0428956900814],
-    hubs: ['sfo', 'hnl'],
+    hubs: ['sfo', 'hnl', 'anc'],
     tz: 'US/Hawaii',
   },
   {
@@ -1242,7 +1242,7 @@ var DESTINATIONS = [
     name: 'Kahului Airport (OGG)',
     city: 'Kahului, USA - Hawaii 🇺🇸',
     pos: [20.894645227300344, -156.43600538629138],
-    hubs: ['sfo', 'hnl'],
+    hubs: ['sfo', 'hnl', 'anc'],
     tz: 'US/Hawaii',
   },
   {
@@ -1452,7 +1452,7 @@ var DESTINATIONS = [
     name: 'Reno-Tahoe International Airport (RNO)',
     city: 'Reno, USA - Nevada 🇺🇸',
     pos: [39.49964863013703, -119.76805218683198],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord', 'anc'],
     tz: 'US/Pacific',
   },
   {
@@ -1648,7 +1648,7 @@ var DESTINATIONS = [
     name: 'Sacramento International Airport (SMF)',
     city: 'Sacramento, USA - California 🇺🇸',
     pos: [38.69506863213448, -121.59003261580382],
-    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'mia', 'ord', 'anc'],
     tz: 'US/Pacific',
   },
   {
