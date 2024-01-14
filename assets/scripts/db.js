@@ -1865,7 +1865,7 @@ var DESTINATIONS = [
     name: 'Erik Nielsen Whitehorse International Airport (YXY)',
     city: 'Whitehorse, Canada 🇨🇦',
     pos: [60.7139263748326, -135.07421919200056],
-    hubs: ['ord'],
+    hubs: ['ord', 'anc'],
     tz: 'Canada/Yukon',
   },
   {
@@ -1879,7 +1879,7 @@ var DESTINATIONS = [
     name: 'Yellowknife Airport (YZF)',
     city: 'Yellowknife, Canada 🇨🇦',
     pos: [62.46527349066923, -114.44129734775916],
-    hubs: ['ord'],
+    hubs: ['ord', 'anc'],
     tz: 'Canada/Mountain',
   },
   {
