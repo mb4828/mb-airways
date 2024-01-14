@@ -1102,7 +1102,7 @@ var DESTINATIONS = [
     name: 'Mexico City International Airport (MEX)',
     city: 'Mexico City, Mexico 🇲🇽',
     pos: [19.43624818319543, -99.07194048906919],
-    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'ord', 'anc'],
     tz: 'America/Mexico_City',
   },
   {
