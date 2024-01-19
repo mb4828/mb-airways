@@ -70,7 +70,7 @@ var DESTINATIONS = [
     name: 'Ted Stevens International Airport (ANC)',
     city: 'Anchorage, USA - Alaska 🇺🇸',
     pos: [61.171332648, -149.991162702],
-    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'ord'],
+    hubs: ['ewr', 'sfo', 'iah', 'hnl', 'ord', 'mia'],
     isHub: true,
     arrRwy: 70,
     depRwy: 70,
@@ -2002,7 +2002,7 @@ var DESTINATIONS = [
     tz: 'US/Alaska',
   },
   {
-    name: 'Merle K. (Mudhole) Smith Airport (CDV)',
+    name: 'Merle K. Mudhole Smith Airport (CDV)',
     city: 'Cordova, USA - Alaska 🇺🇸',
     pos: [60.4916, -145.4776],
     hubs: ['anc'],
