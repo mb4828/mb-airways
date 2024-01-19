@@ -31,36 +31,6 @@ function getNumDays(dep, arr, codeDep, codeArr) {
   );
 }
 
-function getAirportCity(code) {
-  const airport = AIRPORTS.get(code);
-  if (airport && airport.city) {
-    const temp = airport.city.split(',');
-    if (temp.length > 1) {
-      return temp.slice(0, temp.length - 1).join(',');
-    }
-    return temp
-      .join('')
-      .match(/[a-zA-Z. ]*/g)
-      .join('');
-  }
-  console.error('Missing city for ' + code);
-  return '';
-}
-
-function getAirportCountry(code) {
-  const airport = AIRPORTS.get(code);
-  if (airport && airport.city) {
-    const temp = airport.city.split(',');
-    return temp[temp.length - 1].trim();
-  }
-  console.error('Missing city for ' + code);
-  return '';
-}
-
-function getAirportName(code) {
-  return AIRPORTS.get(code)['name'];
-}
-
 function isHub(code) {
   const airport = AIRPORTS.get(code);
   return airport ? !!airport['isHub'] : false;

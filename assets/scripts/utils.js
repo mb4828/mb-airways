@@ -2,10 +2,45 @@ var AIRPORTS = new Map();
 
 var FLIGHTS = [];
 
+function getAirportName(code) {
+  return AIRPORTS.get(code)['name'];
+}
+
+function getAirportFullCity(code) {
+  return AIRPORTS.get(code)['city'];
+}
+
+function getAirportCity(code) {
+  const airport = AIRPORTS.get(code);
+  if (airport && airport.city) {
+    const temp = airport.city.split(',');
+    if (temp.length > 1) {
+      console.log(temp.slice(0, temp.length - 1).join(','));
+      return temp.slice(0, temp.length - 1).join(',');
+    }
+    return temp
+      .join('')
+      .match(/[a-zA-Z. ]*/g)
+      .join('');
+  }
+  console.error('Missing city for ' + code);
+  return '';
+}
+
+function getAirportCountry(code) {
+  const airport = AIRPORTS.get(code);
+  if (airport && airport.city) {
+    const temp = airport.city.split(',');
+    return temp[temp.length - 1].trim();
+  }
+  console.error('Missing city for ' + code);
+  return '';
+}
+
 function getTailLogo(schedule) {
-  if (['717-200', 'Q-400'].includes(schedule.type)) {
+  if (getAirportFullCity(schedule.o).includes('Hawaii') && getAirportFullCity(schedule.d).includes('Hawaii')) {
     return 'assets/images/logos/aloha-tail.png';
-  } else if (schedule.type === 'MAX8' && (schedule.o === 'ANC' || schedule.d === 'ANC')) {
+  } else if (getAirportFullCity(schedule.o).includes('Alaska') && getAirportFullCity(schedule.d).includes('Alaska')) {
     return 'assets/images/logos/alaska-tail.png';
   } else {
     return 'assets/images/logos/mb-tail.png';
